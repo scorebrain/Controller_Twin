@@ -23,6 +23,12 @@ public class App extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Electro-Mech MP Console Emulator");
         stage.setScene(scene);
+        // Force the entire JVM and all child windows to exit when the main window closes
+        stage.setOnCloseRequest(event -> {
+            javafx.application.Platform.exit();
+            System.exit(0);
+        });
+        // ---------------------
         stage.show();
     }
 

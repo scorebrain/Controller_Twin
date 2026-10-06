@@ -25,12 +25,14 @@ import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
 
 public class ConsoleController {
     
     private Cosmac1802 cpu;
     private SerialPort comPort; // Add the hardware port variable
-    private boolean enableHardwareCom = false; // Set to true when USB adapter is attached
+    private boolean enableHardwareCom = true; // Set to true when USB adapter is attached
     private DateTimeFormatter timeFmt = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
     private StringBuilder logBuffer = new StringBuilder();
     private int logLines = 0;
@@ -38,6 +40,10 @@ public class ConsoleController {
     private Button pauseBtn;
     private Button copyBtn;
     private boolean isLogPaused = false;
+    
+    // Handheld LED References
+    public Circle gameClockLed;
+    public Circle shotClockLed;
 
     @FXML
     private Label line1Label;
@@ -123,6 +129,7 @@ public class ConsoleController {
         logStage.setY(100);
         logStage.show();
         // ----------------------------------------------
+        spawnHandheldWindows();
 
         // Start the CPU in a background daemon thread
         Thread cpuThread = new Thread(() -> {
@@ -320,5 +327,100 @@ public class ConsoleController {
                 serialLog.setScrollTop(Double.MAX_VALUE); // Auto-scroll to bottom
             }
         });
+    }
+    
+    // --- LED HARDWARE BINDINGS ---
+    public void updateHandheldLEDs(boolean gcOn, boolean scOn) {
+        Platform.runLater(() -> {
+            if (gameClockLed != null) {
+                gameClockLed.setFill(gcOn ? Color.RED : Color.DARKRED);
+            }
+            if (shotClockLed != null) {
+                shotClockLed.setFill(scOn ? Color.RED : Color.DARKRED);
+            }
+        });
+    }
+    
+    private void spawnHandheldWindows() {
+        // --- GAME CLOCK HANDHELD ---
+        VBox gcLayout = new VBox(20);
+        gcLayout.setAlignment(Pos.CENTER);
+        gcLayout.setStyle("-fx-background-color: #e6e6e6; -fx-border-color: #d1b2b2; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;");
+        gcLayout.setPadding(new Insets(20));
+
+        gameClockLed = new Circle(8, Color.DARKRED);
+        gameClockLed.setStroke(Color.GRAY);
+
+        // ... (Game Clock LED definition)
+        Button gcBtn = new Button();
+        gcBtn.setPrefSize(40, 40);
+        gcBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
+        // Switch #1 -> Row 4, Col 7
+        gcBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 7; cpu.targetRow = 4; } });
+        gcBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
+
+        Label gcLabel = new Label("GAME CLOCK\nWIRED CONTROLLER");
+        gcLabel.setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold; -fx-text-alignment: center;");
+        
+        gcLayout.getChildren().addAll(gameClockLed, gcBtn, gcLabel);
+
+        Stage gcStage = new Stage();
+        gcStage.setTitle("Game Clock");
+        gcStage.setScene(new Scene(gcLayout, 200, 300));
+        gcStage.setX(100); gcStage.setY(450);
+        gcStage.show();
+
+        // --- SHOT CLOCK HANDHELD ---
+        VBox scLayout = new VBox(15);
+        scLayout.setAlignment(Pos.CENTER);
+        scLayout.setStyle("-fx-background-color: #e6e6e6; -fx-border-color: #d1b2b2; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;");
+        scLayout.setPadding(new Insets(20));
+
+        shotClockLed = new Circle(8, Color.DARKRED);
+        shotClockLed.setStroke(Color.GRAY);
+
+        Button resetBtn = new Button();
+        resetBtn.setPrefSize(40, 40);
+        resetBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
+        // Switch #3 (RESET) -> Row 4, Col 1
+        resetBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 1; cpu.targetRow = 4; } });
+        resetBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
+        VBox resetBox = new VBox(2, new Label("RESET"), resetBtn);
+        resetBox.setAlignment(Pos.CENTER);
+        resetBox.setStyle("-fx-border-color: #0000aa; -fx-border-width: 2; -fx-padding: 5;");
+        ((Label)resetBox.getChildren().get(0)).setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold;");
+
+        Button resetObBtn = new Button();
+        resetObBtn.setPrefSize(40, 40);
+        resetObBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
+        // Switch #4 (RESET-OB) -> Row 4, Col 3
+        resetObBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 3; cpu.targetRow = 4; } });
+        resetObBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
+        VBox resetObBox = new VBox(2, new Label("RESET - OB / BLANK"), resetObBtn);
+        resetObBox.setAlignment(Pos.CENTER);
+        resetObBox.setStyle("-fx-border-color: #0000aa; -fx-border-width: 2; -fx-padding: 5;");
+        ((Label)resetObBox.getChildren().get(0)).setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold;");
+
+        Button blankBtn = new Button();
+        blankBtn.setPrefSize(40, 40);
+        blankBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
+        // Switch #2 (BLANK) -> Row 4, Col 5
+        blankBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 5; cpu.targetRow = 4; } });
+        blankBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
+        VBox blankBox = new VBox(2, new Label("PAUSE"), blankBtn);
+        blankBox.setAlignment(Pos.CENTER);
+        blankBox.setStyle("-fx-border-color: red; -fx-border-width: 2; -fx-padding: 5;");
+        ((Label)blankBox.getChildren().get(0)).setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
+
+        Label scLabel = new Label("SHOT TIMER\nWIRED CONTROLLER");
+        scLabel.setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold; -fx-text-alignment: center;");
+
+        scLayout.getChildren().addAll(shotClockLed, resetBox, resetObBox, blankBox, scLabel);
+
+        Stage scStage = new Stage();
+        scStage.setTitle("Shot Clock");
+        scStage.setScene(new Scene(scLayout, 220, 450));
+        scStage.setX(320); scStage.setY(450);
+        scStage.show();
     }
 }

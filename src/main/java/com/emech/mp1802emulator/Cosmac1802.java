@@ -56,6 +56,13 @@ public class Cosmac1802 {
     public volatile int targetRow = 0xFF;       // Which INP 3 value our button pulls low
     public volatile boolean printHit = false;   // Ensures we only print once per click
     public volatile int jumperState = 0xFF;     // Default to unpopulated
+    //public volatile int handheldState = 0xFF; // Handhelds on INP 6
+    
+    // Hardware LED Timers (Software Phosphor)
+    public int gcLedTimer = 0;
+    public int scLedTimer = 0;
+    public boolean lastGcLed = false;
+    public boolean lastScLed = false;
     
     // Virtual UART Receiver State
     public int rxState = 0;     // 0=IDLE, 1=START, 2=DATA, 3=STOP
@@ -77,6 +84,7 @@ public class Cosmac1802 {
 
     public int input(int port) {
         if (port == 2) return 0x00; 
+        //if (port == 6) return handheldState; // Serve handheld switch state
         if (port == 7) return jumperState; 
 
         // THE TRUE MATRIX SCANNER
@@ -102,9 +110,32 @@ public class Cosmac1802 {
     public void output(int port, int value) {
         lastOut[port] = value;
         
-        // Track the matrix row selector so getEF1 and input(4) can respond to it[cite: 14]
-        if (port == 3) lastOut3 = value;
+        if (port == 3) {
+            lastOut3 = value;
+            
+            // Game Clock LED on Bit 7 (0x80)
+            if ((value & 0x80) != 0) {
+                gcLedTimer = 6000; // Keep alive slightly longer than 1 frame (4096 cycles)
+                if (!lastGcLed) {
+                    lastGcLed = true;
+                    if (controller != null) controller.updateHandheldLEDs(lastGcLed, lastScLed);
+                }
+            }
+            
+            // Shot Clock LED (Assuming Bit 6 / 0x40)
+            if ((value & 0x40) != 0) {
+                scLedTimer = 6000; 
+                if (!lastScLed) {
+                    lastScLed = true;
+                    if (controller != null) controller.updateHandheldLEDs(lastGcLed, lastScLed);
+                }
+            }
+        }
         if (port == 6) lastOut6 = value;
+        // Trigger the LED updates when the OS pushes to OUT 7
+        if (port == 7) {
+            if (controller != null) controller.updateHandheldLEDs(lastGcLed, lastScLed);
+        }
 
         if (port == 2) {
             if (value == 0x01) {
@@ -170,10 +201,25 @@ public class Cosmac1802 {
         R[P] = (R[P] + 1) & 0xFFFF;
         
         // --- CYCLE CALCULATOR ---
-        // Long Branches (0xC0-0xCF) take 3 cycles. All others take 2[cite: 17].
         int cycles = ((opcode & 0xF0) == 0xC0) ? 3 : 2;
         totalCycles += cycles;
         // ------------------------
+        
+        // --- LED PHOSPHOR DECAY ---
+        if (gcLedTimer > 0) {
+            gcLedTimer -= cycles;
+            if (gcLedTimer <= 0 && lastGcLed) {
+                lastGcLed = false;
+                if (controller != null) controller.updateHandheldLEDs(lastGcLed, lastScLed);
+            }
+        }
+        if (scLedTimer > 0) {
+            scLedTimer -= cycles;
+            if (scLedTimer <= 0 && lastScLed) {
+                lastScLed = false;
+                if (controller != null) controller.updateHandheldLEDs(lastGcLed, lastScLed);
+            }
+        }
         
         // 2. DECODE
         int I = (opcode >> 4) & 0x0F; 
