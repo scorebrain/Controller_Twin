@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>javafx:run</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>--enable-native-access=javafx.graphics,ALL-UNNAMED -classpath %classpath com.emech.mp1802emulator.App</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>com.emech.mp1802emulator.App</exec.mainClass>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+    </actions>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" style="-fx-background-color: #d9d9d9;" 
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.emech.mp1802emulator.ConsoleController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+   </padding>
+
+   <!-- LCD DISPLAY PANEL -->
+   <VBox alignment="CENTER" spacing="0.0" style="-fx-background-color: #000055; -fx-padding: 15; -fx-border-color: #000000; -fx-border-width: 3;">
+       <Label fx:id="line1Label" text="                " textFill="WHITE">
+          <font><Font name="Monospaced Bold" size="28.0" /></font>
+       </Label>
+       <Label fx:id="line2Label" text="                " textFill="WHITE">
+          <font><Font name="Monospaced Bold" size="28.0" /></font>
+       </Label>
+   </VBox>
+
+   <CheckBox fx:id="jumperCheckBox" text="Install J6 Jumpers (INP 7 = 0x00)" onAction="#handleJumperToggle" selected="false" />
+
+   <!-- MAIN KEYPAD AREA -->
+   <HBox spacing="30.0" alignment="TOP_CENTER">
+       
+       <!-- LEFT CLUSTER -->
+       <VBox spacing="15.0">
+           <!-- Top Left Block -->
+           <GridPane hgap="5.0" vgap="5.0">
+               <Button text="SET&#10;CLOCK" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="0,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="SET CLK&#10;.1 SEC" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="1,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text=".1 SEC&#10;ON/OFF" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="2,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="CLOCK&#10;UP/DN" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="3,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="3" GridPane.rowIndex="0" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               
+               <Button text="SHOT&#10;CLOCKS" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="0,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="AUTO&#10;HORN" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="1,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="TIME OF&#10;DAY" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="2,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="2" GridPane.rowIndex="1" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="TIME OUT&#10;TIMER" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="3,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="3" GridPane.rowIndex="1" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+           </GridPane>
+
+           <!-- Mid Left Block -->
+           <HBox spacing="5.0">
+               <Button text="SET GST&#10;SCORE" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="0,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="SET HOME&#10;SCORE" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="1,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="PLAYER&#10;MATCH" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="2,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="PLAYER&#10;FOUL" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="3,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+           </HBox>
+
+           <!-- Fouls & Bonus Block -->
+           <HBox spacing="5.0">
+               <Button text="GUEST&#10;FOULS" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="0,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="HOME&#10;FOULS" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="1,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="GUEST&#10;BONUS" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="2,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="HOME&#10;BONUS" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="3,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+           </HBox>
+
+           <!-- Bottom Left Scores Block -->
+           <HBox spacing="5.0">
+               <Button text="GUEST&#10;SCORE +1" prefWidth="80" prefHeight="45" textAlignment="CENTER" userData="0,4" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Region prefWidth="30" />
+               <Button text="HOME&#10;SCORE +1" prefWidth="80" prefHeight="45" textAlignment="CENTER" userData="2,4" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+           </HBox>
+       </VBox>
+
+       <!-- CENTER CLUSTER (NUMPAD) -->
+       <VBox spacing="10.0" alignment="TOP_CENTER">
+           <Label text="BASKETBALL • VOLLEYBALL • WRESTLING" textFill="#0000aa">
+               <font><Font name="System Bold" size="10.0" /></font>
+           </Label>
+           <GridPane hgap="5.0" vgap="5.0">
+               <Button text="7" prefWidth="55" prefHeight="50" userData="4,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="8" prefWidth="55" prefHeight="50" userData="5,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="9" prefWidth="55" prefHeight="50" userData="6,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="4" prefWidth="55" prefHeight="50" userData="4,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="5" prefWidth="55" prefHeight="50" userData="5,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="6" prefWidth="55" prefHeight="50" userData="6,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="2" GridPane.rowIndex="1" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="1" prefWidth="55" prefHeight="50" userData="4,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="2" prefWidth="55" prefHeight="50" userData="5,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="3" prefWidth="55" prefHeight="50" userData="6,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="2" GridPane.rowIndex="2" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="CLEAR" prefWidth="55" prefHeight="50" userData="4,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="0" prefWidth="55" prefHeight="50" userData="5,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="ENTER" prefWidth="55" prefHeight="50" userData="6,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" GridPane.columnIndex="2" GridPane.rowIndex="3" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+           </GridPane>
+           <Region VBox.vgrow="ALWAYS" />
+           <!-- Possession -->
+           <Button text="POSS&#10;◄  ►" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="4,4" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+       </VBox>
+
+       <!-- RIGHT CLUSTER -->
+       <VBox spacing="10.0" alignment="TOP_CENTER">
+           <VBox spacing="5.0">
+               <Button text="SET GST&#10;T.O." prefWidth="70" prefHeight="45" textAlignment="CENTER" userData="7,0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="NEW&#10;GAME" prefWidth="70" prefHeight="45" textAlignment="CENTER" userData="7,1" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="SET HOME&#10;T.O." prefWidth="70" prefHeight="45" textAlignment="CENTER" userData="7,2" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+               <Button text="QTR / PER&#10;  +1" prefWidth="70" prefHeight="45" textAlignment="CENTER" userData="7,3" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold;"/>
+           </VBox>
+           <Region VBox.vgrow="ALWAYS" />
+           <HBox spacing="10.0" alignment="BOTTOM_RIGHT">
+               <Button text="HORN" prefWidth="65" prefHeight="45" userData="6,4" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #0000aa;"/>
+               <Button text="CLOCK&#10;ON / OFF" prefWidth="65" prefHeight="45" textAlignment="CENTER" userData="7,4" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: red; -fx-border-color: red;"/>
+           </HBox>
+       </VBox>
+   </HBox>
+</VBox>

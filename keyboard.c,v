@@ -1,0 +1,4371 @@
+head	1.49;
+access;
+symbols
+	CX-EM-B4LineAuto:1.49
+	CX502v1:1.42
+	EditGroupsPt1:1.40
+	CX-474v1:1.40
+	CX-474v2:1.39
+	CX500vCC_NC:1.39
+	CX-472v3:1.37
+	CX-472v1ExCompBug:1.37
+	CX-470v5:1.35
+	CX-470v4:1.35
+	CX-470v3:1.33
+	CX-470v2:1.33
+	CX-406v1:1.32
+	CX-470v1:1.31
+	x2013Jan18:1.29
+	CX-404v:1.28
+	CX-402v1:1.22
+	CX-340v2:1.18
+	CX-340v1:1.16
+	CX-338v1:1.14
+	CX-334-2010-09-24:1.14
+	CX-334-2010-09-09:1.13
+	CX-332v2-C1-45388:1.11
+	CX-332v2:1.10
+	CX-332-2010-05-26ParagsLast:1.9
+	CX-332-2010-05-1FixedSegCounts:1.8
+	CX-332-2010-04-30:1.8
+	CX-322-2010-04-28:1.6
+	CX-322-2010-02-26_buildfails:1.4
+	CX-322-2010-02-24:1.3
+	CX-322-2010-02-08:1.2
+	CX-322-2010-02-02:1.1;
+locks; strict;
+comment	@ * @;
+
+
+1.49
+date	2016.02.18.14.14.33;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.48;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	309456c5d09378f5;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.48
+date	2015.09.25.18.41.48;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.47;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	224f4560593953408;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.47
+date	2015.05.29.20.23.54;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.46;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	183345568c7f12cdb;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.46
+date	2015.04.14.14.49.38;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.45;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	14bbc552d28cb79d6;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.45
+date	2015.03.31.15.24.43;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.44;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	139d4551abbbc4de8;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.44
+date	2015.03.30.13.39.48;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.43;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	137cc55194ffe2a14;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.43
+date	2015.03.19.13.18.36;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.42;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	12de0550acac83f3b;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.42
+date	2014.10.20.14.24.51;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.41;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	60a454451a3c2d03;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.41
+date	2014.10.20.13.47.55;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.40;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	6308544510eb0e96;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.40
+date	2014.08.18.17.32.34;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.39;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	1e9c53f236657df1;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.39
+date	2014.08.07.17.35.28;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.38;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	4c6453e3b89d2b5c;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.38
+date	2014.05.29.20.23.07;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.37;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	7694538796ba4dc7;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.37
+date	2014.03.06.19.20.38;	author Electro-Mech\DNybro;	state Exp;
+branches;
+next	1.36;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	11b45318c9547852;
+username	Electro-Mech\DNybro;
+filename	keyboard.c;
+
+1.36
+date	2013.10.01.19.54.47;	author dennis;	state Exp;
+branches;
+next	1.35;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	2484524b2743757b;
+username	dennis;
+filename	keyboard.c;
+
+1.35
+date	2013.08.21.21.22.08;	author dennis;	state Exp;
+branches;
+next	1.34;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	3c1852152ef4373b;
+username	dennis;
+filename	keyboard.c;
+
+1.34
+date	2013.08.14.15.48.31;	author dennis;	state Exp;
+branches;
+next	1.33;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	329c520ba48e0f63;
+username	dennis;
+filename	keyboard.c;
+
+1.33
+date	2013.07.10.19.14.40;	author dennis;	state Exp;
+branches;
+next	1.32;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	af851ddb05d7e7d;
+username	dennis;
+filename	keyboard.c;
+
+1.32
+date	2013.06.14.15.33.31;	author dennis;	state Exp;
+branches;
+next	1.31;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	3d851bb37506b96;
+username	dennis;
+filename	keyboard.c;
+
+1.31
+date	2013.05.20.18.19.24;	author dennis;	state Exp;
+branches;
+next	1.30;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	b54519a692a4ac4;
+username	dennis;
+filename	keyboard.c;
+
+1.30
+date	2013.04.02.19.20.48;	author dennis;	state Exp;
+branches;
+next	1.29;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	314c515b2ed55104;
+username	dennis;
+filename	keyboard.c;
+
+1.29
+date	2012.12.06.18.31.49;	author dennis;	state Exp;
+branches;
+next	1.28;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	f7c50c0e47877fb;
+username	dennis;
+filename	keyboard.c;
+
+1.28
+date	2012.09.17.18.53.18;	author EMECH\dennis;	state Exp;
+branches;
+next	1.27;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	a305057718e1df4;
+filename	keyboard.c;
+
+1.27
+date	2012.08.21.17.53.28;	author EMECH\dennis;	state Exp;
+branches;
+next	1.26;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	c885033cb1732c2;
+filename	keyboard.c;
+
+1.26
+date	2012.08.15.13.12.32;	author EMECH\dennis;	state Exp;
+branches;
+next	1.25;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	7c8502ba03f06f1;
+filename	keyboard.c;
+
+1.25
+date	2012.04.05.20.17.02;	author EMECH\dennis;	state Exp;
+branches;
+next	1.24;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	c244f7dfdae0218;
+filename	keyboard.c;
+
+1.24
+date	2011.12.07.20.05.09;	author EMECH\dennis;	state Exp;
+branches;
+next	1.23;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	bdc4edfc6e6590e;
+filename	keyboard.c;
+
+1.23
+date	2011.10.19.12.45.23;	author EMECH\dennis;	state Exp;
+branches;
+next	1.22;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	fc04e9ec65313f1;
+filename	keyboard.c;
+
+1.22
+date	2011.09.07.15.16.47;	author EMECH\dennis;	state Exp;
+branches;
+next	1.21;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	af44e678add3669;
+filename	keyboard.c;
+
+1.21
+date	2011.08.22.17.27.17;	author EMECH\dennis;	state Exp;
+branches;
+next	1.20;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	2504e52916537fc;
+filename	keyboard.c;
+
+1.20
+date	2011.08.15.21.05.16;	author EMECH\dennis;	state Exp;
+branches;
+next	1.19;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	d304e4989fc3be4;
+filename	keyboard.c;
+
+1.19
+date	2011.06.08.15.35.26;	author EMECH\dennis;	state Exp;
+branches;
+next	1.18;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	10304def96ae7e68;
+filename	keyboard.c;
+
+1.18
+date	2011.06.01.14.47.29;	author EMECH\dennis;	state Exp;
+branches;
+next	1.17;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	9dc4de650f136c6;
+filename	keyboard.c;
+
+1.17
+date	2011.04.25.13.15.16;	author EMECH\dennis;	state Exp;
+branches;
+next	1.16;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	12e84db573d42546;
+filename	keyboard.c;
+
+1.16
+date	2011.03.29.16.20.25;	author EMECH\dennis;	state Exp;
+branches;
+next	1.15;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	5484d9206b97564;
+filename	keyboard.c;
+
+1.15
+date	2011.02.09.16.05.14;	author EMECH\dennis;	state Exp;
+branches;
+next	1.14;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	92c4d52bb294360;
+filename	keyboard.c;
+
+1.14
+date	2010.09.24.20.18.36;	author EMECH\dennis;	state Exp;
+branches;
+next	1.13;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	d984c9d079b6725;
+filename	keyboard.c;
+
+1.13
+date	2010.09.09.14.29.07;	author EMECH\dennis;	state Exp;
+branches;
+next	1.12;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	d744c88ef3247ab;
+filename	keyboard.c;
+
+1.12
+date	2010.09.02.13.10.06;	author EMECH\dennis;	state Exp;
+branches;
+next	1.11;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	cd84c7fa22d6842;
+filename	keyboard.c;
+
+1.11
+date	2010.07.23.18.14.34;	author EMECH\dennis;	state Exp;
+branches;
+next	1.10;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	9e44c49dc0a4dd9;
+filename	keyboard.c;
+
+1.10
+date	2010.06.17.18.22.50;	author EMECH\dennis;	state Exp;
+branches;
+next	1.9;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	ec44c1a67f95760;
+filename	keyboard.c;
+
+1.9
+date	2010.06.11.20.27.10;	author EMECH\dennis;	state Exp;
+branches;
+next	1.8;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	c8c4c129c1d61bd;
+filename	keyboard.c;
+
+1.8
+date	2010.06.11.19.31.47;	author EMECH\dennis;	state Exp;
+branches;
+next	1.7;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	d5c4c128f223759;
+filename	keyboard.c;
+
+1.7
+date	2010.06.11.19.11.22;	author EMECH\dennis;	state Exp;
+branches;
+next	1.6;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	f584c128a5a27bc;
+filename	keyboard.c;
+
+1.6
+date	2010.06.11.15.27.46;	author EMECH\dennis;	state Exp;
+branches;
+next	1.5;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	fc84c1255f27c99;
+filename	keyboard.c;
+
+1.5
+date	2010.06.11.15.14.58;	author EMECH\dennis;	state Exp;
+branches;
+next	1.4;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	d684c1252f172ca;
+filename	keyboard.c;
+
+1.4
+date	2010.06.11.15.00.01;	author EMECH\dennis;	state Exp;
+branches;
+next	1.3;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	b204c124f706759;
+filename	keyboard.c;
+
+1.3
+date	2010.06.11.14.03.41;	author EMECH\dennis;	state Exp;
+branches;
+next	1.2;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	e3c4c12423c3c3b;
+filename	keyboard.c;
+
+1.2
+date	2010.06.10.20.55.07;	author EMECH\dennis;	state Exp;
+branches;
+next	1.1;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	e944c11512a28ff;
+filename	keyboard.c;
+
+1.1
+date	2010.06.10.20.04.45;	author EMECH\dennis;	state Exp;
+branches;
+next	;
+deltatype	text;
+kopt	kv;
+permissions	666;
+commitid	8b44c11455c0273;
+filename	keyboard.c;
+
+
+desc
+@@
+
+
+1.49
+log
+@Display debug info if there is a channel conflict and the channel is unknown.
+@
+text
+@/*
+ *      Electro-Mech
+ *
+ *      MXConsole
+ *
+ *  Keyboard Routines Source File
+ *  Ryan Davis - DaTran Corp.
+ *
+ *  Created:    June 6, 2003
+ *
+*/
+#ifdef _PIC18
+#include <pic18.h>
+#else
+#include <pic.h>
+#endif
+#include        "globals.h"
+#include        "hardware.h"
+#include        "string.h"
+#include        "keyboard.h"
+#include        "command.h"
+#include        "commandcommon.h"
+#include        "LCD.h"
+#include		"sendmodcommon.h"
+#include        "SendMod.h"
+#include		"SegmentTimer.h"
+#include		"HH_Interface.h"
+
+#ifdef VEC_CONSOLE
+// Both of these are 2 seconds.
+#define MAX_SHORT_PRESS 4345
+#define LONG_PRESS_TIME 200
+
+extern BYTE g_byGameSaveEnabled;
+
+//---------------------------------------------------------------------------------------
+//
+// Keyboard Mapping Arrays, Translate Row/Column to a Command
+//
+//---------------------------------------------------------------------------------------
+#define MMBaseballExtSwitches MPBaseballExtSwitches
+#define MMComboBasebExtSwitches MPBaseballExtSwitches
+#define MMComboFootbExtSwitches MPBaseballExtSwitches
+#define MP1390ExtSwitches MPFootballExtSwitches
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MP Console Baseball
+//
+
+const byte MPBaseballKeyboard [8][8] = {
+
+// COL0           COL1            COL2            COL3              COL4               COL5    COL6                 COL7
+//Row A
+   kbNone,        kbNone,         kbNone,         kbNone,           kbNone,            kbNone, kbNone,              kbNone,
+//Row B
+   kbSETCLOCK,    kbSETCLOCK10TH, kb10THSECONOFF, kbCLOCKUPDOWN,    kb7,               kb8,    kb9,                 kbCURRPC_1,
+//Row C
+   kbASSIGNERROR, kbAUTOHORN,     kbTIMEOFDAY,    kbPITCHCNT,       kb4,               kb5,    kb6,                 kbNEWGAME,
+//Row D
+   kbSETBATTER,   kbSETTOTALRUNS, kbSETTOTALHITS, kbSETTOTALERRORS, kb1,               kb2,    kb3,                 kbSETRUNSPERINNING,
+//Row E
+   kbINNING_1,    kbRUNS_1,       kbHITS_1,       kbERRORS_1,       kbCLEAR_FLASHHITS, kb0,    kbENTER_FLASHERRORS, kbSETINNING,
+//Row F
+   kbBALLS_1,     kbNone,         kbSTRIKES_1,    kbNone,           kbOUTS_1,          kbNone, kbHORNONOFF,         kbCLOCKONOFF,
+//Row G
+   kbNone,        kbNone,         kbNone,         kbNone,           kbNone,            kbNone, kbNone,              kbNone,
+//Row H
+   kbNone,        kbNone,         kbNone,         kbNone,           kbNone,            kbNone, kbNone,              kbNone
+};
+
+const byte MPBaseballExtSwitches [4] = {kbCLOCKONOFF, kbNone, kbNone, kbNone};
+
+const TSparseElement BaseballHandheld[] = {
+	hhPeriodPlus,	kbINNING_1,
+	hhHomeMinus,	kbHOME_1Minus,
+	hhStrikePlus,	kbSTRIKES_1,
+	hhBallPlus,		kbBALLS_1,
+	hhGuestPlus,	kbGUEST_1,
+	hhClockToggle,	kbCLOCKONOFF,
+	hhHomePlus,		kbHOME_1,
+	hhGuestMinus,	kbGUEST_1Minus,
+	hhOutPlus,		kbOUTS_1
+};
+
+const TSparseElement PitchCountHandheld[] = {
+	hhTeamAtBat,	kbINNING_1,
+	hhPitchesMinus,	kbCURRPC_M1,
+	hhPitchesPlus,	kbCURRPC_1,
+};
+
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MP Console Basketball/Wrestling/Volleyball
+//
+
+const byte MPBWVKeyboard [8][8] = {
+
+// COL0                 COL1            COL2               COL3              COL4               COL5    COL6                 COL7
+//Row A
+   kbNone,              kbNone,         kbNone,            kbNone,           kbNone,            kbNone, kbNone,              kbNone,
+//Row B
+   kbSETCLOCK,          kbSETCLOCK10TH, kb10THSECONOFF,    kbCLOCKUPDOWN,    kb7,               kb8,    kb9,                 kbSETGUESTTIMEOUTS,
+//Row C
+   kbSETSHOTDELAYTIMER, kbAUTOHORN,     kbTIMEOFDAY,       kbTIMEOUTTIMER,   kb4,               kb5,    kb6,                 kbNEWGAME,
+//Row D
+   kbSETGUESTSCORE,     kbSETHOMESCORE, kbPLAYERMATCHGAME, kbPLAYERFOUL,     kb1,               kb2,    kb3,                 kbSETHOMETIMEOUTS,
+//Row E
+   kbGUEST_TFMPGW,      kbHOME_TFMPGW,  kbGUESTBONUS,      kbHOMEBONUS,      kbCLEAR_FLASHHITS, kb0,    kbENTER_FLASHERRORS, kbPERIOD,
+//Row F
+   kbGUEST_1,           kbNone,         kbHOME_1,          kbNone,           kbCHANGEPOSSESION, kbNone, kbHORNONOFF,         kbCLOCKONOFF,
+//Row G
+   kbNone,              kbNone,         kbNone,            kbNone,           kbNone,            kbNone, kbNone,              kbNone,
+//Row H
+   kbNone,              kbNone,         kbNone,            kbNone,           kbNone,            kbNone, kbNone,              kbNone
+};
+
+const byte MPBWVExtSwitches [4] = {kbCLOCKONOFF,  kbSHOTDELAYENABLE,  kbSHOTDELAYRESET,  kbOBDELAYRESET};
+
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MP Console Football
+//
+
+const byte MPFootballKeyboard [8][8] = {
+
+// COL0                 COL1               COL2              COL3            COL4               COL5    COL6                 COL7
+//Row A
+   kbNone,              kbNone,            kbNone,           kbNone,         kbNone,            kbNone, kbNone,              kbNone,
+//Row B
+   kbSETCLOCK,          kbSETCLOCK10TH,    kb10THSECONOFF,   kbCLOCKUPDOWN,  kb7,               kb8,    kb9,                 kbDIMMER,
+//Row C
+   kbSETSHOTDELAYTIMER, kbAUTOHORN,        kbTIMEOFDAY,      kbTIMEOUTTIMER, kb4,               kb5,    kb6,                 kbNEWGAME,
+//Row D
+   kbSETGUESTSCORE,     kbSETHOMESCORE,    kbSETYTG,         kbSETBALLON,    kb1,               kb2,    kb3,                 kbNone,
+//Row E
+   kbGUESTTO_1,         kbHOMETO_1,        kbNone,           kbDOWN_1,       kbCLEAR_FLASHHITS, kb0,    kbENTER_FLASHERRORS, kbPERIOD,
+//Row F
+   kbGUEST_1,           kbNone,            kbHOME_1,         kbNone,         kbCHANGEPOSSESION, kbNone, kbHORNONOFF,         kbCLOCKONOFF,
+//Row G
+   kbNone,              kbNone,            kbNone,           kbNone,         kbNone,            kbNone, kbNone,              kbNone,
+//Row H
+   kbNone,              kbNone,            kbNone,           kbNone,         kbNone,            kbNone, kbNone,              kbNone
+};
+
+const byte MPFootballExtSwitches [4] = {kbCLOCKONOFF,  kbSHOTDELAYENABLE,  kbSHOTDELAYRESET,  kbSHOTDELAYONOFF};
+
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MM Console Baseball
+//
+const byte MMBaseballKeyboard [8][8] = {
+
+// COL0               COL1            COL2            COL3          COL4           COL5                 COL6    COL7
+//Row A
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row B
+   kbGUEST_10,        kbGUEST_1,      kbNEWGAME,      kbHOME_10,    kbHOME_1,      kbNone,              kbNone, kbNone,
+//Row C
+   kbCLEAR_FLASHHITS, kbMINUTEDECR,   kbCLOCKRESET,   kbCLOCKONOFF, kbSECONDDECR,  kbENTER_FLASHERRORS, kbNone, kbNone,
+//Row D
+   kbBALLS_1,         kbSTRIKES_1,    kbOUTS_1,       kbINNING_1,   kbNone,        kbNone,              kbNone, kbNone,
+//Row E
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbCLOCKONOFF,        kbNone, kbNone,
+//Row F
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row G
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row H
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone
+};
+
+#ifndef MMBaseballExtSwitches
+const byte MMBaseballExtSwitches [4] = {kbCLOCKONOFF, kbNone, kbNone, kbNone};
+#endif
+
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MM Console ComboBaseball
+//
+const byte MMComboBasebKeyboard [8][8] = {
+
+// COL0               COL1            COL2            COL3          COL4           COL5                 COL6    COL7
+//Row A
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row B
+   kbGUEST_10,        kbGUEST_1,      kbNEWGAME,      kbHOME_10,    kbHOME_1,      kbNone,              kbNone, kbNone,
+//Row C
+   kbNone,            kbMINUTEDECR,   kbCLOCKRESET,   kbSECONDINCR, kbSECONDDECR,  kbINNING_1,          kbNone, kbNone,
+//Row D
+   kbBALLS_1,         kbSTRIKES_1,    kbOUTS_1,       kbCLOCKONOFF, kbNone,        kbNone,              kbNone, kbNone,
+//Row E
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbCLOCKONOFF,        kbNone, kbNone,
+//Row F
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row G
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row H
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone
+};
+
+#ifndef MMComboBasebExtSwitches
+const byte MMComboBasebExtSwitches [4] = {kbCLOCKONOFF, kbNone, kbNone, kbNone};
+#endif
+
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MM Console ComboFootball
+//
+const byte MMComboFootbKeyboard [8][8] = {
+
+// COL0               COL1            COL2            COL3          COL4           COL5                 COL6    COL7
+//Row A
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row B
+   kbGUEST_10,        kbGUEST_1,      kbNEWGAME,      kbHOME_10,    kbHOME_1,      kbNone,              kbNone, kbNone,
+//Row C
+   kbDOWN_1,          kbMINUTEDECR,   kbCLOCKRESET,   kbSECONDINCR, kbSECONDDECR,  kbPERIOD,            kbNone, kbNone,
+//Row D
+   kbYTGRESET,        kbYTG_10,       kbYTG_1,        kbCLOCKONOFF, kbNone,        kbNone,              kbNone, kbNone,
+//Row E
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbCLOCKONOFF,        kbNone, kbNone,
+//Row F
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row G
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone,
+//Row H
+   kbNone,            kbNone,         kbNone,         kbNone,       kbNone,        kbNone,              kbNone, kbNone
+};
+
+#ifndef MMComboFootbExtSwitches
+const byte MMComboFootbExtSwitches [4] = {kbCLOCKONOFF, kbNone, kbNone, kbNone};
+#endif
+
+//-------------------------------------------------------------------------------------------------------------------
+//
+// MP Console MP1390
+//
+
+const byte MP1390Keyboard [8][8] = {
+
+// COL0           	COL1            COL2            COL3              COL4               COL5    COL6                 COL7
+//Row A
+   kbNone,        	kbNone,         kbNone,         kbNone,           kbNone,            kbNone, kbNone,              kbNone,
+//Row B
+   kbSETCLOCK,    	kbSETCLOCK10TH, kb10THSECONOFF, kbCLOCKUPDOWN,    kb7,               kb8,    kb9,                 kbCHANGEPOSSESION,
+//Row C
+kbSETSHOTDELAYTIMER,kbAUTOHORN,     kbTIMEOFDAY,    kbTIMEOUTTIMER,   kb4,               kb5,    kb6,                 kbNEWGAME,
+//Row D
+ kbBALLON_BALL_1,   kbDOWN_STRIKE_1,kbYTG_OUT_1,    kbPITCHCNT,    	  kb1,               kb2,    kb3,                 kbSETBATTER,
+//Row E
+ kbSETGUESTSCORE, 	kbSETHOMESCORE, kbGUESTTOL_PC_1,kbHOMETOL_PC_1,	  kbCLEAR_FLASHHITS, kb0,    kbENTER_FLASHERRORS, kbASSIGNERROR,
+//Row F
+   kbGUEST_1,     	kbNone,         kbHOME_1,       kbNone,           kbINNING_1,        kbNone, kbHORNONOFF,         kbCLOCKONOFF,
+//Row G
+   kbNone,        	kbNone,         kbNone,         kbNone,           kbNone,            kbNone, kbNone,              kbNone,
+//Row H
+   kbNone,        	kbNone,         kbNone,         kbNone,           kbNone,            kbNone, kbNone,              kbNone
+};
+
+#ifndef MP1390ExtSwitches
+const byte MP1390ExtSwitches [4] = {kbCLOCKONOFF,  kbSHOTDELAYENABLE,  kbSHOTDELAYRESET,  kbSHOTDELAYONOFF};
+#endif
+
+const TSparseElement GameClockHandheld[] = {
+	hhClockStop,	kbCLOCKOFF,
+	hhClockRun,		kbCLOCKON,
+	hhHornReset,	kbNone
+};
+
+const TSparseElement SegmentTimerHandheld[] = {
+	hhClockToggle,	kbCLOCKONOFF,
+	hhNextSeg,		kbNextSeg,
+	hhPrevSeg,		kbPrevSeg
+};
+
+const TSparseElement GroupMsgMic[] = {
+	mxChConflict,	kbChConflict
+};
+BYTE ucChannelConflict = 0;
+
+typedef void(*VoidVoidFunc)(void);
+static BYTE NonRepeatKeyCount;
+
+//======================================================================
+//
+// READJUMPERS - Read the Option Jumpers on J1
+//
+//======================================================================
+void ReadJumpers( void )
+{
+    RowHF = 1;
+    RowAF = 1;
+    RowBF = 1;
+    RowCF = 1;
+    RowDF = 1;
+    RowEF = 1;
+    RowFF = 1;
+    RowGF = 1;
+
+    RowJF = 0; // Select dip Switches
+
+
+//    TRISB = 0xFF;  // RB0-RB7=Column0-Column7
+#ifdef REV2LAYOUT
+#ifdef MPLAB_ICD
+    TRISC |= 0x30;  //RC4,RC5 = input for REV2 Debug
+#endif
+#endif
+    g_OptJumpers.All = 0x00;
+
+#ifndef MPLAB_ICD
+
+//  Read DipSwitches
+
+    if (!Column0F)
+        g_OptJumpers.All |= 0x01;
+
+    if (!Column1F)
+        g_OptJumpers.All |= 0x02;
+#else
+#ifdef REV1LAYOUT
+    g_OptJumpers.All |= 0x01;      // Set 0-99 Scores if ICD on REV1
+#else
+    if (!Column0F)
+        g_OptJumpers.All |= 0x01;    //Rev2 DEBUG has Col0 on RC4
+
+    if (!Column1F)
+        g_OptJumpers.All |= 0x02;    //Rev2 DEBUG has Col0 on RC5
+
+#endif //REV1LAYOUT else
+#endif
+    if (!Column2F)
+        g_OptJumpers.All |= 0x04;
+
+    if (!Column3F)
+        g_OptJumpers.All |= 0x08;
+
+    if (!Column4F)
+        g_OptJumpers.All |= 0x10;
+
+    if (!Column5F)
+        g_OptJumpers.All |= 0x20;
+
+    if (!Column6F)
+        g_OptJumpers.All |= 0x40;
+
+    if (!Column7F)
+        g_OptJumpers.All |= 0x80;
+
+    RowHF = 1;
+#ifdef FAKE_JUMPERS
+#warning *** THE JUMPER READS ARE SIMULATED ***
+	g_OptJumpers.All = FAKE_JUMPERS;
+#endif
+}
+
+//======================================================================
+//
+// SCANCOLUMN: KeyColumn
+//
+//     - Return the Lowest Column Number With A Low (Active Key)
+//
+//======================================================================
+byte ScanColumn ( void )
+{
+	// *********************
+#ifndef MPLAB_ICD
+
+	if (!Column0F)
+		return 1;
+	if (!Column1F)
+		return 2;
+#else
+
+#ifndef REV1LAYOUT  // Comment this block out for Debug. *****
+	if (!Column0F)
+		return 1;    //Rev2 DEBUG has Col0 on RC4
+	if (!Column1F)
+		return 2;    //Rev2 DEBUG has Col0 on RC5
+#endif //if not REV1LAYOUT
+#endif
+
+	// ******************
+
+	if (!Column2F)
+		return 3;
+	if (!Column3F)
+		return 4;
+	if (!Column4F)
+		return 5;
+	if (!Column5F)
+		return 6;
+	if (!Column6F)
+		return 7;
+	if (!Column7F)
+		return 8;
+	return 0;
+} //ScanColumn
+#endif
+
+//======================================================================
+//
+// KEYBOARDSCAN: Keyboard Scan
+//     - Handles Keyboard Scan, plus all other bit I/O.
+//
+//======================================================================
+void KeyboardScan( void )
+{
+	static TTwoBytes tKeyTimer = 0;
+	// Neither of the below need to be static, but for some inexplicable reason,
+	//  when one of them is static the code is smaller.
+    unsigned char ucKBRow;		// Fix Reuse Problem?
+    unsigned char ucKBInput;	// Fix Reuse Problem?
+
+//----------------------------------------------------------
+//
+// Process the Remote Switches
+//
+//----------------------------------------------------------
+
+    ucKBInput = 0;
+
+    if ( !SW4In )                //Lowest Priority First
+        ucKBInput = 4;
+
+    if ( !SW3In )
+         ucKBInput = 3;
+
+    if ( !SW2In )
+         ucKBInput = 2;
+
+	if(g_fTxNormalData)		// Not channel or group scan
+	{
+		if(ffHandheldData.byNextIn != ffHandheldData.byNextOut)
+		{
+			static BYTE byState = eHhReceiveWaiting;
+			TTwoBytes tbHandheldDataTemp;
+			tbHandheldDataTemp.ui = ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui;
+			// Add radar handling  here
+			//This needs an "close tunnel".
+			switch(byState)
+			{
+			case eHhReceiveWaiting:
+				if(((tbHandheldDataTemp.ui) & 0xBDFF) == 0xA12B)
+					//Allow G1B3 or G2B3 to open tunnel
+					byState = eHhTunnelOpen;
+				break;
+			case eHhTunnelOpen:
+				if(((tbHandheldDataTemp.by[1]) & 0xFC) == 0xA4)
+				{
+					// Handheld keys
+					ucKBInput = (tbHandheldDataTemp.by[0]);
+					if(tbHandheldDataTemp.by[1] & 0x01)
+						ucKBInput += 0x80;
+					break;
+				}
+				else if(((tbHandheldDataTemp.by[1]) & 0xFC) == 0xE4)
+				{
+					// Radar gun
+					g_game.Fields.ScoreDetail.BaseBall.ucPitchSpeed = (tbHandheldDataTemp.by[0]);
+					g_ScoreUpdFlg.BaseBBits.BatterF = 1;
+					g_ScoreUpdFlg.BaseBBits.PitchCntF = 1;
+					break;
+				}
+				else if(((tbHandheldDataTemp.by[1]) & 0xFC) == 0xA8)
+				{
+					ucKBInput = mxChConflict;
+					ucChannelConflict = (tbHandheldDataTemp.by[0]);
+					if(tbHandheldDataTemp.by[1] & 0x01)
+						ucChannelConflict += 0x80;
+					break;
+				}
+				else
+				{
+					byState = eHhReceiveWaiting;
+					break;
+				}
+				// Drop thru and close tunnel
+//			default:
+//				break;
+			}
+			ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+		}
+	}
+
+    if (!g_SystemFlags.bits.LampTestF) // don't react if in LampTest
+    {
+        if( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450) //Evaluate Long and Short Press
+        {
+            if ( ucKBInput !=2 )   //If C is not pressed
+            {
+                if ( C_hold > 0 && C_hold < MAX_SHORT_PRESS) //If C was recently short pressed, set CPressedShort to 1
+                    g_ClkCtrlFlags.bits.CPressedShort = 1;
+                C_hold = 0;    //Reset C_hold whenever button is not being held
+            }
+            else  //If C is being held
+            {
+                if( C_hold <MAX_SHORT_PRESS)  //Count up to 2 sec
+                    C_hold++;
+
+                if( C_hold == MAX_SHORT_PRESS)
+                {
+                    g_ClkCtrlFlags.bits.CPressedLong = 1;
+                    C_hold = 65000; 							//C_hold will stay unchanged until release
+                }
+            }
+        }
+    }
+
+// Precision Time Clock Control. *****
+
+	if ( g_game.Fields.Attribs.bits.PrecisionTimeF && !g_ClockFlags.bits.TODClockF )
+	{
+		if ( !SW1In && !g_ClockFlags.bits.ClkOnF )
+		{
+			g_ClockFlags.bits.ClkOnF = 1;
+			g_ClockStatus++;
+		}
+		else if ( SW1In && g_ClockFlags.bits.ClkOnF )
+		{
+			g_ClockFlags.bits.ClkOnF = 0;
+			g_ClockStatus++;
+		}
+	}
+    else if ( !SW1In )                //Highest Priority Last (Overwrites)
+         ucKBInput = 1;
+
+    if(ucKBInput)
+    {
+		g_byGameSaveEnabled = 1;
+	    if(ucKBInput < 5)
+	    {
+		    ucKBInput--;
+	        switch ( g_BoardType )
+	        {
+	             case MMBASEBALL:
+	                 ucKBInput = MMBaseballExtSwitches [ucKBInput];
+	                 break;
+
+	             case MMCOMBOBASEB:
+	                 ucKBInput = MMComboBasebExtSwitches [ucKBInput];
+	                 break;
+
+	             case MMCOMBOFOOTB:
+	                 ucKBInput = MMComboFootbExtSwitches [ucKBInput];
+	                 break;
+				 case MPBBB:
+	             case MP1390:
+	             case MP3450:
+	                 ucKBInput = MP1390ExtSwitches [ucKBInput];
+	                 break;
+
+#ifdef NO_ETN_DIMMING_SUPPORT
+	             case MP14XX:
+	                 ucKBInput = MPBaseballExtSwitches [ucKBInput];
+	                 break;
+#endif
+
+	             case MP15XX:
+	                 ucKBInput = MPBaseballExtSwitches [ucKBInput];
+	                 break;
+	
+	             case MPF52:
+	                 ucKBInput = MPFootballExtSwitches [ucKBInput];
+	                 break;
+
+	             case MPBWV:
+	                 ucKBInput = MPBWVExtSwitches [ucKBInput];
+	                 break;
+
+#ifdef NO_ETN_DIMMING_SUPPORT
+	             case MP14X:
+	                 ucKBInput = MPBaseballExtSwitches [ucKBInput];
+	                 break;
+
+	             case MP15X:
+	                 ucKBInput = MPBaseballExtSwitches [ucKBInput];
+	                 break;
+#endif
+
+	             default:
+	                 ucKBInput = MMBaseballExtSwitches [ucKBInput];
+
+	        }// switch			
+
+	        if ( ( ucKBInput == g_LastExtSw ) && ( g_ExtSwTimer )) // Old Key Still Down
+	        {
+	            g_ExtSwTimer = DEBOUNCE_TIME; //Refresh (Debounce = Min Off)
+	        }
+	        else if(!g_SystemFlags.bits.LampTestF) // don't react if in LampTest
+	        {
+	             // New Switch  (New Press Of the old Switch or a New Switch at Any time)
+
+	             g_LastExtSw = ucKBInput;
+	             g_ExtSwTimer = DEBOUNCE_TIME;
+
+	             switch ( ucKBInput )
+	             {
+	                 case kbCLOCKONOFF:
+	                     g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+	                     break;
+	                 case kbSHOTDELAYENABLE:
+	                     g_ClkCtrlFlags.bits.ShotOnOffPressedF = 1;
+	                     break;
+	                 case kbSHOTDELAYRESET:
+	                     g_ClkCtrlFlags.bits.ShotResetPressedF = 1;
+	                     break;
+	                 case kbSHOTDELAYONOFF:
+	                     g_ClkCtrlFlags.bits.ShotRunStopPressedF = 1;
+	                     break;
+	                 case kbOBDELAYRESET:
+	                     g_ClkCtrlFlags.bits.OBResetPressedF = 1;
+	                     break;
+	             }
+	        }
+	    }
+		else // Received input from Handheld
+		{
+			do
+			{
+				g_KeyInput = SPARSE_SEARCH(ucKBInput, GameClockHandheld);
+				if(kbNone != g_KeyInput)
+				{
+					if((kbCLOCKON == g_KeyInput) && !g_ClockFlags.bits.ClkOnF)
+						g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+					else if((kbCLOCKOFF == g_KeyInput) && g_ClockFlags.bits.ClkOnF)
+						g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+					break;
+				}
+				g_KeyInput = SPARSE_SEARCH(ucKBInput, SegmentTimerHandheld);
+				if(kbNone != g_KeyInput)
+					break;
+				g_KeyInput = SPARSE_SEARCH(ucKBInput, BaseballHandheld);
+				if(kbNone != g_KeyInput)
+					break;
+				g_KeyInput = SPARSE_SEARCH(ucKBInput, PitchCountHandheld);
+				if(kbNone != g_KeyInput)
+					break;
+				g_KeyInput = SPARSE_SEARCH(ucKBInput, GroupMsgMic);
+				if(kbNone != g_KeyInput)
+					break;
+			}while(FALSE);
+			// don't react if in LampTest                
+			if ( g_KeyInput == kbCLOCKONOFF && !g_SystemFlags.bits.LampTestF )
+			{
+				g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+
+				g_KeyInput = kbNone;  //We have Already Handled It Locally
+			}
+		}
+	}
+
+//----------------------------------------------------------
+//
+// Read Rows 0-4 Stopping at the First Key Found
+//
+//----------------------------------------------------------
+
+	if(ucKBInput < 5)
+	{
+//		TRISB = 0xFF;  // RB0-RB7=Column0-Column7
+
+#ifdef REV2LAYOUT
+#ifdef MPLAB_ICD
+		TRISC |= 0x30;  //RC4,RC5 = input for REV2 Debug
+#endif
+#endif
+
+		RowJF = 1; // dip Switches OFF
+
+		RowHF = 1;
+		RowGF = 1;
+		RowFF = 1;
+		RowEF = 1;
+		RowDF = 1;
+		RowCF = 1;
+		RowBF = 1;
+
+
+		RowAF = 0;               // Select Row 0
+		ucKBRow = 00;            // Offset in the Keynumber for Row A
+
+		ucKBInput = ScanColumn();
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowAF = 1;
+			RowBF = 0;         // Select Row 1
+			ucKBRow = 1;       // Offset in the Keynumber for Row B
+			ucKBInput = ScanColumn();
+		}
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowBF = 1;
+			RowCF = 0;         // Select Row 2
+			ucKBRow = 2;       // Offset in the Keynumber for Row C
+			ucKBInput = ScanColumn();
+		}
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowCF = 1;
+			RowDF = 0;         // Select Row 3
+			ucKBRow = 3;       // Offset in the Keynumber for Row D
+			ucKBInput = ScanColumn();
+		}
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowDF = 1;
+			RowEF = 0;         // Select Row 4
+			ucKBRow = 4;       // Offset in the Keynumber for Row E
+			ucKBInput = ScanColumn();
+		}
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowEF = 1;
+			RowFF = 0;         // Select Row 6
+			ucKBRow = 5;       // Offset in the Keynumber for Row F
+			ucKBInput = ScanColumn();
+		}
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowFF = 1;
+			RowGF = 0;         // Select Row 7
+			ucKBRow = 6;       // Offset in the Keynumber for Row G
+			ucKBInput = ScanColumn();
+		}
+
+		if (!ucKBInput)  // if no Keys Found Yet
+		{
+			RowGF = 1;
+			RowHF = 0;         // Select Row 4
+			ucKBRow = 7;       // Offset in the Keynumber for Row H
+			ucKBInput = ScanColumn();
+		}
+
+// Process Any Key Found
+
+        if ( ucKBInput )
+        {
+			g_byGameSaveEnabled = 1;
+	        ucKBInput--;
+           switch ( g_BoardType )
+           {
+                case MMBASEBALL:
+                     ucKBInput = MMBaseballKeyboard [ucKBRow][ucKBInput];
+                     break;
+                case MMCOMBOBASEB:
+#ifdef IMPROVED_INCANDESCENT_SUPPORT
+		             if((g_ModelSel == 1))
+			             ucKBInput = MMBaseballKeyboard [ucKBRow][ucKBInput];
+		             else
+#endif
+	                     ucKBInput = MMComboBasebKeyboard [ucKBRow][ucKBInput];
+                     break;
+
+                case MMCOMBOFOOTB:
+                     ucKBInput = MMComboFootbKeyboard [ucKBRow][ucKBInput];
+                     break;
+				 
+			    case MPBBB:
+                case MP1390:
+                case MP3450:
+                     ucKBInput = MP1390Keyboard [ucKBRow][ucKBInput];
+                     break;
+
+                case MPF52:
+                     ucKBInput = MPFootballKeyboard [ucKBRow][ucKBInput];
+                     break;
+
+                case MPBWV:
+                     ucKBInput = MPBWVKeyboard [ucKBRow][ucKBInput];
+                     break;
+
+#ifdef NO_ETN_DIMMING_SUPPORT
+                case MP14XX:
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput];
+                     break;
+#endif
+
+                case MP15XX:
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput];
+                     break;
+
+#ifdef NO_ETN_DIMMING_SUPPORT
+                case MP14X:
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput];
+                     break;
+
+                case MP15X:
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput];
+                     break;
+#endif
+
+                default:
+                     ucKBInput = MMBaseballKeyboard [ucKBRow][ucKBInput];
+            }// switch
+
+            if ( (ucKBInput == (g_LastKey & 0x7F)) && ( g_KeyTimer )) // Old Key Still Down
+            {
+	            //Attempted fix of debounce routine, doesn't appear to be successful
+	            NonRepeatKeyCount = 3;
+                g_KeyTimer = DEBOUNCE_TIME; //Refresh (Debounce = Min Off)
+				// A key is pressed that is not a new press
+				di();
+				if(g_Timer.ui - tKeyTimer.ui > LONG_PRESS_TIME)
+				{
+					// It has been pressed for a long time.
+					tKeyTimer.ui = g_Timer.ui - LONG_PRESS_TIME - 10;	// Make the timer follow the current time in case someone holds a key for more than 650 seconds.
+					if(!(g_LastKey & 0x80))
+						g_KeyInput = g_LastKey = LONG_PRESS(ucKBInput);
+				}
+				ei();
+            }
+            else if(NonRepeatKeyCount && (ucKBInput != (g_LastKey & 0x7F)))
+            {
+	            NonRepeatKeyCount--;
+            }
+            else
+            {
+                // New Key  (New Press Of the old Key or a New Key at Any time)
+
+	            NonRepeatKeyCount = 3;
+                g_KeyInput = g_LastKey = ucKBInput;
+                g_KeyTimer = DEBOUNCE_TIME;
+                di();
+				tKeyTimer.ui = g_Timer.ui;		// Long press timer
+				ei();
+				
+				if(g_KeyInput != kbYTGRESET)
+				g_LastKeyYTG = 0;
+
+                // don't react if in LampTest                
+                if ( ucKBInput == kbCLOCKONOFF && !g_SystemFlags.bits.LampTestF )
+                {
+                    g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+
+                    g_KeyInput = kbNone;  //We have Already Handled It Locally
+                }
+            }
+        }
+	}
+
+//-----------------------------------------------------------
+//
+// Idle Foreground Tasks
+//
+//   (The User Interface doesn't return to the main loop during
+//    User interaction, but it does scan the keyboard, so all
+//    house keeping chores are done here)
+//
+//----------------------------------------------------------
+
+    g_SystemFlags.bits.ResetF = 1;                    //Flag Interrupt To Hit WatchDog
+
+//
+// Process the CLock Control Flags
+//
+	//
+	// Toggle the Game Clock On/Off?
+	//
+    if ( g_ClkCtrlFlags.bits.ClkOnOffPressedF )
+    {
+	    if ( g_ClockFlags.bits.TODClockF )	// Clear button if TOD is active.
+	    {
+		    g_ClkCtrlFlags.bits.ClkOnOffPressedF = 0;
+		}
+		else if(SegTimerEntry)
+		{
+		    g_ClkCtrlFlags.bits.ClkOnOffPressedF = 0;
+		}
+		else
+		{
+			g_ClockFlags.bits.ClkOnF ^= 1;   //Toggle the Clock
+			g_ClockStatus++;
+		}
+    }
+
+	//
+	// Take care of the Shot Clock Functions
+	//
+    if (( g_ClkCtrlFlags.bits.CPressedShort || g_ClkCtrlFlags.bits.CPressedLong || g_ClkCtrlFlags.bits.ShotOnOffPressedF ||
+          g_ClkCtrlFlags.bits.ShotResetPressedF || g_ClkCtrlFlags.bits.OBResetPressedF) && !g_ClockFlags.bits.TODClockF )
+    {
+        // Skip Football 
+        if (!(g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450))
+        {
+	        if ( g_ClkCtrlFlags.bits.ShotOnOffPressedF )
+	        {
+	            g_ClockFlags.bits.SClkEnableF ^= 1; //Toggle the Shot CLock Enable
+	            if ( !g_ClockFlags.bits.SClkEnableF )
+	            {
+					g_ShotDly10 = 0;
+					g_ShotDly01 = 0;   
+				}         	
+	        }
+        }
+
+		// Process short or long press of C button
+        //After short press
+		if ( g_ClkCtrlFlags.bits.CPressedShort &&
+             ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450 ) )
+		{
+			if ( g_ClockFlags.bits.SClkEnableF) //Display On
+			{	
+				if ( g_ShotDly10 == 0 && g_ShotDly01 == 0)    //Turn off Display if timer == 0
+					g_ClockFlags.bits.SClkEnableF = 0;
+				else
+				{
+                    g_ClockFlags.bits.SClkOnF ^= 1;   //Toggle Run/Stop
+				}
+			}
+			else     //Display Off
+			{
+				g_ClockFlags.bits.SClkEnableF = 1;
+			}
+		}
+
+        //After long press
+		if ( g_ClkCtrlFlags.bits.CPressedLong &&
+             ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450 ) )
+		{
+			if(!g_ClockFlags.bits.SClkOnF)
+				g_ClockFlags.bits.SClkEnableF ^= 1;	//Toggle DGT Power
+            g_ShotDly10 = 0;
+            g_ShotDly01 = 0;
+		}
+		else if ( g_ClkCtrlFlags.bits.OBResetPressedF) 		// Reset to OB and Enable Clock.
+		{
+			g_ShotDly10    = g_game.Fields.ShotDlyReset2 / 10;
+	        g_ShotDly01    = g_game.Fields.ShotDlyReset2 % 10;
+	        g_ShotDlyTenth = 9;
+	        g_ClockFlags.bits.SClkEnableF = 1;
+			if ( g_BoardType == MPBWV)
+                g_ClockFlags.bits.SClkOnF = g_ClockFlags.bits.SClkEnableF;
+	    }
+	    // Reset to ShotDelay and Enable Clock.
+	    else if ( g_ClkCtrlFlags.bits.ShotResetPressedF )  //Turn on Shot Clock, Set to RESET1
+		{
+			g_ShotDly10    = g_game.Fields.ShotDlyReset / 10;
+	       	g_ShotDly01    = g_game.Fields.ShotDlyReset % 10;	
+			g_ShotDlyTenth = 9;
+	        g_ClockFlags.bits.SClkEnableF = 1;       //Turns on DOG clock display when reset is pressed
+			if (g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450)
+				g_ClockFlags.bits.SClkOnF = 0;  //Stop Clock for Football
+			if ( g_BoardType == MPBWV)
+                g_ClockFlags.bits.SClkOnF = g_ClockFlags.bits.SClkEnableF;
+	    }
+        
+        g_ClockStatus++;
+    }
+
+    if ( g_ClkCtrlFlags.bits.ShotRunStopPressedF & !g_ClockFlags.bits.TODClockF )	// Football and 1390
+    {
+        //Turn on Shot Clock, Set to RESET2 and Stop
+		if ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450 )
+		{
+			g_ShotDly10    = g_game.Fields.ShotDlyReset2 / 10;
+	       	g_ShotDly01    = g_game.Fields.ShotDlyReset2 % 10;	
+			g_ShotDlyTenth = 9;
+	        g_ClockFlags.bits.SClkEnableF = 1;       //Turns on DOG clock display when reset is pressed
+			g_ClockFlags.bits.SClkOnF = 0;
+
+		}
+		else
+	     	g_ClockFlags.bits.SClkOnF ^= 1;
+       g_ClockStatus++;
+    }
+    
+    if ( !g_ClockFlags.bits.SClkEnableF )
+        g_ClockFlags.bits.SClkOnF = 0;
+
+
+    g_ClkCtrlFlags.AllFlags = 0;  //We have Processed the CLock Control so Clear the Flags
+
+
+    if( g_ClockFlags.bits.ClkOnF )                    //If Clock is On
+    {
+        g_ClockFlags.bits.TODClockF = 0;              //Time Of Day Clock Off
+        g_ClockFlags.bits.TimeOutF = 0;               //IimeOut Clock Off
+    }
+    else if( g_ClockFlags.bits.TimeOutF )             //If TimeOut Clock is On
+    {
+        g_ClockFlags.bits.TODClockF = 0;              //Time of day clock OFF
+    }
+
+
+//
+// If THe Flash Phase Timer Has Expired, then Process Scoreboard to Update Flashes
+//
+
+//Now 1/2Sec!!!     //used to do this once every 60th of a second, now we do it every 10th second.
+
+    if (!g_ucFlashTimer)
+    {
+        g_ucFlashTimer = SYSTICKRATE/2;
+        g_ucFlashCount--;
+        ScoreMod();   //Update the Scoreboard to Handle Error/HitFlash
+    }                                       // End If - Flash Timer
+
+    if( g_ClockStatus )         // Refresh clock if it has changed.
+    {
+       // If the Shot Clock is <= Game Clock then Blank it
+       	if ( CLOCK_ZERO_TEST3(Hours, Min10, Min01) )
+        {
+        	if ( (g_game.Fields.GClock.Sec10*100 + g_game.Fields.GClock.Sec01*10 + g_game.Fields.GClock.Sec10th) <=
+                 (g_ShotDly10*100 + g_ShotDly01*10 + g_ShotDlyTenth - 9) ) // check for .9 less on the shot clock
+        	{
+				if(g_OptJumpers.MPBWVBBits.JCJCMode && g_BoardType == MPBWV)
+					g_ShotDly10 = g_ShotDly01 = g_ShotDlyTenth = 0;
+				else
+				{	
+                    if ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450 )
+                        ;
+       	        	else
+					{
+                        g_ClockFlags.bits.SClkEnableF = 0; // Force Blank if <= Game Clock
+                        g_ClockFlags.bits.SClkOnF = 0;
+					}
+				}
+    		}
+		}
+        ClockMod();
+        g_ClockStatus = 0;
+  	}
+
+//-----------------------------------------------------------------
+//
+// Set Remote GameCLock & Shot Clock LEDs
+//
+//-----------------------------------------------------------------
+
+    if ( g_ClockFlags.bits.ClkOnF )
+    	GClkOut = 0;
+    else
+    	GClkOut = 1;
+    	
+	if(g_BoardType != MPBWV)
+	{
+#ifndef DISABLE_SHOTCLOCK
+        SClkOut = !g_ClockFlags.bits.SClkOnF;
+#endif
+	}
+}
+
+void ProcessTenthsSecs(VoidVoidFunc pTenthsFunc)
+{
+	//disabled for MPBBB
+	//disabled for MP15XX w/GClck3Dig installed
+	//valid for SegTimer Mode AND
+	//  a) either 4-dig display OR TKClock ONLY
+
+	if( (g_BoardType == MPBBB) ||
+	    (g_BoardType == MP15XX && g_OptJumpers.MPB15Bits.GClck3Dig) )
+	    ;
+	else if ( (g_SystemFlags.bits.SegmentTimerF) && ( (Clk_Settings & CLK_SETTINGS_4D) ||
+	                                                  ((g_BoardType == MPF52) && (g_OptJumpers.MPFootBBits.TKClock == 1)) ) )
+	 	pTenthsFunc();
+	else if (!g_SystemFlags.bits.SegmentTimerF)
+	 	pTenthsFunc();
+}
+
+//======================================================================
+//
+//  CHECKKEYINPUT: Check Key Input
+//     - Checks Keyboard Flags, and If key pressed, spawns appropriate command.
+//
+//======================================================================
+void CheckKeyInput( void )
+{
+    if( g_KeyInput != kbNone )
+    {
+        switch( g_KeyInput )
+        {
+        case kbSETCLOCK:
+            SetClock();
+            break;
+
+        case kbTIMEOFDAY:
+            //disabled for MMBASEBALL w/GClk3Dig Jumper installed
+            //disabled for MPBBB w/GClk3Dig Jumper installed
+            //disabled for MP1390 in Baseball Mode w/GClk3Dig Jumper installed
+            //disabled for MP3450 in Baseball Mode with or without jumper
+            //disabled for MP15XX w/J1B installed (3-digit clock)
+            //disabled for SegmentTimer for 2 digits
+            if( !(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig) &&
+                !(g_BoardType == MPBBB && g_OptJumpers.MMBaseBBits.GClck3Dig) &&
+                !(g_BoardType == MP1390 && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL) && g_OptJumpers.MP1390Bits.GClck3Dig) &&
+                !(g_BoardType == MP3450 && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) &&
+                !(g_BoardType == MP15XX && g_OptJumpers.MPB15Bits.GClck3Dig) &&
+                !(g_SystemFlags.bits.SegmentTimerF && (numDigits == 2)))
+                SetTimeOfDay();
+            break;
+             
+        case kbNEWGAME:
+            NewGame();
+            break;
+            
+        case kbNextSeg:
+			if(!g_ClockFlags.bits.ClkOnF)
+			{
+				NextSeg();
+				if(!IntervalF)
+					NextSeg();		//Skip over interval if it is an interval
+			}
+            break;
+            
+        case kbPERIOD:
+			if(!(g_SystemFlags.bits.SegmentTimerF && g_ClockFlags.bits.TimeOutF))
+                Period_1();
+            break;
+
+        case kbSETCLOCK10TH:
+			ProcessTenthsSecs(SetTenthSec);
+            break;
+            
+        case kb10THSECONOFF:
+			ProcessTenthsSecs(SetTenthSecOnOff);
+            break;
+            
+        case kbAUTOHORN:
+            AutoHorn();
+            break;
+
+        case kbTIMEOUTTIMER:
+            //disabled for MP1390 in Baseball Mode 
+            //disabled for MP3450 in Baseball Mode 
+            //disabled for SegmentTimer for 2 digits
+#ifdef NO_ETN_DIMMING_SUPPORT
+            if( !(g_BoardType == MMBASEBALL || g_BoardType == MPBBB || g_BoardType == MP15XX || g_BoardType == MP14XX) &&
+#else
+            if( !(g_BoardType == MMBASEBALL || g_BoardType == MPBBB || g_BoardType == MP15XX) &&
+#endif
+                !(g_BoardType == MP1390 && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) &&
+                !(g_BoardType == MP3450 && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) &&
+                !(g_SystemFlags.bits.SegmentTimerF && (numDigits == 2)) )
+                SetTimeOut();
+            break;
+
+        case kbINNING_1:
+			if(g_SystemFlags.bits.SegmentTimerF)
+                Period_1(); // to increment the next segment
+            else
+                IncrementInning();
+            break;
+
+		case kbPrevSeg:
+        case kbCLEAR_FLASHHITS:    // In Cmd Mode = Flash Hits
+			if(!(g_SystemFlags.bits.SegmentTimerF && g_ClockFlags.bits.TimeOutF))
+             	FlashHits( );
+            break;
+
+        case kbENTER_FLASHERRORS:  // In Cmd Mode = Flash Errors
+            FlashErrors( );
+            break;
+
+        case kbHORNONOFF:
+            SetHornOnOff();
+            break;
+
+        case kbSETSHOTDELAYTIMER:
+            if(!(g_BoardType == MPBBB))
+                SetShotTimer();
+            break;
+
+        case kbSHOTDELAYRESET:
+        case kbSHOTDELAYENABLE:
+        case kbSHOTDELAYONOFF:
+            //Handled Immeadiatley in KBScan
+            break;
+
+
+//Buttons not used in Segment timer
+
+
+        case kbCLOCKUPDOWN:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+             	SetClockUpDown();
+            break;
+
+        case kbCHANGEPOSSESION:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+             	NextPos();
+            break;
+
+        case kbSETHOMESCORE:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+             	SetHomeScore();
+            break;
+
+        case kbSETGUESTSCORE:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetGuestScore();
+            break;
+
+        case kbGUEST_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+				if(g_BoardType == MP15XX)
+				{
+					if ( !(g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80) )       //MSB 1=home, 0=guest possession
+		                IncrementRuns(1);
+				}
+				else
+	                RunsGuest1();
+            }
+            break;
+
+        case kbHOME_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+				if(g_BoardType == MP15XX)
+				{
+					if ( g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80 )       //MSB 1=home, 0=guest possession
+		                IncrementRuns(1);
+				}
+				else
+	                RunsHome1();
+            }
+            break;
+
+#ifndef DISABLE_CHANNEL_MANAGEMENT
+        case kbChConflict:
+        	// Channel became in use after search began, stupid user
+			g_bySendDisabled = 1;
+			lcd_line0(eChannelInUse);
+			if(m_byCurrentGroupChannel == 0)
+				LCD2DigZF(MsgLine[0]+5, 84);
+			else
+				LCD2DigZF(MsgLine[0]+5, m_byCurrentGroupChannel);
+//			LCD2DigZF(MsgLine[0]+5, ucChannelConflict);
+#ifdef DISPLAY_DEBUG
+//				LCD2DigZF(MsgLine[0], 34);
+#endif
+			lcd_line1(ePressEnter);
+			lcd_resend();
+			if(WaitForEnter() == kbENTER_FLASHERRORS)
+				while(GroupManage());
+			g_bySendDisabled = 0;
+            break;
+#endif
+
+        case kbSETBALLON:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+        	{
+                SetBallOn();
+        	}
+            break;
+
+        case kbSETYTG:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+        	{
+                SetYardsToGo();
+        	}
+            break;
+
+        case kbGUESTTO_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+        	{
+                GuestTO_1();
+        	}
+            break;
+
+        case kbHOMETO_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+        	{
+                HomeTO_1();
+        	}
+            break;
+
+        case kbASSIGNERROR:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if( (g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL) )
+                    ;
+                else
+                    SetErrorPosition();
+            }
+            break;
+
+        case kbDOWN_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                Down_1();
+            break;
+
+        case kbSETBATTER:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+				if(!((g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL) || (g_BoardType == MPBBB) || ((g_BoardType == MP15XX) && g_RadarF && g_OptJumpers.MPB15Bits.DoublePitchCount)))
+				    SetBatter();
+            }
+            break;
+
+        case kbSETTOTALRUNS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetTotalRuns();
+            break;
+
+        case kbSETTOTALHITS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetTotalHits();
+            break;
+
+        case kbSETTOTALERRORS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetTotalErrors();
+            break;
+
+        case kbSETRUNSPERINNING:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetRunsPerInning();
+            break;
+
+        case kbRUNS_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementRuns(1);
+            break;
+
+        case kbHITS_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementHits();
+            break;
+
+        case kbGUESTBONUS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementGB();
+            break;
+
+        case kbERRORS_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementErrors();
+            break;
+
+#if 1
+        case kbCURRPC_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                // only used for MPBaseballKeyboards, which is used for MP15XX scoreboards
+                if(g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80 ) // home is at bat
+                    IncrementGuestPC();
+                else
+                    IncrementHomePC();
+            }
+            break;
+        case kbCURRPC_M1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                // only used for MPBaseballKeyboards, which is used for MP15XX scoreboards
+                if(g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80 ) // home is at bat
+                    DecrementGuestPC();
+                else
+                    DecrementHomePC();
+            }
+            break;
+#endif
+        case kbHOMEBONUS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementHB();
+            break;
+
+        case kbSETINNING:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetInning();
+            break;
+
+        case kbBALLS_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementBalls();
+            break;
+
+        case kbSTRIKES_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementStrikes();
+            break;
+
+        case kbOUTS_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrementOuts();
+            break;
+
+        case kbPITCHCNT:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if ( (g_BoardType == MP15XX) ||
+#ifdef NO_ETN_DIMMING_SUPPORT
+                     ((g_BoardType == MP14XX || g_BoardType == MP14X) && (g_OptJumpers.MP14Bits.PitchCount)) ||
+#endif
+                     ((g_BoardType == MP1390 || g_BoardType == MP3450) && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) )
+                {
+                    SetPitchCount();
+                }
+                else
+                {
+                    // do nothing if using a multi-sport board with football as the selected game type
+                    if ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL))
+                        ;
+                    else if(!(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig))
+                        SetPitchCount();
+                }
+            }
+            break;
+
+        case kbGUEST_1Minus:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+				if(g_BoardType == MP15XX)
+				{
+					if ( !(g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80) )       //MSB 1=home, 0=guest possession
+		                IncrementRuns(-1);
+				}
+				else
+	                RunsGuest1M();
+            }
+            break;
+
+        case kbGUEST_10:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                RunsGuest10();
+            break;
+
+        case kbHOME_1Minus:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+				if(g_BoardType == MP15XX)
+				{
+					if ( (g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80) )       //MSB 1=home, 0=guest possession
+		                IncrementRuns(-1);
+				}
+				else
+	                RunsHome1M();
+            }
+            break;
+
+        case kbHOME_10:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                RunsHome10();
+            break;
+
+        case kbCLOCKRESET:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                ResetGameClock();
+            break;
+
+        case kbMINUTEDECR:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                DecrMinutes();
+            break;
+
+        case kbSECONDDECR:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                DecrSeconds();
+            break;
+
+        case kbSECONDINCR:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                IncrSeconds();
+            break;
+
+        case kbYTGRESET:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                YardsToGoReset();
+            break;
+
+        case kbYTG_10:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                YardsToGoMinus10();
+            break;
+
+        case kbYTG_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                YardsToGoMinus1();
+            break;
+
+		case LONG_PRESS(kbCHANGEPOSSESION):
+			g_game.Fields.Attribs.AllFlags &= 0xFC;
+			g_ScoreUpdFlg.AllGamesBits.PossesionF = 1;
+			break;
+
+        case LONG_PRESS(kbGUEST_TFMPGW):
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            	SetGuestFouls();
+            	//g_game.Fields.ScoreDetail.Basketball.ucGuestFouls = 0;
+            break;
+
+        case kbGUEST_TFMPGW:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                GuestFouls_1();
+            break;
+
+        case LONG_PRESS(kbHOME_TFMPGW):
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            	SetHomeFouls();
+            	//g_game.Fields.ScoreDetail.Basketball.ucHomeFouls = 0;
+            break;
+
+        case kbHOME_TFMPGW:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                HomeFouls_1();
+            break;
+
+        case kbPLAYERMATCHGAME:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetPlayerNumber();
+            break;
+
+        case kbPLAYERFOUL:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetPlayerFouls();
+            break;
+
+        case kbSETGUESTTIMEOUTS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetGuestTimeOuts();
+            break;
+
+        case kbSETHOMETIMEOUTS:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetHomeTimeOuts();
+            break;
+
+        case kbBALLON_BALL_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                {
+                    if (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)
+                        SetBallOn();
+                    else
+                        IncrementBalls();
+                }
+                else
+                    IncrementBalls();
+            }
+            break;
+
+        case kbDOWN_STRIKE_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                {
+                    if (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)
+                        Down_1();
+                    else
+                        IncrementStrikes();
+                }
+                else
+                    IncrementStrikes();
+            }
+            break;
+
+        case kbYTG_OUT_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                {
+                    if (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)
+                        SetYardsToGo();
+                    else
+                        IncrementOuts();
+                }
+                else
+                    IncrementOuts();
+            }
+            break;
+
+        case kbGUESTTOL_PC_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                {
+                    if (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)
+                        GuestTO_1();
+                    else
+                        IncrementGuestPC();
+                }
+                else
+                    IncrementGuestPC();
+            }
+            break;
+
+        case kbHOMETOL_PC_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                {
+                    if (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)
+                        HomeTO_1();
+                    else
+                        IncrementHomePC();
+                }
+                else
+                    IncrementHomePC();
+            }
+            break;
+
+        }// end Switch
+
+        g_KeyInput = kbNone; // Clear g_KeyInput
+
+        ClockMod();     //Update All CLock Info
+        ScoreMod ();    //Update Score Info
+
+        g_SystemFlags.bits.RefreshLCDF = 1;      //Force an LCD Update
+    } // end if g_KeyInput
+
+}// end Procedure - CheckKeyInput
+
+@
+
+
+1.48
+log
+@Channel conflict change
+@
+text
+@a288 1
+//#define FAKE_JUMPERS 0xD0
+a320 1
+
+a330 1
+
+d621 1
+a621 1
+				g_KeyInput = SPARCH_SEARCH(ucKBInput, GameClockHandheld);
+d630 1
+a630 1
+				g_KeyInput = SPARCH_SEARCH(ucKBInput, SegmentTimerHandheld);
+d633 1
+a633 1
+				g_KeyInput = SPARCH_SEARCH(ucKBInput, BaseballHandheld);
+d636 1
+a636 1
+				g_KeyInput = SPARCH_SEARCH(ucKBInput, PitchCountHandheld);
+d639 1
+a639 1
+				g_KeyInput = SPARCH_SEARCH(ucKBInput, GroupMsgMic);
+d1231 8
+a1238 1
+			LCD2DigZF(MsgLine[0]+5, ucChannelConflict);
+@
+
+
+1.47
+log
+@Add score keys for Baseball HandHeld to Linescore5
+@
+text
+@d279 1
+d452 1
+a452 1
+				if(((tbHandheldDataTemp.ui) & 0xFC00) == 0xA400)
+d454 1
+d458 1
+d460 1
+a460 1
+				else if(((tbHandheldDataTemp.ui) & 0xFC00) == 0xE400)
+d462 1
+d466 9
+d476 8
+a483 4
+				break;
+			default:
+				byState = eHhReceiveWaiting;
+				break;
+d1231 1
+d1234 1
+d1236 3
+a1238 2
+			WaitForEnter();
+			while(GroupManage());
+@
+
+
+1.46
+log
+@Use jumper names vs jumper number.
+@
+text
+@d1188 9
+a1196 1
+                RunsGuest1();
+d1201 9
+a1209 1
+                RunsHome1();
+d1296 1
+a1296 1
+                IncrementRuns();
+d1385 9
+a1393 1
+                RunsGuest1M();
+d1403 9
+a1411 1
+                RunsHome1M();
+@
+
+
+1.45
+log
+@Move code for consistancy with Sockey.
+@
+text
+@d1039 1
+a1039 1
+	//disabled for MP15XX w/J1B installed
+d1044 1
+a1044 1
+	    (g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1B) )
+d1080 1
+a1080 1
+                !(g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1B) &&
+@
+
+
+1.44
+log
+@Move code for consistancy with Sockey.
+@
+text
+@d1196 1
+a1196 1
+#ifndef NO_ETN_DIMMING_SUPPORT
+d1207 28
+d1245 5
+a1406 5
+        case kbDOWN_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                Down_1();
+            break;
+
+a1421 5
+        case kbGUESTTO_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                GuestTO_1();
+            break;
+
+a1437 5
+        case kbHOMETO_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                HomeTO_1();
+            break;
+
+a1446 10
+            break;
+
+        case kbSETYTG:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetYardsToGo();
+            break;
+
+        case kbSETBALLON:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                SetBallOn();
+@
+
+
+1.43
+log
+@Addconditional FAKE_JUMPERS
+@
+text
+@d1186 21
+a1333 5
+        case kbGUEST_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                RunsGuest1();
+            break;
+
+a1343 5
+        case kbHOME_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+                RunsHome1();
+            break;
+
+a1417 9
+            break;
+
+        case kbChConflict:
+			g_bySendDisabled = 1;
+			lcd_line0(eChannelInUse);
+			lcd_line1(ePressEnter);
+			WaitForEnter();
+			while(GroupManage());
+			g_bySendDisabled = 0;
+@
+
+
+1.42
+log
+@Pitch Count keys
+@
+text
+@d288 1
+d353 4
+d414 1
+a414 1
+    static unsigned char ucKBRow;		// Fix Reuse Problem?
+a415 1
+//    const byte *OurKeyboard;
+@
+
+
+1.41
+log
+@Handle keys needed for Pitch Count Handheld
+@
+text
+@d86 1
+a86 1
+	hhTeamAtBat,	kbPIT_CT_HH_ATBAT,
+a1126 1
+        case kbPIT_CT_HH_ATBAT:
+@
+
+
+1.40
+log
+@Fix start tunnel for radar sequence.
+@
+text
+@d85 6
+d618 3
+d1127 1
+d1250 10
+@
+
+
+1.39
+log
+@Handle Chan Conflict notice sent as a "keystroke", stay in GroupManage() until success.
+@
+text
+@d436 1
+a436 1
+				if(((tbHandheldDataTemp.ui) & 0xFDFF) == 0xA12B)
+@
+
+
+1.38
+log
+@Add server generated "key", mxChConflict/kbChConflict
+@
+text
+@d24 1
+d275 1
+d778 2
+d786 1
+a786 1
+					tKeyTimer.ui = g_Timer.ui - LONG_PRESS_TIME - 1;	// Make the timer follow the current time in case someone holds a key for more than 650 seconds.
+d792 4
+d800 1
+d1384 9
+@
+
+
+1.37
+log
+@Rename g_byChannelScanMode to g_fTxNormalData (inverted).
+@
+text
+@d269 4
+d608 3
+@
+
+
+1.36
+log
+@Move tunneling enum to KeyboardCommon.h
+Remove "HANDHELD_ORIGINAL_RECEIVE code
+Use pointer when accessing HandheldData FIFO
+@
+text
+@d418 1
+a418 1
+	if(!g_byChannelScanMode)
+@
+
+
+1.35
+log
+@Reduce code size.
+Add handling for radar gun Hand-Held
+@
+text
+@d32 1
+a32 5
+enum
+{
+	eHhReceiveWaiting,
+	eHhTunnelOpen
+};
+a385 1
+//#define HANDHELD_ORIGINAL_RECIEVE
+a417 37
+#ifdef HANDHELD_ORIGINAL_RECIEVE
+	if(((ffHandheldData.byNextIn - ffHandheldData.byNextOut) & (HANDHELD_DATA_DEPTH - 1)) > 1)
+	{
+		if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) == 0xA12A)
+		{
+			ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+			switch((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF)
+			{
+			case 0xA430:	//RB7
+				ucKBInput = 3;	//40
+				break;
+			case 0xA431:	//RB8
+				ucKBInput = 4;	//25
+				break;
+			case 0xA432:	//RC8
+				ucKBInput = 2;	//RS
+				break;
+/*
+			case 0xA422:	//RC5
+				ucKBInput = 2;	//RS
+				break;
+*/
+			default:
+				break;
+			}
+		}
+		ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+	}
+/*
+	if(((byFifoIn - ffHandheldData.byNextOut) & (HANDHELD_DATA_DEPTH - 1)) == 1)
+	{
+		if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) != 0xA12A)
+			ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+	}
+*/
+#endif
+#ifndef HANDHELD_ORIGINAL_RECIEVE
+a419 17
+#if 0
+		if(((ffHandheldData.byNextIn - ffHandheldData.byNextOut) & (HANDHELD_DATA_DEPTH - 1)) > 1)
+		{
+			if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) == 0xA12B)
+			{
+				ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+				if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFC00) == 0xA400)
+				{
+					ucKBInput = (ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[0]);
+					if(ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[1] & 0x01)
+						ucKBInput += 0x80;
+				}
+			}
+			ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+		}
+#else
+#define USE_HH_DATA_UI
+a422 1
+#ifdef USE_HH_DATA_UI
+a424 1
+#endif
+a429 1
+#ifdef USE_HH_DATA_UI
+a430 3
+#else
+				if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) == 0xA12B)
+#endif
+a434 1
+#ifdef USE_HH_DATA_UI
+a435 3
+#else
+				if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFC00) == 0xA400)
+#endif
+a436 1
+#ifdef USE_HH_DATA_UI
+a438 4
+#else
+					ucKBInput = (ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[0]);
+					if(ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[1] & 0x01)
+#endif
+a440 1
+#ifdef USE_HH_DATA_UI
+a441 3
+#else
+				else if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFC00) == 0xE400)
+#endif
+a442 1
+#ifdef USE_HH_DATA_UI
+a443 3
+#else
+					g_game.Fields.ScoreDetail.BaseBall.ucPitchSpeed = (ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[0]);
+#endif
+a453 1
+#endif
+a454 9
+/*
+	if(((byFifoIn - ffHandheldData.byNextOut) & (HANDHELD_DATA_DEPTH - 1)) == 1)
+	{
+		if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) != 0xA12A)
+			ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+	}
+*/
+#endif
+
+a497 1
+
+d500 1
+a553 1
+
+d592 8
+a599 8
+			    if(kbNone != g_KeyInput)
+			    {
+				    if((kbCLOCKON == g_KeyInput) && !g_ClockFlags.bits.ClkOnF)
+	                    g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+				    else if((kbCLOCKOFF == g_KeyInput) && g_ClockFlags.bits.ClkOnF)
+	                    g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+			    	break;
+			    }
+d601 2
+a602 2
+			    if(kbNone != g_KeyInput)
+			    	break;
+d604 2
+a605 2
+			    if(kbNone != g_KeyInput)
+			    	break;
+d607 4
+a610 4
+                // don't react if in LampTest                
+                if ( g_KeyInput == kbCLOCKONOFF && !g_SystemFlags.bits.LampTestF )
+                {
+                    g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+d612 2
+a613 2
+                    g_KeyInput = kbNone;  //We have Already Handled It Locally
+                }
+d615 1
+a615 1
+    }
+d709 1
+a1004 2
+	if(ucKBInput)
+		g_byGameSaveEnabled = 1;
+@
+
+
+1.34
+log
+@Reuse (via #define) identical ExtSwitches table
+Decrement ucKBInput before key lookup
+@
+text
+@d478 1
+d482 4
+d487 1
+d491 3
+d495 2
+d500 3
+d504 1
+d506 4
+d512 1
+d514 14
+@
+
+
+1.33
+log
+@Add handling for GameClockHH & SegmentTimerHH
+@
+text
+@d44 4
+a47 1
+
+d169 1
+d171 1
+d198 1
+d200 1
+d227 1
+d229 1
+d257 1
+d259 1
+d481 1
+d561 1
+d565 1
+a565 1
+	                 ucKBInput = MMBaseballExtSwitches [(ucKBInput - 1)];
+d569 1
+a569 1
+	                 ucKBInput = MMComboBasebExtSwitches [(ucKBInput - 1)];
+d573 1
+a573 1
+	                 ucKBInput = MMComboFootbExtSwitches [(ucKBInput - 1)];
+d578 1
+a578 1
+	                 ucKBInput = MP1390ExtSwitches [(ucKBInput - 1)];
+d583 1
+a583 1
+	                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+d588 1
+a588 1
+	                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+d592 1
+a592 1
+	                 ucKBInput = MPFootballExtSwitches [ucKBInput-1];
+d596 1
+a596 1
+	                 ucKBInput = MPBWVExtSwitches [(ucKBInput - 1)];
+d601 1
+a601 1
+	                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+d605 1
+a605 1
+	                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+d610 1
+a610 1
+	                 ucKBInput = MMBaseballExtSwitches [(ucKBInput - 1)];
+d768 1
+d772 1
+a772 1
+                     ucKBInput = MMBaseballKeyboard [ucKBRow][ucKBInput-1];
+d777 1
+a777 1
+			             ucKBInput = MMBaseballKeyboard [ucKBRow][ucKBInput-1];
+d780 1
+a780 1
+	                     ucKBInput = MMComboBasebKeyboard [ucKBRow][ucKBInput-1];
+d784 1
+a784 1
+                     ucKBInput = MMComboFootbKeyboard [ucKBRow][ucKBInput-1];
+d790 1
+a790 1
+                     ucKBInput = MP1390Keyboard [ucKBRow][ucKBInput-1];
+d794 1
+a794 1
+                     ucKBInput = MPFootballKeyboard [ucKBRow][ucKBInput-1];
+d798 1
+a798 1
+                     ucKBInput = MPBWVKeyboard [ucKBRow][ucKBInput-1];
+d803 1
+a803 1
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput-1];
+d808 1
+a808 1
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput-1];
+d813 1
+a813 1
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput-1];
+d817 1
+a817 1
+                     ucKBInput = MPBaseballKeyboard [ucKBRow][ucKBInput-1];
+d822 1
+a822 1
+                     ucKBInput = MMBaseballKeyboard [ucKBRow][ucKBInput-1];
+a906 2
+            //if(g_OptJumpers.MPBWVBBits.JCJCMode)
+            //{
+a915 2
+	            
+            //}
+@
+
+
+1.32
+log
+@Correct spurious output (testing remenant) associated with handheld key entry.
+@
+text
+@d25 2
+d74 9
+a82 9
+	0x11, kbINNING_1,
+	0x12, kbHOME_1Minus,
+	0x20, kbSTRIKES_1,
+	0x21, kbBALLS_1,
+	0x30, kbGUEST_1,
+	0x31, kbCLOCKONOFF,
+	0x32, kbHOME_1,
+	0x33, kbGUEST_1Minus,
+	0x42, kbOUTS_1
+d250 12
+d635 18
+a652 1
+		    g_KeyInput = SearchSparse(ucKBInput, BaseballHandheld, ELEMENT_COUNT(BaseballHandheld));
+d1110 9
+d1158 1
+@
+
+
+1.31
+log
+@Don't save game if keyboard has not been touched.
+Eliminate constant reseting of TRIS that do not change.
+Remove incandescent support for 470 & 500.
+@
+text
+@a621 1
+					TXREG = g_KeyInput;
+@
+
+
+1.30
+log
+@Add score dec functionality
+Process key presses received from HH
+@
+text
+@d35 1
+d269 1
+a269 1
+    TRISB = 0xFF;  // RB0-RB7=Column0-Column7
+d554 1
+d558 1
+d572 1
+d580 1
+d641 1
+a641 1
+		TRISB = 0xFF;  // RB0-RB7=Column0-Column7
+d757 1
+d761 1
+d767 1
+d775 1
+d1017 1
+a1017 3
+	if(g_BoardType == MPBWV)
+        ;
+	else
+d1023 2
+d1101 1
+d1103 3
+a1119 1
+        case kbFLASHHITS:			// Separate Button.
+a1124 1
+        case kbFLASHERRORS:  		// Separate Button.
+a1224 19
+        case kbGUESTPC_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if((g_BoardType == MP15XX || g_BoardType ==MP15X) || (!g_OptJumpers.MP14Bits.PitchCount && (g_BoardType == MP14XX || g_BoardType ==MP14X)))
+                    SetTimeOfDay();
+                else
+                    IncrementGuestPC();
+            }
+            break;
+			
+        case kbHOMEPC_1:
+            if(!g_SystemFlags.bits.SegmentTimerF)
+            {
+                if((g_BoardType == MP15XX || g_BoardType ==MP15X) || (!g_OptJumpers.MP14Bits.PitchCount && (g_BoardType == MP14XX || g_BoardType ==MP14X)))
+                    SetTimeOut();
+                else
+                    IncrementHomePC();
+            }
+            break;
+d1266 1
+d1268 1
+d1358 5
+@
+
+
+1.29
+log
+@Intrim Channel Scanning
+@
+text
+@d30 5
+d70 12
+d436 1
+d439 1
+a439 1
+			if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) == 0xA12A)
+d451 25
+d530 1
+a530 1
+    if ( ucKBInput && (ucKBInput < 5) )
+d532 50
+a581 46
+        switch ( g_BoardType )
+        {
+             case MMBASEBALL:
+                 ucKBInput = MMBaseballExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MMCOMBOBASEB:
+                 ucKBInput = MMComboBasebExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MMCOMBOFOOTB:
+                 ucKBInput = MMComboFootbExtSwitches [(ucKBInput - 1)];
+                 break;
+			 case MPBBB:
+             case MP1390:
+             case MP3450:
+                 ucKBInput = MP1390ExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MP14XX:
+                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MP15XX:
+                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MPF52:
+                 ucKBInput = MPFootballExtSwitches [ucKBInput-1];
+                 break;
+
+             case MPBWV:
+                 ucKBInput = MPBWVExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MP14X:
+                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             case MP15X:
+                 ucKBInput = MPBaseballExtSwitches [(ucKBInput - 1)];
+                 break;
+
+             default:
+                 ucKBInput = MMBaseballExtSwitches [(ucKBInput - 1)];
+                             
+d583 7
+a589 9
+        }// switch			
+        
+        if ( ( ucKBInput == g_LastExtSw ) && ( g_ExtSwTimer )) // Old Key Still Down
+        {
+            g_ExtSwTimer = DEBOUNCE_TIME; //Refresh (Debounce = Min Off)
+        }
+        else if(!g_SystemFlags.bits.LampTestF) // don't react if in LampTest
+        {
+             // New Switch  (New Press Of the old Switch or a New Switch at Any time)
+d591 2
+a592 2
+             g_LastExtSw = ucKBInput;
+             g_ExtSwTimer = DEBOUNCE_TIME;
+d594 28
+a621 19
+             switch ( ucKBInput )
+             {
+                 case kbCLOCKONOFF:
+                     g_ClkCtrlFlags.bits.ClkOnOffPressedF = 1;
+                     break;
+                 case kbSHOTDELAYENABLE:
+                     g_ClkCtrlFlags.bits.ShotOnOffPressedF = 1;
+                     break;
+                 case kbSHOTDELAYRESET:
+                     g_ClkCtrlFlags.bits.ShotResetPressedF = 1;
+                     break;
+                 case kbSHOTDELAYONOFF:
+                     g_ClkCtrlFlags.bits.ShotRunStopPressedF = 1;
+                     break;
+                 case kbOBDELAYRESET:
+                     g_ClkCtrlFlags.bits.OBResetPressedF = 1;
+                     break;
+             }
+        }
+d623 3
+d634 3
+a636 1
+	TRISB = 0xFF;  // RB0-RB7=Column0-Column7
+d640 1
+a640 1
+	TRISC |= 0x30;  //RC4,RC5 = input for REV2 Debug
+d644 1
+a644 1
+	RowJF = 1; // dip Switches OFF
+d646 7
+a652 7
+	RowHF = 1;
+	RowGF = 1;
+	RowFF = 1;
+	RowEF = 1;
+	RowDF = 1;
+	RowCF = 1;
+	RowBF = 1;
+d655 2
+a656 2
+	RowAF = 0;               // Select Row 0
+	ucKBRow = 00;            // Offset in the Keynumber for Row A
+d658 1
+a658 1
+	ucKBInput = ScanColumn();
+d660 7
+a666 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowAF = 1;
+		RowBF = 0;         // Select Row 1
+		ucKBRow = 1;       // Offset in the Keynumber for Row B
+		ucKBInput = ScanColumn();
+	}
+d668 7
+a674 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowBF = 1;
+		RowCF = 0;         // Select Row 2
+		ucKBRow = 2;       // Offset in the Keynumber for Row C
+		ucKBInput = ScanColumn();
+	}
+d676 7
+a682 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowCF = 1;
+		RowDF = 0;         // Select Row 3
+		ucKBRow = 3;       // Offset in the Keynumber for Row D
+		ucKBInput = ScanColumn();
+	}
+d684 7
+a690 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowDF = 1;
+		RowEF = 0;         // Select Row 4
+		ucKBRow = 4;       // Offset in the Keynumber for Row E
+		ucKBInput = ScanColumn();
+	}
+d692 7
+a698 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowEF = 1;
+		RowFF = 0;         // Select Row 6
+		ucKBRow = 5;       // Offset in the Keynumber for Row F
+		ucKBInput = ScanColumn();
+	}
+d700 7
+a706 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowFF = 1;
+		RowGF = 0;         // Select Row 7
+		ucKBRow = 6;       // Offset in the Keynumber for Row G
+		ucKBInput = ScanColumn();
+	}
+d708 7
+a714 7
+	if (!ucKBInput)  // if no Keys Found Yet
+	{
+		RowGF = 1;
+		RowHF = 0;         // Select Row 4
+		ucKBRow = 7;       // Offset in the Keynumber for Row H
+		ucKBInput = ScanColumn();
+	}
+d808 1
+d1295 5
+d1308 5
+@
+
+
+1.28
+log
+@New handheld data format
+@
+text
+@d417 1
+a417 1
+	if(((ffHandheldData.byNextIn - ffHandheldData.byNextOut) & (HANDHELD_DATA_DEPTH - 1)) > 1)
+d419 1
+a419 1
+		if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFDFF) == 0xA12A)
+d421 1
+a421 2
+			ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+			if(((ffHandheldData.aHandheldData[ffHandheldData.byNextOut].ui) & 0xFC00) == 0xA400)
+d423 7
+a429 3
+				ucKBInput = (ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[0]);
+				if(ffHandheldData.aHandheldData[ffHandheldData.byNextOut].by[1] & 0x01)
+					ucKBInput += 0x80;
+d431 1
+a432 1
+		ffHandheldData.byNextOut = (ffHandheldData.byNextOut + 1) & (HANDHELD_DATA_DEPTH - 1);
+@
+
+
+1.27
+log
+@Adjust handling of received Handheld data.
+@
+text
+@d347 1
+d380 1
+d415 25
+d484 1
+a484 1
+    if ( ucKBInput )
+@
+
+
+1.26
+log
+@404-999 for handheld support
+@
+text
+@a378 1
+	//if(ffHandheldData.byNextIn != ffHandheldData.byNextOut)
+d395 1
+d399 1
+d403 1
+a404 1
+		}
+d406 2
+a407 1
+	if(((ffHandheldData.byNextIn - ffHandheldData.byNextOut) & (HANDHELD_DATA_DEPTH - 1)) == 1)
+d412 1
+@
+
+
+1.25
+log
+@404 prep
+@
+text
+@d379 31
+@
+
+
+1.24
+log
+@Prelim 404
+@
+text
+@d603 6
+a608 1
+                     ucKBInput = MMComboBasebKeyboard [ucKBRow][ucKBInput-1];
+d621 8
+a634 8
+                     break;
+
+                case MPF52:
+                     ucKBInput = MPFootballKeyboard [ucKBRow][ucKBInput-1];
+                     break;
+
+                case MPBWV:
+                     ucKBInput = MPBWVKeyboard [ucKBRow][ucKBInput-1];
+@
+
+
+1.23
+log
+@Undisable shotclock
+@
+text
+@d22 1
+d654 1
+a654 1
+						g_KeyInput = g_LastKey = ucKBInput | 0x80;
+d1226 1
+a1226 1
+        case kbGUEST_TFMPGW|0x80:
+d1242 1
+a1242 1
+        case kbHOME_TFMPGW|0x80:
+@
+
+
+1.22
+log
+@Make enum for MSG index.
+@
+text
+@d882 1
+a882 1
+#ifdef DISABLE_SHOTCLOCK
+@
+
+
+1.21
+log
+@Implement reading and display of supply voltage and battery remaining estimate.
+@
+text
+@a228 3
+TTwoBytes tbVoltage = {0};
+byte bAllowAdcRead = 0;
+
+d344 1
+a345 1
+#endif
+d512 1
+a512 1
+        TRISB = 0xFF;  // RB0-RB7=Column0-Column7
+d516 1
+a516 1
+        TRISC |= 0x30;  //RC4,RC5 = input for REV2 Debug
+d520 1
+a520 1
+        RowJF = 1; // dip Switches OFF
+d522 7
+a528 7
+        RowHF = 1;
+        RowGF = 1;
+        RowFF = 1;
+        RowEF = 1;
+        RowDF = 1;
+        RowCF = 1;
+        RowBF = 1;
+d531 2
+a532 2
+        RowAF = 0;               // Select Row 0
+        ucKBRow = 00;            // Offset in the Keynumber for Row A
+d534 3
+a536 2
+	//GClkOut = 1;
+	if(ADON)
+d538 4
+a541 11
+		//SClkOut = 1;
+		while(GODONE)
+			CLRWDT();
+		//SClkOut = 0;
+#ifdef V_INT_RAW
+		tbVoltage.by[1] = ADRESH;
+		tbVoltage.by[0] = (ADRESL>>6)&0x03;
+		tbVoltage.by[0] = (tbVoltage.by[1]<<2) + tbVoltage.by[0];
+		tbVoltage.by[1] = (tbVoltage.by[1]>>6)&0x03;
+#endif
+		ADON = 0;
+a542 3
+	ADCON1 = 0x0F;	// No Analog Inputs Enabled
+	//GClkOut = 0;
+        ucKBInput = ScanColumn();
+d544 7
+a550 7
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowAF = 1;
+                RowBF = 0;         // Select Row 1
+                ucKBRow = 1;       // Offset in the Keynumber for Row B
+                ucKBInput = ScanColumn();
+        }
+d552 7
+a558 7
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowBF = 1;
+                RowCF = 0;         // Select Row 2
+                ucKBRow = 2;       // Offset in the Keynumber for Row C
+                ucKBInput = ScanColumn();
+        }
+d560 7
+a566 7
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowCF = 1;
+                RowDF = 0;         // Select Row 3
+                ucKBRow = 3;       // Offset in the Keynumber for Row D
+                ucKBInput = ScanColumn();
+        }
+d568 7
+a574 7
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowDF = 1;
+                RowEF = 0;         // Select Row 4
+                ucKBRow = 4;       // Offset in the Keynumber for Row E
+                ucKBInput = ScanColumn();
+        }
+d576 7
+a582 7
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowEF = 1;
+                RowFF = 0;         // Select Row 6
+                ucKBRow = 5;       // Offset in the Keynumber for Row F
+                ucKBInput = ScanColumn();
+        }
+d584 7
+a590 22
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowFF = 1;
+                RowGF = 0;         // Select Row 7
+                ucKBRow = 6;       // Offset in the Keynumber for Row G
+                ucKBInput = ScanColumn();
+        }
+
+        if (!ucKBInput)  // if no Keys Found Yet
+        {
+                RowGF = 1;
+                RowHF = 0;         // Select Row 4
+                ucKBRow = 7;       // Offset in the Keynumber for Row H
+                ucKBInput = ScanColumn();
+        }
+        if(bAllowAdcRead)
+        {
+			ADCON1 = 0x07;	// AN0-AN7 Analog Inputs
+			ADCON0 = 0x1D;	// Enable A/D for AN7(RE2) using the RC Conversion Clock
+			GODONE = 1;
+			bAllowAdcRead = 0;
+		}
+a709 2
+			if(g_ClockFlags.bits.TimeOutToSB);
+				g_ClockFlags.bits.TimeOutToSB = 0;
+@
+
+
+1.20
+log
+@Remove unused code
+Fix interval horn when not in 10ths
+sockey/emech
+Signal strength
+Monitor voltage
+@
+text
+@a543 1
+		di();
+a548 2
+		tbVoltage.by[0] -= 150;
+		tbVoltage.by[1] = 0;
+a550 1
+		ei();
+@
+
+
+1.19
+log
+@Implement long press
+@
+text
+@d229 3
+a240 1
+
+a302 1
+
+a313 1
+
+a314 1
+
+d317 4
+a320 5
+   if (!Column0F)
+     return 1;
+
+   if (!Column1F)
+     return 2;
+d324 4
+a327 5
+   if (!Column0F)
+     return 1;    //Rev2 DEBUG has Col0 on RC4
+
+   if (!Column1F)
+     return 2;    //Rev2 DEBUG has Col0 on RC5
+d333 13
+a345 19
+  if (!Column2F)
+    return 3;
+
+  if (!Column3F)
+    return 4;
+
+  if (!Column4F)
+    return 5;
+
+  if (!Column5F)
+    return 6;
+
+  if (!Column6F)
+    return 7;
+
+  if (!Column7F)
+    return 8;
+  return 0;
+
+d358 3
+a360 1
+    unsigned char ucKBRow;		// Fix Reuse Problem?
+d537 21
+d615 7
+a621 1
+
+a866 16
+#if 0
+    if ( !(g_ucFlashTimer%10) ) // will drop in on ticks == 40, 30, 20, 10, 0
+    {
+#ifdef USE_RESEND_TIMER
+        if ( g_ResendTimer )
+            g_ResendTimer--;
+#endif
+
+        if (!g_ucFlashTimer)
+        {
+            g_ucFlashTimer = SYSTICKRATE/2;
+            g_ucFlashCount--;
+            ScoreMod();   //Update the Scoreboard to Handle Error/HitFlash
+        }
+    }                                       // End If - Flash Timer
+#else
+d872 1
+a872 2
+    }
+#endif
+@
+
+
+1.18
+log
+@340v2, lamp test for ETN disabled.
+@
+text
+@d26 3
+a28 1
+#define MAX_SHORT_PRESS 4400
+d366 3
+a368 3
+    static near unsigned char ucKBRow;		// Fix Reuse Problem?
+    static near unsigned char ucKBInput;	// Fix Reuse Problem?
+
+d401 1
+a401 1
+                if( C_hold <MAX_SHORT_PRESS)  //Count up to 5 sec
+d406 2
+a407 2
+                    g_ClkCtrlFlags.bits.CPressedLong = 1;  
+                    C_hold = 9999; 							//C_hold will stay unchanged until release
+d654 1
+a654 2
+
+            if ( (ucKBInput == g_LastKey) && ( g_KeyTimer )) // Old Key Still Down
+d657 10
+d674 3
+d1255 6
+d1269 6
+@
+
+
+1.17
+log
+@Conditional compile to disable shot clock.
+@
+text
+@d255 1
+a255 1
+    g_OptJumpers.All |= 0x00;
+d709 1
+a709 1
+			g_ClockFlags.bits.ClkOnF = !g_ClockFlags.bits.ClkOnF;   //Toggle the Clock
+d749 1
+a749 1
+                    g_ClockFlags.bits.SClkOnF = !g_ClockFlags.bits.SClkOnF;   //Toggle Run/Stop
+d763 1
+a763 1
+				g_ClockFlags.bits.SClkEnableF = !g_ClockFlags.bits.SClkEnableF;	//Toggle DGT Power
+d805 1
+a805 1
+	     	g_ClockFlags.bits.SClkOnF = !g_ClockFlags.bits.SClkOnF;
+@
+
+
+1.16
+log
+@Include changes from C144424 & C149244
+Basketball expanded fouls
+Baseball Pitch Speed/Batter Number/Double Pitch Count, pick any 2.
+@
+text
+@a713 1
+
+d898 1
+d900 1
+@
+
+
+1.15
+log
+@Implement Dimming and ETN.
+@
+text
+@d1054 1
+a1054 1
+				if(!((g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL) || (g_BoardType == MPBBB) || ((g_BoardType == MP15XX) && g_RadarF)))
+a1055 7
+				/*if ((g_BoardType == MP1390 || g_BoardType == MP3450) && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL))
+				    SetBatter();
+				else if( ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) ||
+				    ((g_BoardType == MP15XX) && (g_RadarF)) )
+				    ;
+				else
+				    SetBatter();*/
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d227 1
+a445 1
+			 case MPCBB:
+a618 1
+				case MPCBB:
+d861 1
+a861 1
+       	if ( !(g_game.Fields.GClock.Hours | g_game.Fields.GClock.Min10 | g_game.Fields.GClock.Min01) )
+d901 1
+d903 15
+a917 2
+
+
+a960 1
+#warning Fix me like sockey
+d962 1
+a962 19
+            //disabled for MPBBB
+            //disabled for MPCBB
+            //disabled for MP15XX w/J1B installed
+            //valid for SegTimer Mode AND
+            //  a) either 4-dig display OR TKClock ONLY
+#if 0
+            if(!(g_BoardType == MPBBB || g_BoardType == MPCBB) //Board type is not MPBBB nor MPCBB and not in SegTimer mode
+               && (  (!g_SystemFlags.bits.SegmentTimerF)|| (Clk_Settings & CLK_SETTINGS_4D)	//if in segtimer mode, either 4-dig display or tk clock
+                     || ( ( g_BoardType == MPF52 ) && (g_OptJumpers.MPFootBBits.TKClock == 1))   )   )
+#endif
+           if( (g_BoardType == MPBBB) ||
+                (g_BoardType == MPCBB) ||
+                (g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1B) )
+                ;
+            else if ( (g_SystemFlags.bits.SegmentTimerF) && ( (Clk_Settings & CLK_SETTINGS_4D) ||
+                                                              ((g_BoardType == MPF52) && (g_OptJumpers.MPFootBBits.TKClock == 1)) ) )
+             	SetTenthSec();
+            else if (!g_SystemFlags.bits.SegmentTimerF)
+             	SetTenthSec();
+d966 1
+a966 19
+            //disabled for MPBBB
+            //disabled for MPCBB
+            //disabled for MP15XX w/J1B installed
+            //valid for SegTimer Mode AND
+            //  a) either 4-dig display OR TKClock ONLY
+#if 0
+            if(!(g_BoardType == MPBBB || g_BoardType == MPCBB) //Board type is not MPBBB nor MPCBB and not in SegTimer mode
+               && (  (!g_SystemFlags.bits.SegmentTimerF)|| (Clk_Settings & CLK_SETTINGS_4D)	//if in segtimer mode, either 4-dig display or tk clock
+                     || ( ( g_BoardType == MPF52 ) && (g_OptJumpers.MPFootBBits.TKClock == 1))   )   )
+#endif
+           if( (g_BoardType == MPBBB) ||
+                (g_BoardType == MPCBB) ||
+                (g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1B) )
+                ;
+            else if ( (g_SystemFlags.bits.SegmentTimerF) && ( (Clk_Settings & CLK_SETTINGS_4D) ||
+                                                              ((g_BoardType == MPF52) && (g_OptJumpers.MPFootBBits.TKClock == 1)) ) )
+                SetTenthSecOnOff();
+            else if (!g_SystemFlags.bits.SegmentTimerF)
+                SetTenthSecOnOff();
+d977 1
+a977 1
+            if( !(g_BoardType == MMBASEBALL || g_BoardType == MPBBB || g_BoardType == MPCBB || g_BoardType == MP15XX || g_BoardType == MP14XX) &&
+d1007 1
+a1007 1
+            if(!(g_BoardType == MPBBB || g_BoardType == MPCBB))
+@
+
+
+1.13
+log
+@Adjust the scoreboards that can ask "SET BATTER"
+@
+text
+@d947 2
+a948 1
+            
+@
+
+
+1.12
+log
+@Now using SendModCommon.c & h and GlobalCommon.h
+@
+text
+@d1077 9
+a1085 9
+                {
+                    if ((g_BoardType == MP1390 || g_BoardType == MP3450) && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL))
+                        SetBatter();
+                    else if( ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) ||
+                        ((g_BoardType == MP15XX) && (g_RadarF)) )
+                        ;
+                    else
+                        SetBatter();
+                }
+@
+
+
+1.11
+log
+@Some cleaning
+@
+text
+@d708 2
+d956 1
+a956 1
+               && (  (!g_SystemFlags.bits.SegmentTimerF)|| (Clk_Settings & 0b10000000)	//if in segtimer mode, either 4-dig display or tk clock
+d963 1
+a963 1
+            else if ( (g_SystemFlags.bits.SegmentTimerF) && ( (Clk_Settings & 0b10000000) ||
+d978 1
+a978 1
+               && (  (!g_SystemFlags.bits.SegmentTimerF)|| (Clk_Settings & 0b10000000)	//if in segtimer mode, either 4-dig display or tk clock
+d985 1
+a985 1
+            else if ( (g_SystemFlags.bits.SegmentTimerF) && ( (Clk_Settings & 0b10000000) ||
+@
+
+
+1.10
+log
+@Resend unchanged data during idle periods.
+@
+text
+@d26 1
+d392 1
+a392 1
+                if ( C_hold > 0 && C_hold < 6999) //If C was recently short pressed, set CPressedShort to 1
+d398 1
+a398 1
+                if( C_hold <7000)  //Count up to 5 sec
+d401 1
+a401 1
+                if( C_hold == 7000)
+d717 2
+a718 2
+    if (( g_ClkCtrlFlags.bits.CPressedShort | g_ClkCtrlFlags.bits.CPressedLong | g_ClkCtrlFlags.bits.ShotOnOffPressedF |
+          g_ClkCtrlFlags.bits.ShotResetPressedF | g_ClkCtrlFlags.bits.OBResetPressedF) & !g_ClockFlags.bits.TODClockF )
+d727 1
+a727 1
+	            g_ClockFlags.bits.SClkEnableF = !g_ClockFlags.bits.SClkEnableF; //Toggle the Shot CLock Enable
+@
+
+
+1.9
+log
+@Parag's last revision
+@
+text
+@d835 1
+d838 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d716 2
+a717 1
+    if (( g_ClkCtrlFlags.bits.CPressedShort | g_ClkCtrlFlags.bits.CPressedLong | g_ClkCtrlFlags.bits.ShotOnOffPressedF | g_ClkCtrlFlags.bits.ShotResetPressedF | g_ClkCtrlFlags.bits.OBResetPressedF) & !g_ClockFlags.bits.TODClockF )
+d832 15
+a846 1
+    if ( !g_ucFlashTimer )
+d851 2
+a852 2
+    }                                       // End If - Flash Timer
+
+d1003 4
+a1006 1
+            IncrementInning();
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d909 1
+d914 2
+a915 1
+                !(g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1B) )
+d977 3
+d982 2
+a983 1
+                !(g_BoardType == MP3450 && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL)) )
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d385 14
+a398 20
+	if( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390 || g_BoardType == MP3450) //Evaluate Long and Short Press
+	{
+		if ( ucKBInput !=2 )   //If C is not pressed
+		{
+			if ( C_hold > 0 && C_hold < 6999) //If C was recently short pressed, set CPressedShort to 1
+				g_ClkCtrlFlags.bits.CPressedShort = 1;
+			C_hold = 0;    //Reset C_hold whenever button is not being held
+		}
+		else  //If C is being held
+		{
+			if( C_hold <7000)  //Count up to 5 sec
+				C_hold++;
+
+			if( C_hold == 7000)
+			{
+				g_ClkCtrlFlags.bits.CPressedLong = 1;  
+				C_hold = 9999; 							//C_hold will stay unchanged until release
+			}
+		}
+	}
+d400 8
+d484 1
+a484 1
+        else
+d666 3
+a668 2
+				
+                if ( ucKBInput == kbCLOCKONOFF )
+d747 1
+a747 1
+				g_ClockFlags.bits.SClkOnF = !g_ClockFlags.bits.SClkOnF;   //Toggle Run/Stop
+a808 1
+        
+d844 2
+a845 1
+        	if ( (g_game.Fields.GClock.Sec10*100 + g_game.Fields.GClock.Sec01*10 + g_game.Fields.GClock.Sec10th) <= (g_ShotDly10*100 + g_ShotDly01*10 + g_ShotDlyTenth) )
+d876 2
+a877 1
+	if(g_BoardType == MPBWV);
+d880 1
+a880 1
+	SClkOut = !g_ClockFlags.bits.SClkOnF;
+d907 1
+a907 1
+            //disabled for MP3450 in Baseball Mode w/GClk3Dig Jumper installed
+d912 1
+a912 1
+                !(g_BoardType == MP3450 && !(g_game.Fields.ScoreboardModel & MULTISPORTFOOTBALL) && g_OptJumpers.MP1390Bits.GClck3Dig) &&
+d975 1
+a975 1
+            if( !(g_BoardType == MMBASEBALL || g_BoardType == MPBBB || g_BoardType == MPCBB || g_BoardType == MP15XX) &&
+@
+
+
+1.5
+log
+@Build fails
+@
+text
+@d901 1
+d904 1
+a904 1
+            //disabled for MP15XX w/J1C installed
+d906 1
+d909 1
+a909 1
+                !(g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1C) )
+d925 1
+a925 1
+            //disabled for MP15XX w/J1C installed
+d935 1
+a935 1
+                (g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1C) )
+d947 1
+a947 1
+            //disabled for MP15XX w/J1C installed
+d957 1
+a957 1
+                (g_BoardType == MP15XX && g_OptJumpers.GlobalBits.J1C) )
+d971 3
+a973 1
+            if(!(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig))
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d905 2
+a906 2
+                !(g_BoardType == MP1390 && g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD && g_OptJumpers.MP1390Bits.GClck3Dig) &&
+                !(g_BoardType == MP3450 && g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD && g_OptJumpers.MP1390Bits.GClck3Dig) &&
+d1030 1
+a1030 1
+                if( (g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD) )
+d1041 1
+a1041 1
+                    if ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD))
+d1043 1
+a1043 1
+                    else if( ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)) ||
+d1153 1
+a1153 1
+                     ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD)) )
+d1160 1
+a1160 1
+                    if ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD))
+d1283 1
+a1283 1
+                    if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+d1298 1
+a1298 1
+                    if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+d1313 1
+a1313 1
+                    if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+d1328 1
+a1328 1
+                    if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+d1343 1
+a1343 1
+                    if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d444 1
+d603 2
+a604 2
+            {
+                 case MMBASEBALL:
+d607 1
+a607 2
+
+                 case MMCOMBOBASEB:
+d611 1
+a611 1
+                 case MMCOMBOFOOTB:
+d615 4
+a618 3
+			     case MPBBB:
+				 case MPCBB:
+                 case MP1390:
+d622 1
+a622 1
+                 case MP14XX:
+d626 1
+a626 1
+                 case MP15XX:
+d630 1
+a630 1
+                 case MPF52:
+d634 1
+a634 1
+                 case MPBWV:
+d638 1
+a638 1
+                 case MP14X:
+d642 1
+a642 1
+                 case MP15X:
+d646 1
+a646 1
+                 default:
+a647 2
+                     
+
+d716 1
+a716 2
+        if (!(g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB) &&
+            !( (g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD) ) )
+d736 1
+a736 2
+             ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB ||
+               ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)) ) )
+d755 1
+a755 2
+             ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB ||
+               ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)) ) )
+d778 1
+a778 1
+			if (g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390)
+d790 1
+a790 2
+		if ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB ||
+             ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)) )
+d848 2
+a849 2
+                    if ( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB ||
+                         ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)) )
+d1040 9
+a1048 5
+                if( ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)) ||
+                    ((g_BoardType == MP15XX) && (g_RadarF)) )
+                    ;
+                else
+                    SetBatter();
+d1163 1
+a1163 1
+                        SetTimeOut();
+@
+
+
+1.2
+log
+@3450
+@
+text
+@d900 21
+a920 19
+         case kbSETCLOCK:
+             SetClock();
+             break;
+
+         case kbTIMEOFDAY:
+             //disabled for MMBASEBALL w/GClk3Dig Jumper installed
+             //disabled for MP1390 in Baseball Mode w/GClk3Dig Jumper installed
+             //disabled for MP3450 in Baseball Mode w/GClk3Dig Jumper installed
+			 if( !(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig) &&
+                 !(g_BoardType == MP1390 && g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD && g_OptJumpers.MP1390Bits.GClck3Dig) &&
+                 !(g_BoardType == MP3450 && g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD && g_OptJumpers.MP1390Bits.GClck3Dig) )
+                 SetTimeOfDay();
+             break;
+
+         case kbNEWGAME:
+             NewGame();
+             break;
+
+         case kbPERIOD:
+d922 22
+a943 7
+             Period_1();
+             break;
+
+         case kbSETCLOCK10TH:
+			 if(!(g_BoardType == MPBBB || g_BoardType == MPCBB) //Board type is not MPBBB nor MPCBB and not in SegTimer mode
+				&& (  (!g_SystemFlags.bits.SegmentTimerF)|| (Clk_Settings & 0b10000000)	//if in segtimer mode, either 4-dig display or tk clock
+				|| ( ( g_BoardType == MPF52 ) && (g_OptJumpers.MPFootBBits.TKClock == 1))   )   )
+d945 36
+a980 21
+             break;
+
+         case kb10THSECONOFF:
+			 if(!(g_BoardType == MPBBB || g_BoardType == MPCBB) //Board type is not MPBBB nor MPCBB and not in SegTimer mode
+				&& (  (!g_SystemFlags.bits.SegmentTimerF)|| (Clk_Settings & 0b10000000)	//if in segtimer mode, either 4-dig display or tk clock
+				|| ( ( g_BoardType == MPF52 ) && (g_OptJumpers.MPFootBBits.TKClock == 1))   )   )
+             SetTenthSecOnOff();
+             break;
+
+         case kbAUTOHORN:
+             AutoHorn();
+             break;
+
+         case kbTIMEOUTTIMER:
+			 if(!(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig))
+                 SetTimeOut();
+             break;
+
+         case kbINNING_1:
+             IncrementInning();
+             break;
+d982 2
+a983 2
+         case kbCLEAR_FLASHHITS:    // In Cmd Mode = Flash Hits
+         case kbFLASHHITS:			// Separate Button.
+d986 1
+a986 1
+             	break;
+d988 19
+a1006 19
+         case kbENTER_FLASHERRORS:  // In Cmd Mode = Flash Errors
+         case kbFLASHERRORS:  		// Separate Button.
+             FlashErrors( );
+             break;
+
+         case kbHORNONOFF:
+             SetHornOnOff();
+             break;
+
+         case kbSETSHOTDELAYTIMER:
+		     if(!(g_BoardType == MPBBB || g_BoardType == MPCBB))
+             SetShotTimer();
+             break;
+
+         case kbSHOTDELAYRESET:
+         case kbSHOTDELAYENABLE:
+         case kbSHOTDELAYONOFF:
+             //Handled Immeadiatley in KBScan
+             break;
+d1013 1
+a1013 1
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+d1015 1
+a1015 1
+             break;
+d1018 1
+a1018 1
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+d1020 1
+a1020 1
+             break;
+d1023 1
+a1023 1
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+d1025 1
+a1025 1
+             break;
+d1028 3
+a1030 3
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetGuestScore();
+             break;
+d1033 8
+a1040 8
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if( (g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD) )
+                     ;
+                 else
+                     SetErrorPosition();
+             }
+             break;
+d1043 59
+a1101 58
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if( (g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD) )
+                     ;
+                 else
+                     SetBatter();
+             }
+             break;
+
+         case kbSETTOTALRUNS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetTotalRuns();
+             break;
+
+         case kbSETTOTALHITS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetTotalHits();
+             break;
+
+         case kbSETTOTALERRORS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetTotalErrors();
+             break;
+
+         case kbSETRUNSPERINNING:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetRunsPerInning();
+             break;
+
+         case kbRUNS_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementRuns();
+             break;
+
+         case kbHITS_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementHits();
+             break;
+
+         case kbGUESTBONUS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementGB();
+             break;
+
+         case kbERRORS_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementErrors();
+             break;
+
+		 case kbGUESTPC_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+			 {
+				 if((g_BoardType == MP15XX || g_BoardType ==MP15X) || (!g_OptJumpers.MP14Bits.PitchCount && (g_BoardType == MP14XX || g_BoardType ==MP14X)))
+                     SetTimeOfDay();
+				 else
+                     IncrementGuestPC();
+			 }
+			 break;
+d1103 9
+a1111 9
+		 case kbHOMEPC_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+			 {
+				 if((g_BoardType == MP15XX || g_BoardType ==MP15X) || (!g_OptJumpers.MP14Bits.PitchCount && (g_BoardType == MP14XX || g_BoardType ==MP14X)))
+                     SetTimeOut();
+				 else
+                     IncrementHomePC();
+			 }
+			 break;
+d1114 9
+a1122 9
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+			 {
+                 // only used for MPBaseballKeyboards, which is used for MP15XX scoreboards
+                 if(g_game.Fields.ScoreDetail.BaseBall.ucInning & 0x80 ) // home is at bat
+                     IncrementGuestPC();
+                 else
+                     IncrementHomePC();
+			 }
+			 break;
+d1124 229
+a1352 229
+         case kbHOMEBONUS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementHB();
+             break;
+
+         case kbSETINNING:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetInning();
+             break;
+
+         case kbBALLS_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementBalls();
+             break;
+
+         case kbSTRIKES_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementStrikes();
+             break;
+
+         case kbOUTS_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrementOuts();
+             break;
+
+		 case kbPITCHCNT:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+			 {
+                 if ( (g_BoardType == MP15XX) ||
+                      ((g_BoardType == MP14XX || g_BoardType == MP14X) && (g_OptJumpers.MP14Bits.PitchCount)) ||
+                      ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD)) )
+                 {
+                     SetPitchCount();
+                 }
+                 else
+                 {
+                     // do nothing if using a multi-sport board with football as the selected game type
+                     if ((g_BoardType == MP1390 || g_BoardType == MP3450) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD))
+                         ;
+                     else if(!(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig))
+                         SetTimeOut();
+                 }
+			 }
+             break;
+
+         case kbGUEST_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             RunsGuest1();
+             break;
+
+         case kbGUEST_10:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             RunsGuest10();
+             break;
+
+         case kbHOME_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             RunsHome1();
+             break;
+
+         case kbHOME_10:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             RunsHome10();
+             break;
+
+         case kbCLOCKRESET:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             ResetGameClock();
+             break;
+
+         case kbMINUTEDECR:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             DecrMinutes();
+             break;
+
+         case kbSECONDDECR:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             DecrSeconds();
+             break;
+
+         case kbSECONDINCR:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             IncrSeconds();
+             break;
+
+         case kbDOWN_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             Down_1();
+             break;
+
+         case kbYTGRESET:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             YardsToGoReset();
+             break;
+
+         case kbYTG_10:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             YardsToGoMinus10();
+             break;
+
+         case kbYTG_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             YardsToGoMinus1();
+             break;
+
+         case kbGUESTTO_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             GuestTO_1();
+             break;
+
+         case kbGUEST_TFMPGW:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             GuestFouls_1();
+             break;
+
+         case kbHOMETO_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             HomeTO_1();
+             break;
+
+         case kbHOME_TFMPGW:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             HomeFouls_1();
+             break;
+
+         case kbSETYTG:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetYardsToGo();
+             break;
+
+         case kbSETBALLON:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetBallOn();
+             break;
+
+         case kbPLAYERMATCHGAME:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetPlayerNumber();
+             break;
+
+         case kbPLAYERFOUL:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetPlayerFouls();
+             break;
+
+         case kbSETGUESTTIMEOUTS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetGuestTimeOuts();
+             break;
+
+         case kbSETHOMETIMEOUTS:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+	             SetHomeTimeOuts();
+             break;
+
+         case kbBALLON_BALL_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                 {
+                     if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+                         SetBallOn();
+                     else
+                         IncrementBalls();
+                 }
+                 else
+                     IncrementBalls();
+             }
+             break;
+
+         case kbDOWN_STRIKE_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                 {
+                     if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+                         Down_1();
+                     else
+                         IncrementStrikes();
+                 }
+                 else
+                         IncrementStrikes();
+             }
+             break;
+
+         case kbYTG_OUT_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                 {
+                     if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+                         SetYardsToGo();
+                     else
+                         IncrementOuts();
+                 }
+                 else
+                     IncrementOuts();
+             }
+             break;
+
+         case kbGUESTTOL_PC_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                 {
+                     if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+                         GuestTO_1();
+                     else
+                         IncrementGuestPC();
+                 }
+                 else
+                     IncrementGuestPC();
+             }
+             break;
+
+         case kbHOMETOL_PC_1:
+			 if(!g_SystemFlags.bits.SegmentTimerF)
+             {
+				 if(g_BoardType == MP1390 || g_BoardType == MP3450)
+                 {
+                     if (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD)
+                         HomeTO_1();
+                     else
+                         IncrementHomePC();
+                 }
+                 else
+                     IncrementHomePC();
+             }
+             break;
+@
+
+
+1.1
+log
+@*** empty log message ***
+@
+text
+@d385 1
+a385 1
+	if( g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390) //Evaluate Long and Short Press
+d716 3
+a718 2
+
+        if (!(g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390))  //Skip for Football
+d736 4
+a739 1
+		if ((g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390) && g_ClkCtrlFlags.bits.CPressedShort )  //After short press
+d756 4
+a759 1
+		if ((g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390) && g_ClkCtrlFlags.bits.CPressedLong )  //After long press
+d763 2
+a764 2
+				g_ShotDly10 = 0;
+				g_ShotDly01 = 0;
+d766 1
+a766 5
+		
+
+			
+		// Reset to OB and Enable Clock.
+		else if ( g_ClkCtrlFlags.bits.OBResetPressedF)
+d773 1
+a773 1
+	       g_ClockFlags.bits.SClkOnF = g_ClockFlags.bits.SClkEnableF;
+d785 1
+a785 1
+	       g_ClockFlags.bits.SClkOnF = g_ClockFlags.bits.SClkEnableF;
+d788 1
+a788 2
+        
+       g_ClockStatus++;
+d793 3
+a795 1
+		if(g_BoardType == MPF52 || g_BoardType == MMCOMBOFOOTB || g_BoardType == MP1390)  //Turn on Shot Clock, Set to RESET2 and Stop 
+a843 1
+
+d853 2
+a854 1
+       	         	if (( g_BoardType == MPF52 ) || ( g_BoardType == MP1390 ));
+d857 2
+a858 2
+                	g_ClockFlags.bits.SClkEnableF = 0; // Force Blank if <= Game Clock
+					g_ClockFlags.bits.SClkOnF = 0;
+d905 6
+a910 1
+			 if(!(g_BoardType == MMBASEBALL && g_OptJumpers.MMBaseBBits.GClck3Dig))
+d1003 1
+a1003 1
+				 if( (g_BoardType == MP1390) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD) )
+d1013 1
+a1013 1
+				 if( (g_BoardType == MP1390) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD) )
+d1121 1
+a1121 1
+                      ((g_BoardType == MP1390) && (g_game.Fields.ScoreboardSubType == BASEBALLSCOREBOARD)) )
+d1128 1
+a1128 1
+                     if ((g_BoardType == MP1390) && (g_game.Fields.ScoreboardSubType == FOOTBALLSCOREBOARD))
+d1249 1
+a1249 1
+				 if(g_BoardType == MP1390)
+d1264 1
+a1264 1
+				 if(g_BoardType == MP1390)
+d1279 1
+a1279 1
+				 if(g_BoardType == MP1390)
+d1294 1
+a1294 1
+				 if(g_BoardType == MP1390)
+d1309 1
+a1309 1
+				 if(g_BoardType == MP1390)
+@
+
