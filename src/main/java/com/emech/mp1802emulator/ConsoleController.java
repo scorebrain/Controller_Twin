@@ -9,6 +9,10 @@ package com.emech.mp1802emulator;
  * @author CMcMichael
  */
 
+import java.util.HashMap;
+import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import com.fazecast.jSerialComm.SerialPort;
@@ -27,19 +31,43 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.CheckBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class ConsoleController {
     
     private Cosmac1802 cpu;
+    private HashMap<String, String> gbwDictionary = new HashMap<>();
     private SerialPort comPort; // Add the hardware port variable
     private boolean enableHardwareCom = true; // Set to true when USB adapter is attached
     private DateTimeFormatter timeFmt = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
     private StringBuilder logBuffer = new StringBuilder();
-    private int logLines = 0;
-    private TextArea serialLog;
+    
+    // --- SERIAL LOGGER & FILTER TRACKING ---
+    public boolean showChangesOnly = true; // Configurable default state
+    
+    // 32 addresses. Initialize to -1 so the first 0x00 payload always registers as a change.
+    private int[] addressState = new int[32]; 
+    private boolean[] bankActive = new boolean[8]; // Tracks the Word 4 'i' bit for each of the 8 possible banks
+    
+    // Custom object to hold the formatted string and its color state
+    private class LogEntry {
+        String text;
+        boolean isBankActive;
+        LogEntry(String text, boolean isBankActive) { this.text = text; this.isBankActive = isBankActive; }
+    }
+    
+    private ListView<LogEntry> serialLog;
+    private ObservableList<LogEntry> logLinesList = FXCollections.observableArrayList();
+    
     private Button pauseBtn;
     private Button copyBtn;
+    private CheckBox filterCheckBox;
     private boolean isLogPaused = false;
+    // ---------------------------------------
     
     // Handheld LED References
     public Circle gameClockLed;
@@ -59,13 +87,20 @@ public class ConsoleController {
         cpu = new Cosmac1802();
         cpu.controller = this; // Link CPU to this controller
         cpu.reset();
+        
+        // --- RESTORE HARDWARE STATE ---
+        // Load the battery-backed RAM first
+        cpu.loadNVRAM("B23.nvram");
 
-       try {
+        try {
             IntelHexLoader.load("B23.HEX", cpu.memory);
         } catch (Exception e) {
             System.err.println("Failed to load ROM: " + e.getMessage());
             return;
         }
+        
+        // Load the external address descriptions
+        loadProtocolDictionary("Protocol.ini", "B23_DEFAULT");
        
         // --- INITIALIZE PHYSICAL RS-232 HARDWARE ---
         if (enableHardwareCom) {
@@ -85,16 +120,46 @@ public class ConsoleController {
                     comPort.closePort();
                     System.out.println("COM3 port released.");
                 }
+                // --- SIMULATE POWER LOSS (SAVE RAM) ---
+                if (cpu != null) {
+                    cpu.saveNVRAM("B23.nvram");
+                    System.out.println("Hardware NVRAM state preserved.");
+                }
             }));
         } else {
             System.out.println("PHYSICAL HARDWARE: RS-232 output is disabled.");
         }
         // -------------------------------------------
         
+        Arrays.fill(addressState, -1);
+        
         // --- SPAWN INDEPENDENT SERIAL LOGGER WINDOW ---
-        serialLog = new TextArea();
-        serialLog.setEditable(false);
-        serialLog.setStyle("-fx-control-inner-background: #000000; -fx-text-fill: #00FF00; -fx-font-family: 'Consolas', 'Courier New', monospace; -fx-font-size: 11px; -fx-font-weight: bold;");
+        Label logHeader = new Label(" Time        | Raw   | Adr |   Payload    | Context\n Stamp       | Bytes | GBW | i | h ... a  | Description");
+        logHeader.setStyle("-fx-font-family: 'Consolas', 'Courier New', monospace; -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-background-color: #333333; -fx-padding: 5 5 5 8;");
+        logHeader.setMaxWidth(Double.MAX_VALUE); 
+        
+        serialLog = new ListView<>(logLinesList);
+        serialLog.setStyle("-fx-control-inner-background: #000000; -fx-background-color: #000000;");
+        // Custom Cell Factory to colorize lines based on the Bank's Active state
+        serialLog.setCellFactory(lv -> new ListCell<LogEntry>() {
+            @Override
+            protected void updateItem(LogEntry item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                    setStyle("-fx-background-color: #000000;");
+                } else {
+                    setText(item.text);
+                    setFont(javafx.scene.text.Font.font("Consolas", javafx.scene.text.FontWeight.BOLD, 12));
+                    setTextFill(item.isBankActive ? Color.LIMEGREEN : Color.GRAY);
+                    setStyle("-fx-background-color: #000000;"); // Hides the blue selection highlight
+                }
+            }
+        });
+        
+        filterCheckBox = new CheckBox("Changes Only");
+        filterCheckBox.setSelected(showChangesOnly);
+        filterCheckBox.setOnAction(e -> showChangesOnly = filterCheckBox.isSelected());
         
         pauseBtn = new Button("Pause Log");
         copyBtn = new Button("Copy Log");
@@ -107,24 +172,24 @@ public class ConsoleController {
         copyBtn.setOnAction(e -> {
             javafx.scene.input.Clipboard clipboard = javafx.scene.input.Clipboard.getSystemClipboard();
             javafx.scene.input.ClipboardContent content = new javafx.scene.input.ClipboardContent();
-            content.putString(serialLog.getText());
+            StringBuilder sb = new StringBuilder();
+            sb.append(logHeader.getText()).append("\n");
+            for (LogEntry entry : logLinesList) sb.append(entry.text).append("\n");
+            content.putString(sb.toString());
             clipboard.setContent(content);
         });
 
-        HBox buttonBar = new HBox(10, pauseBtn, copyBtn);
+        HBox buttonBar = new HBox(15, filterCheckBox, pauseBtn, copyBtn);
         buttonBar.setAlignment(Pos.CENTER_RIGHT);
         buttonBar.setPadding(new Insets(5));
         buttonBar.setStyle("-fx-background-color: #d9d9d9;");
 
-        VBox logRoot = new VBox(serialLog, buttonBar);
-        // This command ensures the text area expands, pinning the buttons to the bottom
+        VBox logRoot = new VBox(logHeader, serialLog, buttonBar);
         VBox.setVgrow(serialLog, Priority.ALWAYS);
 
         Stage logStage = new Stage();
-        logStage.setTitle("B23 Serial Data Trace");
-        logStage.setScene(new Scene(logRoot, 500, 300));
-        
-        // Offset the window slightly so it doesn't spawn directly on top of the console
+        logStage.setTitle("Controller Output Serial Data Trace");
+        logStage.setScene(new Scene(logRoot, 650, 300));
         logStage.setX(100); 
         logStage.setY(100);
         logStage.show();
@@ -167,6 +232,33 @@ public class ConsoleController {
         cpuThread.start();
     }
  
+    // --- PROTOCOL DICTIONARY LOADER ---
+    private void loadProtocolDictionary(String filename, String profile) {
+        gbwDictionary.clear();
+        boolean inProfile = false;
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty() || line.startsWith(";")) continue; // Skip blanks and comments
+                
+                if (line.startsWith("[")) {
+                    inProfile = line.equalsIgnoreCase("[" + profile + "]");
+                    continue;
+                }
+                
+                if (inProfile && line.contains("=")) {
+                    String[] parts = line.split("=", 2);
+                    gbwDictionary.put(parts[0].trim(), parts[1].trim());
+                }
+            }
+            System.out.println("Loaded " + gbwDictionary.size() + " GBW definitions for profile: " + profile);
+        } catch (Exception e) {
+            System.err.println("Failed to load Protocol.ini: " + e.getMessage());
+        }
+    }
+
     // Called by Cosmac1802.java to push text to the UI
     public void updateLCD(String line1, String line2) {
         Platform.runLater(() -> {
@@ -232,30 +324,6 @@ public class ConsoleController {
         }
     }
     
-    /*
-    // --- SERIAL LOGGER UI HANDLERS ---
-    @FXML
-    public void handlePauseLog(javafx.event.ActionEvent event) {
-        isLogPaused = !isLogPaused;
-        if (isLogPaused) {
-            pauseBtn.setText("Resume Log");
-        } else {
-            pauseBtn.setText("Pause Log");
-        }
-    }
-
-    @FXML
-    public void handleCopyLog(javafx.event.ActionEvent event) {
-        javafx.scene.input.Clipboard clipboard = javafx.scene.input.Clipboard.getSystemClipboard();
-        javafx.scene.input.ClipboardContent content = new javafx.scene.input.ClipboardContent();
-        content.putString(serialLog.getText());
-        clipboard.setContent(content);
-        
-        // Optional console confirmation
-        System.out.println("Serial log copied to clipboard.");
-    }
-*/
-    
     // --- SERIAL PROTOCOL DECODER ---
     public void receiveSerialFrame(int lowByte, int highByte) {
         
@@ -277,54 +345,72 @@ public class ConsoleController {
         // Combine h (MSB) + lower 7 into the 8-bit Data Payload
         int data = (hBit << 7) | lower7;
 
+        // --- LOGIC ANALYZER & FILTER ---
+        int full9BitPayload = (iBit << 8) | data;
+        int bankIdx = address / 4; // 0 to 7
+        int wordIdx = address % 4; // 0 to 3 (Word 1 to 4)
+        
+        // Check for Bank Activation via Word 4's 'i' bit
+        if (wordIdx == 3) {
+            boolean isNowActive = (iBit == 1);
+            // If the bank's active state changes (ON->OFF or OFF->ON), intentionally invalidate 
+            // the cached states of Words 1, 2, and 3 so they trigger the filter on the next pass.
+            if (isNowActive != bankActive[bankIdx]) {
+                addressState[bankIdx * 4] = -1;     // Word 1
+                addressState[bankIdx * 4 + 1] = -1; // Word 2
+                addressState[bankIdx * 4 + 2] = -1; // Word 3
+            }
+            bankActive[bankIdx] = isNowActive;
+        }
+        
+        boolean hasChanged = (addressState[address] != full9BitPayload);
+        if (hasChanged) {
+            addressState[address] = full9BitPayload;
+        }
+        
+        // Drop the frame immediately if the filter is on and nothing changed
+        if (showChangesOnly && !hasChanged) {
+            return; 
+        }
+        
+        boolean currentBankIsActive = bankActive[bankIdx];
+        // -------------------------------
+
         // Decode Address to GBBWW (1-Indexed)
-        int word = (address % 4) + 1;
-        int bank = ((address / 4) % 4) + 1;
+        int word = wordIdx + 1;
+        int bank = (bankIdx % 4) + 1;
         int group = (address / 16) + 1;
         String gbbww = String.format("%d%d%d", group, bank, word);
 
         // Contextual Payload Formatting
-        String dataStr;
+        String payloadStr;
         if (word == 1 || word == 2) {
-            // Words 1 & 2: Hex/BCD format
-            dataStr = String.format("%02X      ", data);
+            payloadStr = String.format("%d %02X      ", iBit, data);
         } else {
-            // Words 3 & 4: Discrete bits mapping h down to a
             StringBuilder bits = new StringBuilder();
             for (int bit = 7; bit >= 0; bit--) {
                 bits.append((data & (1 << bit)) != 0 ? (char)('a' + bit) : '.');
             }
-            dataStr = bits.toString();
+            payloadStr = String.format("%d %s", iBit, bits.toString());
         }
 
-        // Basic Description Generator (To be expanded)
-        String desc = "---";
-        if (address == 0) desc = "Main Timer Seconds";
-        else if (address == 1) desc = "Main Timer Minutes";
-        else if (address == 3) desc = "Quarters / Colons";
-        else if (address == 4) desc = "System / Active Bit";
-        else if (address == 9) desc = "Team 2 (Home) Total Points";
-
-        // Construct the Line
+        // Query the dictionary and construct the string
+        String desc = gbwDictionary.getOrDefault(gbbww, "Unknown Address");
         String timestamp = LocalTime.now().format(timeFmt);
         String hexRaw = String.format("%02X %02X", lowByte, highByte);
-        String line = String.format("%s | %s | %s | %d | %s | %s\n", 
-                timestamp, hexRaw, gbbww, iBit, dataStr, desc);
+        
+        // Formatted line without the newline character (ListView handles vertical stacking)
+        String line = String.format("%-12s | %-5s | %-3s | %-10s | %s", 
+                timestamp, hexRaw, gbbww, payloadStr, desc);
 
         // Push to UI via JavaFX Thread (throttled to 100 lines)
         Platform.runLater(() -> {
             if (!isLogPaused) {
-                logBuffer.append(line);
-                logLines++;
-                if (logLines > 100) {
-                    int firstNewline = logBuffer.indexOf("\n");
-                    if (firstNewline != -1) {
-                        logBuffer.delete(0, firstNewline + 1);
-                        logLines--;
-                    }
+                logLinesList.add(new LogEntry(line, currentBankIsActive));
+                if (logLinesList.size() > 100) {
+                    logLinesList.remove(0);
                 }
-                serialLog.setText(logBuffer.toString());
-                serialLog.setScrollTop(Double.MAX_VALUE); // Auto-scroll to bottom
+                serialLog.scrollTo(logLinesList.size() - 1); // Auto-scroll to bottom
             }
         });
     }

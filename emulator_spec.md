@@ -18,7 +18,10 @@ Instruction decoding for `INP` and `OUT` ports is handled via `N0`, `N1`, and `N
 
 ### Output Ports
 * **OUT 2:** LCD Command Register (Sends instructions like 0x38, 0x01 to the HD44780 controller)[cite: 17].
-* **OUT 3:** Matrix Row Selector. The OS outputs immediate memory bytes to this port to pull specific rows low. The active-low row masks are `0x1E`, `0x1D`, `0x1B`, `0x17`, and `0x0F`, corresponding to a 5-row physical matrix (Rows 0 through 4)[cite: 16, 20].
+* **OUT 3:** Shared Matrix Selector & Handheld LED Driver. 
+    * **Bits 0-4:** The OS outputs immediate memory bytes to pull specific rows low. The active-low row masks are `0x1E`, `0x1D`, `0x1B`, `0x17`, and `0x0F` (Rows 0-4).
+    * **Bits 5-7:** The OS uses the unused upper pins of the OUT 3 latch to drive the Handheld LEDs via Persistence of Vision (PoV). It turns the LED bit ON, quickly turns it OFF to scan the matrix row, and turns it back ON. Because the 54Hz timer interrupt runs so fast, the human eye perceives a solid red light.
+* **OUT 7:** Dedicated to external Indicator Relays (e.g., Auto Horn and Possession indicators on a separate header).
 
 ### Input Ports
 * **INP 3:** Matrix Column Reader. Read immediately after an `OUT 3` mask is applied to sense button closures on the active row[cite: 16, 20].
@@ -39,12 +42,11 @@ Instruction decoding for `INP` and `OUT` ports is handled via `N0`, `N1`, and `N
     * **Byte 2 (High):** MSB is 1. Next 5 bits = Address (0-31). Lower 2 bits = MSBs of the 9-bit Data Payload[cite: 17].
 
 ## 4. User Interface (Java View)
-The UI acts as a bridge to the hardware interfaces, visually representing two console models:
-* **MM Model:** 15-button physical keypad layout with 2 indicator LEDs (Power, Main Timer). LCD is disabled/hidden.
-* **MP Model:** 37-button physical keypad layout with 2x16 character LCD (mapped to HD44780 standard based on the Powertip PC-1602F using the ST7066U controller).
-* **Handheld Switches:** UI toggles representing 3-button+LED and 1-button+LED external switch assemblies.
-* **Configuration Menu:** Allows dynamic loading of .hex ROM files, toggling Option Pins (`PGM1`-`PGM5`), and swapping sport-specific button label overlays.
-* **Keypad Matrix Mapping:** The physical hardware utilizes an 8 column x 5 row matrix. The OS drives a walking zero across 5 rows (OUT 3 masks 0x1E, 0x1D, 0x1B, 0x17, 0x0F mapping to Rows 0-4) and reads the active-low columns on INP 3.
+The UI acts as a bridge to the hardware interfaces:
+* **MM / MP Console Models:** JavaFX representations of the physical 15-button and 37-button hardware, complete with the ST7066U 2x16 LCD.
+* **Handheld Switches:** Pop-out windows representing the 3-button and 1-button handhelds. These do not have a dedicated input port. They are wired in parallel directly into the main keypad matrix (Switch 1 = Row 4/Col 7, Switch 2 = Row 4/Col 5, Switch 3 = Row 4/Col 1, Switch 4 = Row 4/Col 3).
+* **Protocol Dictionary:** Dynamic mapping of serial payloads using external `.ini` files (e.g., `Protocol.ini`), translating raw Group/Bank/Word addresses into contextual human-readable descriptions.
+* **NVRAM (Non-Volatile RAM):** Simulates the hardware's VCC battery backup. The emulator serializes the virtual 64KB memory array to a binary `.nvram` file upon JVM termination, allowing the 1802 to perform a warm boot and preserve timer/score states across sessions.
 
 ## 5. Development Roadmap
 * **Phase 1: Virtual CPU Core:** Implement 1802 registers (R0-RF, D, P, X, N, DF, IE, Q) and the fetch-decode-execute cycle. Verify via opcode unit tests.

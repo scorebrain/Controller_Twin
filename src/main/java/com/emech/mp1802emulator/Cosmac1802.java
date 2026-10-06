@@ -499,4 +499,33 @@ public class Cosmac1802 {
             }
         }
     }
+    
+    // --- NON-VOLATILE RAM (BATTERY BACKUP) ---
+    public void saveNVRAM(String filename) {
+        try (java.io.FileOutputStream fos = new java.io.FileOutputStream(filename)) {
+            for (int i = 0; i < memory.length; i++) {
+                fos.write(memory[i]);
+            }
+        } catch (Exception e) {
+            System.err.println("Failed to save NVRAM: " + e.getMessage());
+        }
+    }
+
+    public void loadNVRAM(String filename) {
+        java.io.File file = new java.io.File(filename);
+        if (file.exists()) {
+            try (java.io.FileInputStream fis = new java.io.FileInputStream(file)) {
+                for (int i = 0; i < memory.length; i++) {
+                    int b = fis.read();
+                    if (b == -1) break;
+                    memory[i] = b;
+                }
+                System.out.println("NVRAM restored from " + filename);
+            } catch (Exception e) {
+                System.err.println("Failed to load NVRAM: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Cold boot: No previous NVRAM found.");
+        }
+    }
 }
