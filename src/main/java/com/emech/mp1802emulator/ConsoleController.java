@@ -74,14 +74,14 @@ public class ConsoleController {
     public Circle shotClockLed;
 
     @FXML
-    private Label line1Label;
+    private Label line1LCD;
 
     @FXML
-    private Label line2Label;
-    
+    private Label line2LCD;
+    /*
     @FXML
     private javafx.scene.control.CheckBox jumperCheckBox;
-
+*/
     @FXML
     public void initialize() {
         cpu = new Cosmac1802();
@@ -262,17 +262,17 @@ public class ConsoleController {
     // Called by Cosmac1802.java to push text to the UI
     public void updateLCD(String line1, String line2) {
         Platform.runLater(() -> {
-            line1Label.setText(line1);
-            line2Label.setText(line2);
+            line1LCD.setText(line1);
+            line2LCD.setText(line2);
         });
     }
    
-    @FXML
+/*    @FXML
     public void handleJumperToggle(javafx.event.ActionEvent event) {
         if (cpu != null) {
             cpu.jumperState = jumperCheckBox.isSelected() ? 0x00 : 0xFF;
         }
-    }
+    }  */
 
     // The Universal Button Press Handler
     // 8 columns (0 - 7) x 5 rows (0=Row B, 1=Row C, 2 = Row D, 3=Row E, 5=Row F)
@@ -281,7 +281,7 @@ public class ConsoleController {
         if (cpu != null) {
             javafx.scene.control.Button btn = (javafx.scene.control.Button) event.getSource();
             String data = (String) btn.getUserData();
-            
+            System.out.println(data);
             if (data != null && !data.equals("?,?")) {
                 String[] coords = data.split(",");
                 if (coords.length == 2) {
