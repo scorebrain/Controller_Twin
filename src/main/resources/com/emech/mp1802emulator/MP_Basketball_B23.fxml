@@ -20,21 +20,21 @@
       prefWidth="696"
       prefHeight="510"	  >
     <children>
-		<Rectangle width="222.0" height="76.0" layoutX="337.0" layoutY="38.0" fill="#0022cc" />
-		<Rectangle width="218.0" height="72.0" layoutX="339.0" layoutY="40.0" fill="#d2d9d9" />
+		<Rectangle width="212.0" height="66.0" layoutX="342.0" layoutY="43.0" fill="#023f88" />
+		<Rectangle width="208.0" height="62.0" layoutX="344.0" layoutY="45.0" fill="#d2d9d9" />
 		<Rectangle id="lcd-rectangle" width="200.0" height="54.0" layoutX="348.0" layoutY="49.0"  />
 		<Label id="lcd-text" fx:id="line1LCD" alignment="CENTER" prefWidth="176.0" prefHeight="14.0" layoutX="360.0" layoutY="56.0" text="LINE 1 123456789" />
 		<Label id="lcd-text" fx:id="line2LCD" alignment="CENTER" prefWidth="176.0" prefHeight="14.0" layoutX="360.0" layoutY="76.0" text="LINE 2 987654321" />
 		
-		<Rectangle width="234.0" height="118.0" layoutX="46.0" layoutY="96.0" fill="#0022cc" />
-		<Rectangle width="234.0" height="60.0" layoutX="46.0" layoutY="238.0" fill="#0022cc" />
-		<Rectangle width="234.0" height="60.0" layoutX="46.0" layoutY="322.0" fill="#0022cc" />
-		<Rectangle width="176.0" height="234.0" layoutX="360.0" layoutY="148.0" fill="#0022cc" />
-		<Rectangle width="60.0" height="234.0" layoutX="592.0" layoutY="148.0" fill="#0022cc" />
-		<Rectangle width="60.0" height="60.0" layoutX="46.0" layoutY="406.0" fill="#0022cc" />
-		<Rectangle width="60.0" height="60.0" layoutX="162.0" layoutY="406.0" fill="#0022cc" />
-		<Rectangle width="60.0" height="60.0" layoutX="319.0" layoutY="406.0" fill="#0022cc" />
-		<Rectangle width="60.0" height="60.0" layoutX="476.0" layoutY="406.0" fill="#0022cc" />
+		<Rectangle width="234.0" height="118.0" layoutX="46.0" layoutY="96.0" fill="#023f88" />
+		<Rectangle width="234.0" height="60.0" layoutX="46.0" layoutY="238.0" fill="#023f88" />
+		<Rectangle width="234.0" height="60.0" layoutX="46.0" layoutY="322.0" fill="#023f88" />
+		<Rectangle width="176.0" height="234.0" layoutX="360.0" layoutY="148.0" fill="#023f88" />
+		<Rectangle width="60.0" height="234.0" layoutX="592.0" layoutY="148.0" fill="#023f88" />
+		<Rectangle width="60.0" height="60.0" layoutX="46.0" layoutY="406.0" fill="#023f88" />
+		<Rectangle width="60.0" height="60.0" layoutX="162.0" layoutY="406.0" fill="#023f88" />
+		<Rectangle width="60.0" height="60.0" layoutX="319.0" layoutY="406.0" fill="#023f88" />
+		<Rectangle width="60.0" height="60.0" layoutX="476.0" layoutY="406.0" fill="#023f88" />
 		<Rectangle width="60.0" height="60.0" layoutX="592.0" layoutY="406.0" fill="#cc2200" />
 		
 		<Rectangle width="56.0" height="56.0" layoutX="48.0" layoutY="98.0" fill="#d2d9d9" />
@@ -121,143 +121,155 @@
 		<Button userData="6,4" id="button-white" layoutX="479.0" layoutY="409.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
 		<Button userData="7,4" id="button-white" layoutX="595.0" layoutY="409.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
 		
-		<Label prefWidth="200.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="348.0" layoutY="120.0" text="BASKETBALL" />
+		<Label prefWidth="296.0" prefHeight="18.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="44.0" layoutY="24.0" text="ELECTRO-MECH SCOREBOARD CO." />
+		<Label prefWidth="296.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 9px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="44.0" layoutY="42.0" text="P.O. BOX 102  #3 INDUSTRIAL PARKWAY" />
+		<Label prefWidth="296.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 9px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="44.0" layoutY="54.0" text="WRIGHTSVILL, GA  31096" />
+		<Label prefWidth="296.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 9px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="44.0" layoutY="66.0" text="(912) 864-3366" />
+		<Label prefWidth="316.0" prefHeight="18.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="290.0" layoutY="118.0" text="BASKETBALL/WRESTLING/VOLLEYBALL" />
 			
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="49.0" layoutY="99.0" text="SET CLOCK" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="107.0" layoutY="99.0" text="SET CLOCK .1 SEC" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="165.0" layoutY="99.0" text=".1 SEC ON /&#10;OFF" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="223.0" layoutY="99.0" text="CLOCK UP / DOWN" />
 			
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="49.0" layoutY="157.0" text="SHOT TIMER" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="49.0" layoutY="157.0" text="SET SHOT TIMER" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="107.0" layoutY="157.0" text="AUTO HORN" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="165.0" layoutY="157.0" text="TIME&#10;OF&#10;DAY" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="223.0" layoutY="157.0" text="TIME OUT TIMER" />
 		
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="49.0" layoutY="241.0" text="SET GUEST SCORES" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="49.0" layoutY="241.0" text="SET GUEST SCORE" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="107.0" layoutY="241.0" text="SET HOME SCORES" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="107.0" layoutY="241.0" text="SET HOME SCORE" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="165.0" layoutY="241.0" text="PLAYER MATCH GAME" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="223.0" layoutY="241.0" text="PLAYER FOUL" />
 			
 		<Label prefWidth="46.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: right; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: right; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="53.0" layoutY="325.0" text="TEAM MATCH GAMES" />
 		<Label prefWidth="9.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: left; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: left; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="49.0" layoutY="325.0" text="(&#10;(&#10;(" />
 		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="51.0" layoutY="382.0" text="GUEST" />
-		
+		<Rectangle width="4.0" height="42.0" layoutX="103.0" layoutY="331.0" fill="#d2d9d9" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: left; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: left; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="110.0" layoutY="325.0" text="FOULS POINTS WON" />
 		<Label prefWidth="9.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: right; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: right; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="151.0" layoutY="325.0" text=")&#10;)&#10;)" />
 		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="107.0" layoutY="382.0" text="HOME" />
 		
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="165.0" layoutY="325.0" text="GUEST BONUS" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="223.0" layoutY="325.0" text="HOME BONUS" />
 			
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="595.0" layoutY="151.0" text="SET HOME FOULS" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="595.0" layoutY="209.0" text="NEW GAME" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="595.0" layoutY="267.0" text="SET GUEST FOULS" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="595.0" layoutY="325.0" text="QTR.&#10;+1" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="595.0" layoutY="325.0" text="QTR" />
 			
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="49.0" layoutY="409.0" text="GUEST SCORES +1" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="49.0" layoutY="409.0" text="GUEST SCORE +1" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="165.0" layoutY="409.0" text="HOME SCORES +1" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="165.0" layoutY="409.0" text="HOME SCORE +1" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="322.0" layoutY="409.0" text="POSS" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="322.0" layoutY="409.0" text="NEXT&#10;POSS" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
-			layoutX="479.0" layoutY="409.0" text="HORN" />
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="479.0" layoutY="409.0" text="HORN ON /&#10;OFF" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
 			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #cc2200;"
 			layoutX="595.0" layoutY="409.0" text="CLOCK ON /&#10;OFF" />
 			
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="363.0" layoutY="151.0" text="7" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="421.0" layoutY="151.0" text="8" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="479.0" layoutY="151.0" text="9" />
 		
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="363.0" layoutY="209.0" text="4" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="421.0" layoutY="209.0" text="5" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="479.0" layoutY="209.0" text="6" />
 		
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="363.0" layoutY="267.0" text="1" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="421.0" layoutY="267.0" text="2" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="479.0" layoutY="267.0" text="3" />
 		
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="363.0" layoutY="325.0" text="CLEAR" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="421.0" layoutY="325.0" text="0" />
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
-			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #0022cc;"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="479.0" layoutY="325.0" text="ENTER" />
 		
 	</children>
