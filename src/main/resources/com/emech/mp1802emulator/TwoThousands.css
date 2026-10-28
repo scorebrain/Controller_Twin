@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 12, 2020, 9:04:22 PM
+    Author     : CMcMichael
+*/
+
+/* No point in setting a color/fill here
+/* You can control most font details and background color at the container level
+/*    but you control font color at the Label/Text level
+*/
+
+#keypad-gray {
+    -fx-background-color: 
+        #bbbbbb;
+}
+
+#button-white {
+	-fx-pref-width: 54;
+	-fx-pref-height: 54;
+	-fx-background-color: #ffffff;
+}
+
+#button-white:hover {
+    -fx-background-color: 
+        #c9ccde;
+}
+
+#button-white:pressed {
+-fx-background-color: 
+        #c0aeca;
+}
+
+#lcd-rectangle {
+
+    -fx-arc-height: 5;
+    -fx-arc-width: 5;
+    -fx-fill: 
+        linear-gradient(#8dc63f, #9de64f);
+    -fx-stroke-width: 3;
+    -fx-stroke-type: centered;
+    -fx-stroke: linear-gradient(#999999, #666666);
+}
+
+#lcd-text {
+    -fx-font-family: "Courier New";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3d1f4d;
+	-fx-text-alignment: center;
+}
+
+

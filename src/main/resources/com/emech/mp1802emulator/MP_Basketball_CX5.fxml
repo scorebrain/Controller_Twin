@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.SVGPath?>
+
+<Pane style="-fx-background-color: #bbbbbb;" 
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.emech.mp1802emulator.ConsoleController"
+	  stylesheets="@TwoThousands.css"
+      prefWidth="696"
+      prefHeight="510"	  >
+    <children>
+	
+		<!-- Logo (scaled from original SVG) -->
+		<SVGPath content="M62.6146 ,77.9993c-2.1519 ,0 -4.0146 -1.457 -4.5367 -3.5419l-8.1633 -32.6496c-0.3528 -1.4041 -0.0423 -2.8646 ,0.8502 -4.0076 ,0.8961 -1.1465 ,2.2401 -1.7992 ,3.6865 -1.7992h225.5982c1.4499 ,0 ,2.7905 ,0.6562 ,3.683 ,1.7956 ,0.8925 ,1.1465 ,1.203 ,2.6106 ,0.8537 ,4.0146l-8.1633 ,32.6496c-0.5221 ,2.0849 -2.3848 ,3.5419 -4.5367 ,3.5419H62.6146Z" fill="#222222"/>
+		<SVGPath content="M62.6146 ,76.4753c-1.4464 ,0 -2.7058 -0.9807 -3.0551 -2.3848l-8.1633 -32.6496c-0.2364 -0.9454 -0.0282 -1.9297 ,0.5715 -2.7023 ,0.6033 -0.7726 ,1.5099 -1.2136 ,2.4836 -1.2136h225.5982c0.9772 ,0 ,1.8803 ,0.441 ,2.4836 ,1.21 ,0.6033 ,0.7726 ,0.8114 ,1.7568 ,0.575 ,2.7058l-8.1633 ,32.6496c-0.3493 ,1.4041 -1.6087 ,2.3848 -3.0551 ,2.3848H62.6146Z" fill="#ffffff"/>
+		<SVGPath content="M62.6146 ,74.9478c-0.7444 ,0 -1.3935 -0.508 -1.5769 -1.2312l-8.1633 -32.6496c-0.1199 -0.4833 -0.0106 -0.9984 0.2963 -1.3935 0.3069 -0.3951 ,0.7796 -0.6244 ,1.2806 -0.6244h225.5982c0.5009 ,0 ,0.9737 0.2293 ,1.2806 ,0.6244 0.3069 ,0.3951 ,0.4163 ,0.9102 0.2963 ,1.3935l-8.1633 ,32.6496c-0.1799 ,0.7232 -0.829 ,1.2312 -1.5769 ,1.2312H62.6146Z" fill="#a32035"/>
+		<Polygon points="277.4849,60.5897,277.6648,59.8735,56.8361,59.8735,57.016,60.5897,277.4849,60.5897" fill="#ffffff"/>
+		<Circle centerX="78.0381" centerY="57.0019" radius="14.3616" fill="#ffffff"/>
+		<SVGPath content="M78.0381 ,40.4884c-9.1193 ,0 -16.5136 ,7.3942 -16.5136 ,16.5136s7.3942 ,16.5136 ,16.5136 ,16.5136 ,16.5136 -7.3942 ,16.5136 -16.5136 -7.3942 -16.5136 -16.5136 -16.5136ZM73.9071 ,67.8358l-4.1275 -2.5788v-16.5136l4.1275 -2.5788v21.6747ZM80.0983 ,69.1269l-2.0638 ,1.2912 -2.0638 -1.2912v-24.2535l2.0638 -1.2912 ,2.0638 ,1.2912v24.2535ZM86.2931 ,65.2569l-4.1275 ,2.5788v-21.6747l4.1275 ,2.5788v16.5136Z" fill="#222222"/>
+		<SVGPath content="M111.6932 ,46.0023h-7.359v2.5365h5.7856v2.3283h-5.7856v2.6988h7.359v2.4448h-11.0384v-12.3649h11.0384v2.3566Z" fill="#ffffff"/>
+		<SVGPath content="M118.6958 ,53.5659h6.1489v2.4448h-9.8143v-12.3649h3.6689v9.9201Z" fill="#ffffff"/>
+		<SVGPath content="M138.8994 ,46.0023h-7.359v2.5365h5.7856v2.3283h-5.7856v2.6988h7.359v2.4448h-11.0384v-12.3649h11.0384v2.3566Z" fill="#ffffff"/>
+		<SVGPath content="M154.6968 ,48.2495l-3.7924 0.1905c-0.0529 -1.7463 -0.9031 -2.6176 -2.5541 -2.6176 -1.8909 ,0 -2.8363 ,1.3441 -2.8363 ,4.0323 ,0 ,1.5522 0.2575 ,2.6035 ,0.7726 ,3.1574 ,0.5151 ,0.5539 ,1.2312 ,0.829 ,2.1555 ,0.829 ,1.4958 ,0 ,2.413 -0.7796 ,2.7446 -2.3354l3.5101 0.1729c-0.2258 ,1.4781 -0.9137 ,2.6035 -2.0673 ,3.3726 -1.1501 ,0.7691 -2.5612 ,1.1536 -4.2298 ,1.1536 -2.0461 ,0 -3.7077 -0.5644 -4.9883 -1.6933 -1.2806 -1.1289 -1.9191 -2.6917 -1.9191 -4.6849 ,0 -1.8662 ,0.6174 -3.3937 ,1.8556 -4.5826 ,1.2383 -1.1889 ,2.9281 -1.7851 ,5.073 -1.7851 ,3.7148 ,0 ,5.8032 ,1.5981 ,6.2724 ,4.7907Z" fill="#ffffff"/>
+		<SVGPath content="M167.732 ,43.6493v2.4448h-3.8276v9.9166h-3.6689v-9.9166h-3.8488v-2.4448h11.3454Z" fill="#ffffff"/>
+		<SVGPath content="M174.0891 ,51.1141v4.9001h-3.6442v-12.3649h6.7945c1.2524 ,0 ,2.2578 0.1164 ,3.0163 0.3493 ,0.7585 0.2328 ,1.3864 ,0.6597 ,1.8838 ,1.2806 ,0.4974 ,0.6209 ,0.7479 ,1.3123 ,0.7479 ,2.0708 ,0 ,1.4852 -0.8961 ,2.5506 -2.6846 ,3.1962l2.854 ,5.4681h-4.0005l-2.3742 -4.9001h-2.5929ZM174.0891 ,45.8506v3.1503h2.219c0.7232 ,0 ,1.2524 -0.0388 ,1.5804 -0.1235 0.3281 -0.0811 ,0.6209 -0.2611 ,0.8784 -0.5433 0.2575 -0.2822 ,0.3845 -0.6033 ,0.3845 -0.9666s-0.127 -0.6526 -0.3845 -0.9243c-0.2575 -0.2716 -0.5362 -0.441 -0.8396 -0.5045s-0.8678 -0.0953 -1.6969 -0.0953h-2.1414Z" fill="#ffffff"/>
+		<SVGPath content="M192.3383 ,56.2011c-2.0814 ,0 -3.6936 -0.6244 -4.8295 -1.8733 -1.1395 -1.2488 -1.7074 -2.7623 -1.7074 -4.5367s0.5786 -3.3126 ,1.7321 -4.5191 ,2.7975 -1.8133 ,4.9318 -1.8133 ,3.7853 ,0.6456 ,4.8825 ,1.9332c1.0971 ,1.2912 ,1.6475 ,2.7623 ,1.6475 ,4.4238 ,0 ,1.7921 -0.5644 ,3.3055 -1.6969 ,4.5367 -1.1324 ,1.2312 -2.7834 ,1.8486 -4.9565 ,1.8486ZM192.4406 ,45.8224c-1.8979 ,0 -2.8469 ,1.3335 -2.8469 ,4.004s0.949 ,4.0111 ,2.8469 ,4.0111 ,2.7587 -1.3335 ,2.7587 -4.004 -0.9172 -4.0111 -2.7587 -4.0111Z" fill="#ffffff"/>
+		<SVGPath content="M201.2389 ,50.3238h5.4116v1.965h-5.4116v-1.965Z" fill="#ffffff"/>
+		<SVGPath content="M216.4895 ,56.0142l-3.8135 -10.0824v10.0824h-3.0339v-12.3649h5.6374l2.7129 ,7.4013 ,2.854 -7.4013h5.655v12.3649h-3.6442v-10.0824l-3.8876 ,10.0824h-2.4765Z" fill="#ffffff"/>
+		<SVGPath content="M241.7802 ,46.0023h-7.359v2.5365h5.7856v2.3283h-5.7856v2.6988h7.359v2.4448h-11.0384v-12.3649h11.0384v2.3566Z" fill="#ffffff"/>
+		<SVGPath content="M257.5776 ,48.2495l-3.7924 0.1905c-0.0529 -1.7463 -0.9031 -2.6176 -2.5541 -2.6176 -1.8909 ,0 -2.8363 ,1.3441 -2.8363 ,4.0323 ,0 ,1.5522 0.2575 ,2.6035 ,0.7726 ,3.1574 ,0.5151 ,0.5539 ,1.2312 ,0.829 ,2.1555 ,0.829 ,1.4958 ,0 ,2.413 -0.7796 ,2.7446 -2.3354l3.5101 0.1729c-0.2258 ,1.4781 -0.9137 ,2.6035 -2.0673 ,3.3726 -1.1501 ,0.7691 -2.5612 ,1.1536 -4.2298 ,1.1536 -2.0461 ,0 -3.7077 -0.5644 -4.9883 -1.6933 -1.2806 -1.1289 -1.9191 -2.6917 -1.9191 -4.6849 ,0 -1.8662 ,0.6174 -3.3937 ,1.8556 -4.5826s2.9281 -1.7851 ,5.073 -1.7851c3.7148 ,0 ,5.8032 ,1.5981 ,6.2724 ,4.7907Z" fill="#ffffff"/>
+		<SVGPath content="M272.7541 ,43.6493v12.3649h-3.556v-5.1012h-4.8225v5.1012h-3.556v-12.3649h3.556v4.819h4.8225v-4.819h3.556Z" fill="#ffffff"/>
+		<SVGPath content="M104.2178 ,71.5011c-1.8309 ,0 -3.0586 -0.6914 -3.6583 -2.0567l-0.1482 -0.3387 ,1.524 -0.2787 0.0917 0.2187c0.3281 ,0.7867 ,1.0372 ,1.1712 ,2.1696 ,1.1712 ,0.5927 ,0 ,1.0336 -0.0953 ,1.3159 -0.2822 0.2505 -0.1693 ,0.3669 -0.3739 ,0.3669 -0.6491 ,0 -0.187 -0.0776 -0.321 -0.2505 -0.4374 -0.2187 -0.1482 -0.4763 -0.254 -0.7655 -0.3104l-1.6545 -0.3246c-0.448 -0.0917 -0.822 -0.2046 -1.1148 -0.3387 -0.3175 -0.1446 -0.5891 -0.3669 -0.8079 -0.6668 -0.2258 -0.3069 -0.3422 -0.6632 -0.3422 -1.0619 ,0 -0.6562 0.3069 -1.1853 ,0.9172 -1.5663 ,0.5644 -0.3563 ,1.2912 -0.5362 ,2.159 -0.5362 ,1.6228 ,0 ,2.7058 ,0.6068 ,3.2279 ,1.8062l0.1376 0.321 -1.5487 ,0.3669 -0.0741 -0.2716c-0.0847 -0.3069 -0.2893 -0.5327 -0.6174 -0.695 -0.3598 -0.1764 -0.7514 -0.2681 -1.1606 -0.2681s-0.7585 0.0847 -1.0689 0.2505c-0.3387 0.1834 -0.3775 ,0.4057 -0.3775 ,0.5574 ,0 ,0.3281 ,0.3704 ,0.5644 ,1.1042 ,0.7056l1.5416 0.2893c1.5628 0.2999 ,2.3566 ,1.0089 ,2.3566 ,2.1131 ,0 ,0.6668 -0.3104 ,1.2277 -0.9172 ,1.6651 -0.5786 ,0.4128 -1.3899 ,0.6244 -2.413 ,0.6244Z" fill="#bbbbbb"/>
+		<SVGPath content="M114.1062 ,71.5011c-1.1289 ,0 -2.0285 -0.3739 -2.6776 -1.1113 -0.6421 -0.7267 -0.9666 -1.6298 -0.9666 -2.6846s0.3422 -1.9897 ,1.0195 -2.6599c0.6738 -0.6703 ,1.584 -1.0089 ,2.7058 -1.0089 ,1.6828 ,0 ,2.7834 ,0.7832 ,3.2632 ,2.3319l0.0988 0.321 -1.5522 0.2469 -0.0776 -0.2328c-0.314 -0.9278 -0.8819 -1.3794 -1.7392 -1.3794 -0.6456 ,0 -1.1254 0.2046 -1.4711 ,0.6279 -0.3563 ,0.4339 -0.5362 ,1.0654 -0.5362 ,1.8733 ,0 ,0.7338 0.1834 ,1.33 ,0.5503 ,1.7604 ,0.3563 ,0.4233 ,0.8184 ,0.6279 ,1.4111 ,0.6279 ,0.9172 ,0 ,1.5134 -0.4763 ,1.8168 -1.4499l0.0776 -0.2469 ,1.524 0.2752 -0.0988 0.314c-0.4939 ,1.5875 -1.6157 ,2.3954 -3.3408 ,2.3954Z" fill="#bbbbbb"/>
+		<SVGPath content="M123.7829 ,71.5011c-1.143 ,0 -2.0496 -0.3669 -2.6988 -1.0866 -0.6385 -0.7126 -0.9631 -1.5946 -0.9631 -2.6247s0.3422 -1.9756 ,1.0125 -2.6811c0.6773 -0.7091 ,1.5769 -1.0689 ,2.6811 -1.0689s1.9967 ,0.3528 ,2.667 ,1.0513c0.6703 ,0.695 ,1.0089 ,1.5769 ,1.0089 ,2.6282s-0.3281 ,1.8909 -0.9701 ,2.6388c-0.6562 ,0.7585 -1.5734 ,1.1465 -2.7376 ,1.1465ZM123.8005 ,65.2993c-0.6209 ,0 -1.0971 0.2152 -1.457 ,0.6632 -0.3704 ,0.4586 -0.5574 ,1.076 -0.5574 ,1.8309s0.1905 ,1.3406 ,0.5644 ,1.7956c0.3634 ,0.441 ,0.8431 ,0.6562 ,1.457 ,0.6562s1.1113 -0.2223 ,1.464 -0.6773c0.3669 -0.4727 ,0.5503 -1.0971 ,0.5503 -1.8556s-0.187 -1.3794 -0.5574 -1.7992c-0.3669 -0.4128 -0.8467 -0.6138 -1.4605 -0.6138Z" fill="#bbbbbb"/>
+		<SVGPath content="M135.9149 ,71.3671l-1.524 -2.861h-1.9015v2.861h-1.5522v-7.1932h3.549c0.956 ,0 ,1.6828 0.2187 ,2.159 ,0.6526 ,0.4868 ,0.441 ,0.7338 ,0.9384 ,0.7338 ,1.4817 ,0 ,0.4128 -0.1411 ,0.8114 -0.4128 ,1.1853 -0.2223 0.2999 -0.5539 ,0.5327 -0.9913 ,0.695l1.6828 ,3.1785h-1.7463ZM134.3592 ,67.2466c0.4939 ,0 ,0.8608 -0.0988 ,1.083 -0.2893 0.2152 -0.1834 0.3175 -0.4022 0.3175 -0.6632s-0.0988 -0.4304 -0.314 -0.568c-0.2469 -0.1623 -0.5715 -0.2434 -0.9631 -0.2434h-1.9967v1.7639h1.8697Z" fill="#bbbbbb"/>
+		<Polygon points="141.0126,71.3671,141.0126,64.1739,146.8264,64.1739,146.8264,65.4827,142.6318,65.4827,142.6318,66.9997,145.9621,66.9997,145.9621,68.2556,142.6318,68.2556,142.6318,70.0547,146.9428,70.0547,146.9428,71.3671,141.0126,71.3671" fill="#bbbbbb"/>
+		<SVGPath content="M150.2836 ,71.3671v-7.1932h3.5595c0.889 ,0 ,1.5663 0.1834 ,2.0144 ,0.5503 ,0.4657 ,0.3775 ,0.7056 ,0.8326 ,0.7056 ,1.3476 ,0 ,0.4763 -0.1729 ,1.0619 -0.889 ,1.4676 0.2575 0.1235 ,0.4763 0.2787 ,0.6456 ,0.4657 0.3316 ,0.3634 ,0.5009 ,0.7796 ,0.5009 ,1.2383 ,0 ,0.6103 -0.2575 ,1.1254 -0.7655 ,1.5346 -0.4904 ,0.3916 -1.2312 ,0.5891 -2.2084 ,0.5891h-3.5595ZM153.7902 ,70.0547c0.4763 ,0 ,0.8396 -0.0882 ,1.083 -0.2611 0.2187 -0.1552 0.321 -0.3387 0.321 -0.5821 ,0 -0.1799 -0.0494 -0.3422 -0.1517 -0.4939 -0.1023 -0.1552 -0.2469 -0.2752 -0.441 -0.3634 -0.2011 -0.0917 -0.5256 -0.1376 -0.9631 -0.1376h-1.7709v1.838h1.9226ZM153.3704 ,67.0067c0.8749 ,0 ,1.1889 -0.1658 ,1.2982 -0.2646 0.187 -0.1729 0.2787 -0.3634 0.2787 -0.5856 ,0 -0.2046 -0.0882 -0.3634 -0.2787 -0.4974 -0.2187 -0.1517 -0.5644 -0.2293 -1.0336 -0.2293h-1.7709v1.5769h1.5064Z" fill="#bbbbbb"/>
+		<SVGPath content="M163.3999 ,71.5011c-1.143 ,0 -2.0496 -0.3669 -2.6988 -1.0866 -0.6385 -0.7126 -0.9631 -1.5946 -0.9631 -2.6247s0.3422 -1.9756 ,1.0125 -2.6811c0.6773 -0.7091 ,1.5769 -1.0689 ,2.6811 -1.0689s1.9967 ,0.3528 ,2.667 ,1.0513c0.6703 ,0.695 ,1.0089 ,1.5769 ,1.0089 ,2.6282s-0.3281 ,1.8909 -0.9701 ,2.6388c-0.6562 ,0.7585 -1.5734 ,1.1465 -2.7376 ,1.1465ZM163.4175 ,65.2993c-0.6209 ,0 -1.0971 0.2152 -1.457 ,0.6632 -0.3704 ,0.4586 -0.5574 ,1.076 -0.5574 ,1.8309s0.1905 ,1.3406 ,0.5644 ,1.7956c0.3634 ,0.441 ,0.8431 ,0.6562 ,1.457 ,0.6562s1.1113 -0.2223 ,1.464 -0.6773c0.3669 -0.4727 ,0.5503 -1.0971 ,0.5503 -1.8556s-0.187 -1.3794 -0.5574 -1.7992c-0.3669 -0.4128 -0.8467 -0.6138 -1.4605 -0.6138Z" fill="#bbbbbb"/>
+		<SVGPath content="M174.9393 ,71.3671l-0.8326 -1.9332h-2.6741l-0.7408 ,1.9332h-1.4993l2.921 -7.1932h1.5628l2.9422 ,7.1932h-1.6828ZM173.6481 ,68.2309l-0.8467 -2.1026 -0.8467 ,2.1026h1.6933Z" fill="#bbbbbb"/>
+		<SVGPath content="M184.4255 ,71.3671l-1.524 -2.861h-1.9015v2.861h-1.5522v-7.1932h3.549c0.956 ,0 ,1.6828 0.2187 ,2.159 ,0.6526 ,0.4868 ,0.441 ,0.7338 ,0.9384 ,0.7338 ,1.4817 ,0 ,0.4128 -0.1411 ,0.8114 -0.4128 ,1.1853 -0.2223 0.2999 -0.5539 ,0.5327 -0.9913 ,0.695l1.6828 ,3.1785h-1.7463ZM182.8733 ,67.2466c0.4939 ,0 ,0.8608 -0.0988 ,1.083 -0.2893 0.2152 -0.1834 0.3175 -0.4022 0.3175 -0.6632s-0.0988 -0.4304 -0.314 -0.568c-0.2469 -0.1623 -0.5715 -0.2434 -0.9631 -0.2434h-1.9967v1.7639h1.8697Z" fill="#bbbbbb"/>
+		<SVGPath content="M189.5267 ,71.3671v-7.1932h3.0621c1.2383 ,0 ,2.226 0.3493 ,2.9281 ,1.0372 ,0.7056 ,0.6879 ,1.0619 ,1.5452 ,1.0619 ,2.5435s-0.3493 ,1.8697 -1.0336 ,2.5647c-0.6879 ,0.695 -1.5663 ,1.0478 -2.6176 ,1.0478h-3.4043ZM192.5288 ,70.0794c0.8008 ,0 ,1.4076 -0.2152 ,1.8098 -0.6421 ,0.4092 -0.441 ,0.6103 -1.0089 ,0.6103 -1.7427 ,0 -0.5856 -0.194 -1.1007 -0.5891 -1.5699 -0.3845 -0.4551 -0.9843 -0.6773 -1.8309 -0.6773h-1.3864v4.632h1.3864Z" fill="#bbbbbb"/>
+		<SVGPath content="M208.7284 ,71.5011c-1.1289 ,0 -2.0285 -0.3739 -2.6776 -1.1113 -0.6421 -0.7267 -0.9666 -1.6298 -0.9666 -2.6846s0.3422 -1.9897 ,1.0195 -2.6599c0.6738 -0.6703 ,1.584 -1.0089 ,2.7058 -1.0089 ,1.6828 ,0 ,2.7834 ,0.7832 ,3.2632 ,2.3319l0.0988 0.321 -1.5522 0.2469 -0.0776 -0.2328c-0.314 -0.9278 -0.8819 -1.3794 -1.7392 -1.3794 -0.6456 ,0 -1.1254 0.2046 -1.4711 ,0.6279 -0.3563 ,0.4339 -0.5362 ,1.0654 -0.5362 ,1.8733 ,0 ,0.7338 0.1834 ,1.33 ,0.5503 ,1.7604 ,0.3563 ,0.4233 ,0.8184 ,0.6279 ,1.4111 ,0.6279 ,0.9172 ,0 ,1.5134 -0.4763 ,1.8168 -1.4499l0.0776 -0.2469 ,1.524 0.2752 -0.0988 0.314c-0.4939 ,1.5875 -1.6157 ,2.3954 -3.3408 ,2.3954Z" fill="#bbbbbb"/>
+		<SVGPath content="M218.4016 ,71.5011c-1.143 ,0 -2.0496 -0.3669 -2.6988 -1.0866 -0.6385 -0.7126 -0.9631 -1.5946 -0.9631 -2.6247s0.3422 -1.9756 ,1.0125 -2.6811c0.6773 -0.7091 ,1.5769 -1.0689 ,2.6811 -1.0689s1.9967 ,0.3528 ,2.667 ,1.0513c0.6703 ,0.695 ,1.0089 ,1.5769 ,1.0089 ,2.6282s-0.3281 ,1.8909 -0.9701 ,2.6388c-0.6562 ,0.7585 -1.5734 ,1.1465 -2.7376 ,1.1465ZM218.4227 ,65.2993c-0.6209 ,0 -1.0971 0.2152 -1.457 ,0.6632 -0.3704 ,0.4586 -0.5574 ,1.076 -0.5574 ,1.8309s0.1905 ,1.3406 ,0.5644 ,1.7956c0.3634 ,0.441 ,0.8431 ,0.6562 ,1.457 ,0.6562s1.1113 -0.2223 ,1.464 -0.6773c0.3669 -0.4727 ,0.5503 -1.0971 ,0.5503 -1.8556s-0.187 -1.3794 -0.5574 -1.7992c-0.3669 -0.4128 -0.8467 -0.6138 -1.4605 -0.6138Z" fill="#bbbbbb"/>
+		<Polygon points="232.5339,71.3671,232.5339,66.6222,230.329,71.3671,229.2566,71.3671,227.0199,66.6081,227.0199,71.3671,225.5594,71.3671,225.5594,64.1739,227.5668,64.1739,229.8775,69.0599,232.1282,64.1739,234.1214,64.1739,234.1214,71.3671,232.5339,71.3671" fill="#bbbbbb"/>
+		<SVGPath content="M238.0795 ,71.3671v-7.1932h3.2209c0.9878 ,0 ,1.7357 0.2258 ,2.226 ,0.6738 ,0.4974 ,0.4551 ,0.7479 ,0.9843 ,0.7479 ,1.5769 ,0 ,0.6597 -0.2752 ,1.21 -0.822 ,1.6404 -0.5256 ,0.4092 -1.2136 ,0.6174 -2.0426 ,0.6174h-1.711v2.6811h-1.6193ZM241.3075 ,67.4124c0.4198 ,0 ,0.7549 -0.0988 ,1.0019 -0.2893 0.2293 -0.1799 0.3351 -0.4022 0.3351 -0.6985 ,0 -0.2505 -0.1023 -0.4692 -0.3104 -0.6703s-0.5292 -0.3069 -0.9525 -0.3069h-1.6828v1.965h1.6087Z" fill="#bbbbbb"/>
+		<SVGPath content="M251.6015 ,71.3671l-0.8326 -1.9332h-2.6741l-0.7408 ,1.9332h-1.4993l2.921 -7.1932h1.5628l2.9422 ,7.1932h-1.6828ZM250.3104 ,68.2309l-0.8467 -2.1026 -0.8467 ,2.1026h1.6933Z" fill="#bbbbbb"/>
+		<SVGPath content="M261.3347 ,71.3671l-3.803 -5.1294v5.1294h-1.4182v-7.1932h1.7357l3.5313 ,4.7625v-4.7625h1.4005v7.1932h-1.4429Z" fill="#bbbbbb"/>
+		<Polygon points="268.3479,71.3671,268.3479,68.3896,265.3035,64.1739,267.2473,64.1739,269.2899,67.0032,271.3501,64.1739,273.0117,64.1739,269.9672,68.3896,269.9672,71.3671,268.3479,71.3671" fill="#bbbbbb"/>
+
+			<!-- Main Outline -->
+		<SVGPath content="M667.5026,77.9993h-114.0003v1.4993h114.0003c5.7891,0,10.5022,4.7096,10.5022,10.4987v390c0,5.7891-4.7096,10.4987-10.5022,10.4987H28.501c-5.7891,0-10.5022-4.7096-10.5022-10.4987V30.0003c0-5.7891,4.7096-10.4987,10.5022-10.4987h279.0018c5.7891,0,10.5022,4.7096,10.5022,10.4987v30.0003c0,10.7527,8.7489,19.5016,19.4981,19.5016h6.0008v-1.4993h-6.0008c-9.9413,0-17.9988-8.0575-17.9988-17.9988v-30.0003c0-6.6005-5.401-12.0015-12.0015-12.0015H28.501c-6.6005,0-12.0015,5.401-12.0015,12.0015v450.0006c0,6.6005,5.401,12.0015,12.0015,12.0015h639.0016c6.6005,0,12.0015-5.401,12.0015-12.0015V90.0008c0-6.6005-5.401-12.0015-12.0015-12.0015Z" fill="#222222"/>
+		
+		<!-- Title Outline -->
+		<SVGPath content="M667.5026,17.9988h-329.9995c-6.6005,0-12.0015,5.401-12.0015,12.0015v30.0003c0,6.6005,5.401,12.0015,12.0015,12.0015h4.5015v-1.4993h-4.5015c-5.7891,0-10.4987-4.7096-10.4987-10.4987v-30.0003c0-5.7891,4.7096-10.4987,10.4987-10.4987h329.9995c5.7891,0,10.5022,4.7096,10.5022,10.4987v30.0003c0,5.7891-4.7096,10.4987-10.5022,10.4987h-112.501v1.4993h112.501c6.6005,0,12.0015-5.401,12.0015-12.0015v-30.0003c0-6.6005-5.401-12.0015-12.0015-12.0015Z" fill="#222222"/>
+		
+		<!-- LCD Outline -->
+		<SVGPath content="M541.5007,37.5003h-185.9989c-7.4436,0-13.5008,6.0572-13.5008,13.5008v47.999c0,7.4436,6.0572,13.5008,13.5008,13.5008h185.9989c7.4436,0,13.5008-6.0572,13.5008-13.5008v-47.999c0-7.4436-6.0572-13.5008-13.5008-13.5008ZM553.5022,99.0002c0,6.6181-5.3834,12.0015-12.0015,12.0015h-185.9989c-6.6181,0-11.998-5.3834-11.998-12.0015v-47.999c0-6.6181,5.3834-12.0015,11.998-12.0015h185.9989c6.6181,0,12.0015,5.3834,12.0015,12.0015v47.999Z" fill="#222222"/>
+		
+		<!-- LCD Area -->
+		<Rectangle id="lcd-rectangle" width="200.0" height="54.0" layoutX="348.5" layoutY="48.0"  />
+		<Label id="lcd-text" fx:id="line1LCD" alignment="CENTER" prefWidth="176.0" prefHeight="14.0" layoutX="360.5" layoutY="56.0" text="LINE 1 123456789" />
+		<Label id="lcd-text" fx:id="line2LCD" alignment="CENTER" prefWidth="176.0" prefHeight="14.0" layoutX="360.5" layoutY="76.0" text="LINE 2 987654321" />
+		
+		<!-- 0,0 through 3,0 [SET CLOCK], etc. -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="45.75" layoutY="120.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="47.25" layoutY="122.25" fill="#ffffff" />
+		<Button userData="0,0" id="button-white" layoutX="48.0" layoutY="123.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="123.0" text="SET&#10;CLOCK" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="107.25" layoutY="120.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="108.75" layoutY="122.25" fill="#ffffff" />
+		<Button userData="1,0" id="button-white" layoutX="109.5" layoutY="123.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="109.5" layoutY="123.0" text="SET&#10;CLOCK&#10;.1 SEC" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="168.75" layoutY="120.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="170.25" layoutY="122.25" fill="#ffffff" />
+		<Button userData="2,0" id="button-white" layoutX="171.0" layoutY="123.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="171.0" layoutY="123.0" text=".1 SEC&#10;ON /&#10;OFF" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="230.25" layoutY="120.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="231.75" layoutY="122.25" fill="#ffffff" />
+		<Button userData="3,0" id="button-white" layoutX="232.5" layoutY="123.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="232.5" layoutY="123.0" text="CLOCK&#10;UP /&#10;DOWN" />
+		
+		<!-- 0,1 through 3,1 [SHOT CLOCKS], etc. -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="45.75" layoutY="182.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="47.25" layoutY="183.75" fill="#ffffff" />
+		<Button userData="0,1" id="button-white" layoutX="48.0" layoutY="184.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="184.5" text="SHOT&#10;CLOCKS" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="107.25" layoutY="182.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="108.75" layoutY="183.75" fill="#ffffff" />
+		<Button userData="1,1" id="button-white" layoutX="109.5" layoutY="184.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="109.5" layoutY="184.5" text="AUTO&#10;HORN" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="168.75" layoutY="182.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="170.25" layoutY="183.75" fill="#ffffff" />
+		<Button userData="2,1" id="button-white" layoutX="171.0" layoutY="184.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="171.0" layoutY="184.5" text="TIME&#10;OF&#10;DAY" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="230.25" layoutY="182.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="231.75" layoutY="183.75" fill="#ffffff" />
+		<Button userData="3,1" id="button-white" layoutX="232.5" layoutY="184.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="232.5" layoutY="184.5" text="TIME&#10;OUT&#10;TIMER" />
+		
+		<!-- 0,2 through 3,2 [SET GUEST SCORE], etc. -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="45.75" layoutY="255.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="47.25" layoutY="257.25" fill="#ffffff" />
+		<Button userData="0,2" id="button-white" layoutX="48.0" layoutY="258.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="258.0" text="SET&#10;GUEST&#10;SCORE" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="107.25" layoutY="255.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="108.75" layoutY="257.25" fill="#ffffff" />
+		<Button userData="1,2" id="button-white" layoutX="109.5" layoutY="258.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="109.5" layoutY="258.0" text="SET&#10;HOME&#10;SCORE" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="168.75" layoutY="255.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="170.25" layoutY="257.25" fill="#ffffff" />
+		<Button userData="2,2" id="button-white" layoutX="171.0" layoutY="258.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="171.0" layoutY="262.5" text="PLAYER" />
+		<Rectangle width="45" height="1.5" arcHeight="1.5" arcWidth="1.5" layoutX="175.75" layoutY="279.0" fill="#011e41" />
+		<Label prefWidth="54.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #54565a;"
+			layoutX="171.0" layoutY="281.0" text="MATCH" />
+		<Rectangle width="35" height="1.5" arcHeight="0.75" arcWidth="0.75" layoutX="180.75" layoutY="295.0" fill="#011e41" />
+		<Label prefWidth="54.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #54565a;"
+			layoutX="171.0" layoutY="296.0" text="GAME" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="230.25" layoutY="255.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="231.75" layoutY="257.25" fill="#ffffff" />
+		<Button userData="3,2" id="button-white" layoutX="232.5" layoutY="258.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="232.5" layoutY="258.0" text="PLAYER&#10;FOUL" />
+		
+		<!-- 0,3 through 3,3 [TEAM FOULS], etc. -->
+		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10.5px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="316.5" text="GUEST" />
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="45.75" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="47.25" layoutY="330.75" fill="#ffffff" />
+		<Button userData="0,3" id="button-white" layoutX="48.0" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10.5px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="332.5" text="TEAM" />
+		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10.5px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="343.5" text="FOULS" />
+		<Rectangle width="45" height="1.5" arcHeight="1.5" arcWidth="1.5" layoutX="52.75" layoutY="358.0" fill="#011e41" />
+		<Label prefWidth="54.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 9px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #54565a;"
+			layoutX="48.0" layoutY="360.5" text="POINTS" />
+		<Rectangle width="32" height="1.5" arcHeight="0.75" arcWidth="0.75" layoutX="59.25" layoutY="372.0" fill="#011e41" />
+		<Label prefWidth="54.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 9px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #54565a;"
+			layoutX="48.0" layoutY="372.5" text="WON" />
+		
+		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10.5px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="109.5" layoutY="316.5" text="HOME" />
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="107.25" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="108.75" layoutY="330.75" fill="#ffffff" />
+		<Button userData="1,3" id="button-white" layoutX="109.5" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10.5px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="109.5" layoutY="332.5" text="TEAM" />
+		<Label prefWidth="54.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10.5px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="109.5" layoutY="343.5" text="FOULS" />
+		<Rectangle width="45" height="1.5" arcHeight="1.5" arcWidth="1.5" layoutX="114.25" layoutY="358.0" fill="#011e41" />
+		<Label prefWidth="54.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 9px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #54565a;"
+			layoutX="109.5" layoutY="360.5" text="POINTS" />
+		<Rectangle width="32" height="1.5" arcHeight="0.75" arcWidth="0.75" layoutX="120.75" layoutY="372.0" fill="#011e41" />
+		<Label prefWidth="54.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 9px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #54565a;"
+			layoutX="109.5" layoutY="372.5" text="WON" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="168.75" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="170.25" layoutY="330.75" fill="#ffffff" />
+		<Button userData="2,3" id="button-white" layoutX="171.0" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="171.0" layoutY="331.5" text="GUEST&#10;BONUS" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="230.25" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="231.75" layoutY="330.75" fill="#ffffff" />
+		<Button userData="3,3" id="button-white" layoutX="232.5" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="232.5" layoutY="331.5" text="HOME&#10;BONUS" />
+		
+		<!-- 4,0 through 6,0 == [7] [8] [9] -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="357.75" layoutY="144.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="359.25" layoutY="146.25" fill="#ffffff" />
+		<Button userData="4,0" id="button-white" layoutX="360.0" layoutY="147.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="148.0" text="7" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="178.0" text="A B C" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="419.25" layoutY="144.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="420.75" layoutY="146.25" fill="#ffffff" />
+		<Button userData="5,0" id="button-white" layoutX="421.5" layoutY="147.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="148.0" text="8" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="178.0" text="D E F" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="480.75" layoutY="144.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="482.25" layoutY="146.25" fill="#ffffff" />
+		<Button userData="6,0" id="button-white" layoutX="483.0" layoutY="147.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="148.0" text="9" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="178.0" text="G H I" />
+		
+		<!-- 4,1 through 6,1 == [4] [5] [6] -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="357.75" layoutY="206.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="359.25" layoutY="207.75" fill="#ffffff" />
+		<Button userData="4,1" id="button-white" layoutX="360.0" layoutY="208.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="209.5" text="4" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="239.5" text="J K L" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="419.25" layoutY="206.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="420.75" layoutY="207.75" fill="#ffffff" />
+		<Button userData="5,1" id="button-white" layoutX="421.5" layoutY="208.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="209.5" text="5" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="239.5" text="M N O" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="480.75" layoutY="206.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="482.25" layoutY="207.75" fill="#ffffff" />
+		<Button userData="6,1" id="button-white" layoutX="483.0" layoutY="208.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="209.5" text="6" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="239.5" text="P Q R" />
+		
+		<!-- 4,2 through 6,2 == [1] [2] [3] -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="357.75" layoutY="267.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="359.25" layoutY="269.25" fill="#ffffff" />
+		<Button userData="4,2" id="button-white" layoutX="360.0" layoutY="270.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="271.0" text="1" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="301.0" text="S T U" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="419.25" layoutY="267.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="420.75" layoutY="269.25" fill="#ffffff" />
+		<Button userData="5,2" id="button-white" layoutX="421.5" layoutY="270.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="271.0" text="2" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="301.0" text="V W X" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="480.75" layoutY="267.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="482.25" layoutY="269.25" fill="#ffffff" />
+		<Button userData="6,2" id="button-white" layoutX="483.0" layoutY="270.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="271.0" text="3" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="301.0" text="Y Z" />
+		
+		<!-- 4,3 through 6,3 == [CLEAR] [0] [ENTER] -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="357.75" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="359.25" layoutY="330.75" fill="#ffffff" />
+		<Button userData="4,3" id="button-white" layoutX="360.0" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="360.0" layoutY="331.5" text="CLEAR" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="419.25" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="420.75" layoutY="330.75" fill="#ffffff" />
+		<Button userData="5,3" id="button-white" layoutX="421.5" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.10"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 24px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="332.5" text="0" />
+		<Label prefWidth="54.0" prefHeight="15.0" alignment="CENTER" wrapText="true" mouseTransparent="true" scaleX="1.15"
+			style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 13px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="421.5" layoutY="362.5" text="&#38; - . !" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="480.75" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="482.25" layoutY="330.75" fill="#ffffff" />
+		<Button userData="6,3" id="button-white" layoutX="483.0" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="483.0" layoutY="331.5" text="ENTER" />
+		
+		<!-- 7,0 through 7,3 == Right Column -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="591.75" layoutY="144.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="593.25" layoutY="146.25" fill="#ffffff" />
+		<Button userData="7,0" id="button-white" layoutX="594.0" layoutY="147.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true" lineSpacing="-2.0"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 11px; -fx-text-alignment: center; -fx-padding: 0; -fx-text-fill: #011e41;"
+			layoutX="594.0" layoutY="147.0" text="SET&#10;GUEST&#10;TIME&#10;OUTS" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="591.75" layoutY="206.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="593.25" layoutY="207.75" fill="#ffffff" />
+		<Button userData="7,1" id="button-white" layoutX="594.0" layoutY="208.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="594.0" layoutY="208.5" text="NEW&#10;GAME" />
+		<Rectangle width="46.1" height="15.24" arcHeight="6.0" arcWidth="6.0" layoutX="597.95" layoutY="242.38" fill="#011e41" mouseTransparent="true" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #ffffff;"
+			layoutX="594.0" layoutY="231.5" text="OPTIONS" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="591.75" layoutY="267.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="593.25" layoutY="269.25" fill="#ffffff" />
+		<Button userData="7,2" id="button-white" layoutX="594.0" layoutY="270.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true" lineSpacing="-2.0"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 11px; -fx-text-alignment: center; -fx-padding: 0; -fx-text-fill: #011e41;"
+			layoutX="594.0" layoutY="270.0" text="SET&#10;HOME&#10;TIME&#10;OUTS" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="591.75" layoutY="329.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="593.25" layoutY="330.75" fill="#ffffff" />
+		<Button userData="7,3" id="button-white" layoutX="594.0" layoutY="331.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="594.0" layoutY="331.5" text="QTR /&#10;PERIOD&#10;+1" />
+		
+		<!-- 0,4 through 7,4 [SCORE +1], etc. -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="45.75" layoutY="402.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="47.25" layoutY="404.25" fill="#ffffff" />
+		<Button userData="0,4" id="button-white" layoutX="48.0" layoutY="405.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="48.0" layoutY="405.0" text="GUEST&#10;SCORE&#10;+1" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="182.25" layoutY="402.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="183.75" layoutY="404.25" fill="#ffffff" />
+		<Button userData="2,4" id="button-white" layoutX="184.5" layoutY="405.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="184.5" layoutY="405.0" text="HOME&#10;SCORE&#10;+1" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="318.75" layoutY="402.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="320.25" layoutY="404.25" fill="#ffffff" />
+		<Button userData="4,4" id="button-white" layoutX="321.0" layoutY="405.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="18.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="321.0" layoutY="412.0" text="POSS" />
+		<!-- Left arrow -->
+		<Rectangle x="336.5717" y="434.9052" width="3.8100" height="12.1920" fill="#011e41"/>
+		<Polygon points="336.5717,450.9072,328.9517,441.0012,336.5717,431.0952,336.5717,450.9072" fill="#011e41"/>
+		<!-- Right arrow -->
+		<Rectangle x="355.6218" y="434.9052" width="3.8100" height="12.1920" fill="#011e41"/>
+		<Polygon points="359.4283,450.9072,367.0483,441.0012,359.4283,431.0952,359.4283,450.9072" fill="#011e41"/>
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="455.25" layoutY="402.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="456.75" layoutY="404.25" fill="#ffffff" />
+		<Button userData="6,4" id="button-white" layoutX="457.5" layoutY="405.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="457.5" layoutY="405.0" text="HORN" />
+		
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="591.75" layoutY="402.75" fill="#a32035" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="593.25" layoutY="404.25" fill="#ffffff" />
+		<Button userData="7,4" id="button-white" layoutX="594.0" layoutY="405.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #a32035;"
+			layoutX="594.0" layoutY="405.0" text="CLOCK&#10;ON /&#10;OFF" />
+		
+		<Label prefWidth="100.0" prefHeight="60.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 14px; -fx-text-alignment: right; -fx-padding: 3; -fx-text-fill: #222222;"
+			layoutX="540.0" layoutY="15.0" text="SCOREBOARD&#10;CONTROL&#10;CONSOLE" />
+		<Label prefWidth="297.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 14px; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #011e41;"
+			layoutX="300.0" layoutY="113.0" text="B A S K E T B A L L" />
+		<Label prefWidth="297.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Medium'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #222222;"
+			layoutX="300.0" layoutY="128.0" text="VOLLEYBALL  •  WRESTLING" />
+		<Label prefWidth="244.5" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Book'; -fx-font-size: 11px; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #222222;"
+			layoutX="44.25" layoutY="78.0" text="72 Industrial Blvd.  •  Wrightsville, GA  31096" />
+		<Label prefWidth="296.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Book'; -fx-font-size: 11px; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #222222;"
+			layoutX="200.0" layoutY="470.0" text="www.electro-mech.com  •  800-445-7846" />
+		
+	</children>
+</Pane>

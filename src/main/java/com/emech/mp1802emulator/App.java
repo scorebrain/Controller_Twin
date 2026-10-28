@@ -19,7 +19,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("MP_Basketball_B23.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("MP_Basketball_CX5.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 696, 510);
         stage.setTitle("Electro-Mech MP Controller Emulator");
         stage.setScene(scene);
