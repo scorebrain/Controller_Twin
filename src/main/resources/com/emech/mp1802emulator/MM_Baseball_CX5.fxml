@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.SVGPath?>
+
+<Pane style="-fx-background-color: #bbbbbb;" 
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.emech.mp1802emulator.ConsoleController"
+	  stylesheets="@TwoThousands.css"
+      prefWidth="408"
+      prefHeight="324"	  >
+    <children>
+	
+		<!-- EMech Logo -->
+		<SVGPath content="M21.1842 ,40.5164c-1.5381 ,0 -2.8716 -1.0407 -3.242 -2.5329l-5.8349 -23.3467c-0.2505 -1.0019 -0.0317 -2.0496 ,0.6068 -2.8681 ,0.6421 -0.8184 ,1.6016 -1.2876 ,2.6352 -1.2876h161.3035c1.0372 ,0 ,1.9967 ,0.4692 ,2.6352 ,1.2841 ,0.6385 ,0.822 ,0.8608 ,1.8662 ,0.6103 ,2.8716l-5.8349 ,23.3432c-0.3704 ,1.4922 -1.7074 ,2.5329 -3.242 ,2.5329H21.1842Z" fill="#222222"/>
+		<SVGPath content="M21.1842 ,39.4263c-1.0336 ,0 -1.9332 -0.702 -2.1837 -1.7074l-5.8349 -23.3467c-0.1693 -0.6773 -0.0212 -1.3794 ,0.4092 -1.9297 ,0.4304 -0.5503 ,1.0795 -0.8678 ,1.7745 -0.8678h161.3035c0.6985 ,0 ,1.3441 0.314 ,1.7745 ,0.8643 ,0.4304 ,0.5539 ,0.5786 ,1.2559 ,0.4092 ,1.9332l-5.8349 ,23.3432c-0.2505 ,1.0054 -1.1501 ,1.7074 -2.1837 ,1.7074H21.1842Z" fill="#ffffff"/>
+		<SVGPath content="M21.1842 ,38.3327c-0.5327 ,0 -0.9984 -0.3634 -1.1254 -0.8784l-5.8349 -23.3467c-0.0882 -0.3457 -0.0106 -0.7161 0.2117 -0.9948 0.2187 -0.2822 ,0.5574 -0.448 ,0.9137 -0.448h161.3035c0.3563 ,0 ,0.695 0.1658 ,0.9137 ,0.448 0.2187 0.2822 0.2963 ,0.6491 0.2117 ,0.9948l-5.8349 ,23.3467c-0.1305 ,0.5186 -0.5927 ,0.8784 -1.1254 ,0.8784H21.1842Z" fill="#a32035"/>
+		<Polygon points="174.8183,28.0669,174.9453,27.5518,17.0532,27.5518,17.1837,28.0669,174.8183,28.0669" fill="#ffffff"/>
+		<Circle centerX="32.2155" centerY="25.4987" radius="10.2658" fill="#ffffff"/>
+		<SVGPath content="M32.2155 ,13.6948c-6.5228 ,0 -11.8074 ,5.2846 -11.8074 ,11.8074s5.2881 ,11.8074 ,11.8074 ,11.8074 ,11.8074 -5.2846 ,11.8074 -11.8074 -5.2881 -11.8074 -11.8074 -11.8074ZM29.2593 ,33.2492l-2.9527 -1.845v-11.8074l2.9527 -1.845v15.4975ZM33.6866 ,34.1699l-1.4746 ,0.9207 -1.4746 -0.9207v-17.3425l1.4746 -0.9207 ,1.4746 ,0.9207v17.3425ZM38.114 ,31.4042l-2.9527 ,1.845v-15.4975l2.9527 ,1.845v11.8074Z" fill="#222222"/>
+		<SVGPath content="M56.2784 ,17.6388h-5.2634v1.8133h4.1381v1.6651h-4.1381v1.9297h5.2634v1.7498h-7.8916v-8.8406h7.8916v1.6827Z" fill="#ffffff"/>
+		<SVGPath content="M61.2843 ,23.0469h4.3956v1.7498h-7.0167v-8.8406h2.6211v7.0908Z" fill="#ffffff"/>
+		<SVGPath content="M75.727 ,17.6388h-5.2634v1.8133h4.1381v1.6651h-4.1381v1.9297h5.2634v1.7498h-7.8916v-8.8406h7.8916v1.6827Z" fill="#ffffff"/>
+		<SVGPath content="M87.0229 ,19.244l-2.7129 0.1376c-0.0388 -1.2488 -0.6456 -1.8732 -1.8239 -1.8732 -1.3511 ,0 -2.0285 ,0.9596 -2.0285 ,2.8822 ,0 ,1.1112 0.1834 ,1.8627 ,0.5503 ,2.2578 ,0.3669 ,0.3951 ,0.8819 ,0.5927 ,1.5416 ,0.5927 ,1.0689 ,0 ,1.7251 -0.5574 ,1.9614 -1.6722l2.5082 0.1235c-0.1623 ,1.0583 -0.6562 ,1.8627 -1.4781 ,2.413 -0.822 ,0.5503 -1.8309 ,0.8255 -3.0233 ,0.8255 -1.464 ,0 -2.6529 -0.4022 -3.5666 -1.21s-1.3723 -1.9226 -1.3723 -3.3478c0 -1.3335 ,0.441 -2.4271 ,1.3264 -3.2773s2.0955 -1.2771 ,3.6265 -1.2771c2.6564 ,0 ,4.1522 ,1.143 ,4.4838 ,3.4255Z" fill="#ffffff"/>
+		<SVGPath content="M96.3468 ,15.9525v1.7498h-2.7375v7.0908h-2.6211v-7.0908h-2.7517v-1.7498h8.1103Z" fill="#ffffff"/>
+		<SVGPath content="M100.8905 ,21.2901v3.5031h-2.607v-8.8406h4.8577c0.8961 ,0 ,1.6157 0.0847 ,2.159 0.2505 ,0.5433 0.1658 ,0.9913 ,0.4727 ,1.3476 ,0.9172 ,0.3563 ,0.4445 ,0.5327 ,0.9384 ,0.5327 ,1.4817 ,0 ,1.0619 -0.6385 ,1.8239 -1.9191 ,2.286l2.039 ,3.9088h-2.861l-1.6969 -3.5031h-1.8556ZM100.8905 ,17.5259v2.2542h1.5875c0.5186 ,0 ,0.8961 -0.0282 ,1.1289 -0.0882 0.2364 -0.06 ,0.4445 -0.187 ,0.6279 -0.3881 0.1834 -0.2011 0.2752 -0.4304 0.2752 -0.6914s-0.0917 -0.4657 -0.2752 -0.6597c-0.1834 -0.194 -0.3845 -0.314 -0.5997 -0.3598s-0.6209 -0.067 -1.2136 -0.067h-1.531Z" fill="#ffffff"/>
+		<SVGPath content="M113.9397 ,24.9307c-1.4887 ,0 -2.6388 -0.448 -3.4537 -1.3406 -0.8149 -0.8925 -1.2206 -1.9755 -1.2206 -3.2455s0.4127 -2.3671 ,1.2382 -3.2314 ,2.0002 -1.2947 ,3.5278 -1.2947 ,2.7058 ,0.4621 ,3.489 ,1.3829c0.7832 ,0.9207 ,1.1783 ,1.9755 ,1.1783 ,3.1644 ,0 ,1.2841 -0.4057 ,2.3636 -1.2136 ,3.2455 -0.8079 ,0.8819 -1.9897 ,1.3229 -3.5419 ,1.3229ZM114.0103 ,17.5083c-1.3582 ,0 -2.0355 ,0.956 -2.0355 ,2.861s0.6773 ,2.8681 ,2.0355 ,2.8681 ,1.972 -0.956 ,1.972 -2.861 -0.6562 -2.8681 -1.972 -2.8681Z" fill="#ffffff"/>
+		<SVGPath content="M120.3003 ,20.7256h3.87v1.4041h-3.87v-1.4041Z" fill="#ffffff"/>
+		<SVGPath content="M131.2046 ,24.7931l-2.727 -7.2072v7.2072h-2.1696v-8.8406h4.0322l1.9403 ,5.2916 ,2.039 -5.2916h4.0428v8.8406h-2.607v-7.2072l-2.7799 ,7.2072h-1.7709Z" fill="#ffffff"/>
+		<SVGPath content="M149.2879 ,17.6388h-5.2634v1.8133h4.1381v1.6651h-4.1381v1.9297h5.2634v1.7498h-7.8916v-8.8406h7.8916v1.6827Z" fill="#ffffff"/>
+		<SVGPath content="M160.5838 ,19.244l-2.7129 0.1376c-0.0388 -1.2488 -0.6456 -1.8732 -1.8239 -1.8732 -1.3511 ,0 -2.0285 ,0.9596 -2.0285 ,2.8822 ,0 ,1.1112 0.1834 ,1.8627 ,0.5503 ,2.2578 ,0.3669 ,0.3951 ,0.8819 ,0.5927 ,1.5416 ,0.5927 ,1.0689 ,0 ,1.7251 -0.5574 ,1.9614 -1.6722l2.5082 0.1235c-0.1623 ,1.0583 -0.6562 ,1.8627 -1.4781 ,2.413 -0.822 ,0.5503 -1.8309 ,0.8255 -3.0233 ,0.8255 -1.464 ,0 -2.6529 -0.4022 -3.5666 -1.21s-1.3723 -1.9226 -1.3723 -3.3478c0 -1.3335 ,0.441 -2.4271 ,1.3264 -3.2773 ,0.8855 -0.8502 ,2.0955 -1.2771 ,3.6265 -1.2771 ,2.6564 ,0 ,4.1522 ,1.143 ,4.4838 ,3.4255Z" fill="#ffffff"/>
+		<SVGPath content="M171.4352 ,15.9525v8.8406h-2.5435v-3.6477h-3.4466v3.6477h-2.5435v-8.8406h2.5435v3.4466h3.4466v-3.4466h2.5435Z" fill="#ffffff"/>
+		<SVGPath content="M50.9303 ,35.8703c-1.3088 ,0 -2.1872 -0.4939 -2.6141 -1.4711l-0.1058 -0.2399 ,1.0901 -0.1976 0.0635 0.1552c0.2364 ,0.5644 ,0.7408 ,0.8396 ,1.5522 ,0.8396 ,0.4233 ,0 ,0.7408 -0.067 ,0.9384 -0.2046 0.1799 -0.1199 0.2611 -0.2681 0.2611 -0.4657 ,0 -0.1341 -0.0564 -0.2293 -0.1799 -0.314 -0.1552 -0.1058 -0.3387 -0.1799 -0.5468 -0.2222l-1.1818 -0.2328c-0.321 -0.0635 -0.5891 -0.1482 -0.7973 -0.2434 -0.2258 -0.1023 -0.4198 -0.2646 -0.5786 -0.4762 -0.1623 -0.2187 -0.2434 -0.4762 -0.2434 -0.7585 ,0 -0.4692 0.2187 -0.8467 ,0.6562 -1.1218 ,0.4057 -0.254 ,0.9243 -0.3845 ,1.5452 -0.3845 ,1.1606 ,0 ,1.9367 ,0.4339 ,2.3072 ,1.2912l0.0988 0.2293 -1.1077 0.2646 -0.0529 -0.194c-0.06 -0.2187 -0.2046 -0.381 -0.441 -0.4974 -0.2575 -0.127 -0.5362 -0.1905 -0.829 -0.1905s-0.5433 0.06 -0.762 0.1799c-0.2399 0.1305 -0.2681 0.2893 -0.2681 ,0.3986 ,0 ,0.2328 0.2646 ,0.4057 ,0.7902 ,0.5045l1.1042 0.2081c1.1183 0.2152 ,1.6863 ,0.7232 ,1.6863 ,1.5099 ,0 ,0.4762 -0.2222 ,0.8784 -0.6562 ,1.1889 -0.4127 0.2963 -0.9948 ,0.4445 -1.7251 ,0.4445Z" fill="#bbbbbb"/>
+		<SVGPath content="M58 ,35.8703c-0.8079 ,0 -1.4499 -0.2681 -1.9156 -0.7937 -0.4586 -0.5186 -0.6914 -1.1642 -0.6914 -1.9191s0.2434 -1.4217 ,0.7267 -1.9015c0.4833 -0.4798 ,1.1324 -0.7232 ,1.9332 -0.7232 ,1.203 ,0 ,1.9897 ,0.5609 ,2.3319 ,1.6651l0.0706 0.2293 -1.1077 0.1764 -0.0564 -0.1658c-0.2258 -0.6632 -0.6315 -0.9878 -1.2418 -0.9878 -0.4621 ,0 -0.8043 0.1482 -1.0513 ,0.448 -0.254 0.3104 -0.3845 ,0.762 -0.3845 ,1.3406 ,0 ,0.5256 0.1305 ,0.949 ,0.3916 ,1.2594 0.254 0.3034 ,0.5856 ,0.4516 ,1.0089 ,0.4516 ,0.6562 ,0 ,1.0795 -0.3387 ,1.2982 -1.0372l0.0529 -0.1764 ,1.0901 0.1976 -0.0706 0.2258c-0.3528 ,1.1359 -1.1571 ,1.711 -2.3883 ,1.711Z" fill="#bbbbbb"/>
+		<SVGPath content="M64.9179 ,35.8703c-0.8184 ,0 -1.4675 -0.2611 -1.9297 -0.7761 -0.4586 -0.5115 -0.6879 -1.143 -0.6879 -1.8768s0.2434 -1.4146 ,0.7232 -1.9191c0.4833 -0.508 ,1.1289 -0.7655 ,1.9156 -0.7655s1.4287 0.254 ,1.9085 ,0.7514c0.4798 ,0.4974 ,0.7197 ,1.1289 ,0.7197 ,1.8803s-0.2328 ,1.3547 -0.695 ,1.8874c-0.4692 ,0.5433 -1.1254 ,0.8184 -1.9579 ,0.8184ZM64.932 ,31.4324c-0.4445 ,0 -0.7832 0.1552 -1.0407 ,0.4727 -0.2646 0.3281 -0.3986 ,0.7691 -0.3986 ,1.3088s0.1341 ,0.9596 ,0.4022 ,1.2841c0.2611 0.3175 ,0.6032 ,0.4692 ,1.0407 ,0.4692s0.7937 -0.1587 ,1.0477 -0.4833c0.2611 -0.3387 ,0.3951 -0.7832 ,0.3951 -1.3264s-0.1341 -0.9878 -0.3986 -1.2876c-0.2611 -0.2963 -0.6032 -0.4374 -1.0442 -0.4374Z" fill="#bbbbbb"/>
+		<SVGPath content="M73.5962 ,35.7715l-1.0901 -2.0461h-1.3582v2.0461h-1.1112v-5.1435h2.5365c0.6844 ,0 ,1.203 0.1587 ,1.5452 ,0.4692 0.3492 0.314 ,0.5256 ,0.6738 ,0.5256 ,1.0583 ,0 ,0.2963 -0.0988 ,0.5821 -0.2963 ,0.8467 -0.1587 0.2152 -0.3951 ,0.381 -0.7091 ,0.4974l1.203 ,2.2719h-1.2488ZM72.4814 ,32.8258c0.3528 ,0 ,0.6138 -0.0706 ,0.7761 -0.2081 0.1517 -0.1305 0.2293 -0.2857 0.2293 -0.4727s-0.0706 -0.3069 -0.2222 -0.4057c-0.1764 -0.1164 -0.4092 -0.1729 -0.6879 -0.1729h-1.4287v1.2629h1.337Z" fill="#bbbbbb"/>
+		<Polygon points="77.2404,35.7715,77.2404,30.628,81.3961,30.628,81.3961,31.5664,78.3975,31.5664,78.3975,32.6495,80.7787,32.6495,80.7787,33.549,78.3975,33.549,78.3975,34.8367,81.4808,34.8367,81.4808,35.7715,77.2404,35.7715" fill="#bbbbbb"/>
+		<SVGPath content="M83.8691 ,35.7715v-5.1435h2.5435c0.635 ,0 ,1.1183 0.1305 ,1.4393 ,0.3916 0.3351 0.2716 ,0.5045 ,0.5962 ,0.5045 ,0.9631 ,0 ,0.3387 -0.1235 ,0.7585 -0.635 ,1.0513 0.187 0.0882 0.3387 0.2011 ,0.4621 0.3316 0.2364 0.2575 ,0.3563 ,0.5574 ,0.3563 ,0.8855 ,0 ,0.4374 -0.1834 ,0.8043 -0.5468 ,1.0971 -0.3492 0.2787 -0.8819 ,0.4233 -1.5769 ,0.4233h-2.5435ZM86.3738 ,34.8367c0.3422 ,0 ,0.5997 -0.0635 ,0.7761 -0.187 0.1552 -0.1129 0.2293 -0.2434 0.2293 -0.4163 ,0 -0.127 -0.0353 -0.2434 -0.1094 -0.3528 -0.0741 -0.1129 -0.1764 -0.1976 -0.314 -0.2575 -0.1446 -0.067 -0.3775 -0.0988 -0.6879 -0.0988h-1.2665v1.3123h1.3758ZM86.0774 ,32.653c0.6244 ,0 ,0.8502 -0.1199 ,0.9278 -0.1905 0.1341 -0.1235 0.2011 -0.2611 0.2011 -0.4198 ,0 -0.1482 -0.0635 -0.2611 -0.1976 -0.3563 -0.1552 -0.1094 -0.4057 -0.1623 -0.7408 -0.1623h-1.2665v1.1254h1.076Z" fill="#bbbbbb"/>
+		<SVGPath content="M93.2459 ,35.8703c-0.8184 ,0 -1.4675 -0.2611 -1.9297 -0.7761 -0.4586 -0.5115 -0.6879 -1.143 -0.6879 -1.8768s0.2434 -1.4146 ,0.7232 -1.9191c0.4833 -0.508 ,1.1289 -0.7655 ,1.9156 -0.7655s1.4287 0.254 ,1.9085 ,0.7514c0.4798 ,0.4974 ,0.7197 ,1.1289 ,0.7197 ,1.8803s-0.2328 ,1.3547 -0.695 ,1.8874c-0.4692 ,0.5433 -1.1254 ,0.8184 -1.9579 ,0.8184ZM93.26 ,31.4324c-0.4445 ,0 -0.7832 0.1552 -1.0407 ,0.4727 -0.2646 0.3281 -0.3986 ,0.7691 -0.3986 ,1.3088s0.1341 ,0.9596 ,0.4022 ,1.2841c0.2611 0.3175 ,0.6032 ,0.4692 ,1.0407 ,0.4692s0.7937 -0.1587 ,1.0477 -0.4833c0.2611 -0.3387 ,0.3951 -0.7832 ,0.3951 -1.3264s-0.1341 -0.9878 -0.3986 -1.2876c-0.2611 -0.2963 -0.6032 -0.4374 -1.0442 -0.4374Z" fill="#bbbbbb"/>
+		<SVGPath content="M101.4973 ,35.7715l-0.5927 -1.3829h-1.912l-0.5292 ,1.3829h-1.0724l2.0884 -5.1435h1.1183l2.1025 ,5.1435h-1.203ZM100.573 ,33.5314l-0.6068 -1.5028 -0.6068 ,1.5028h1.21Z" fill="#bbbbbb"/>
+		<SVGPath content="M108.2812 ,35.7715l-1.0901 -2.0461h-1.3582v2.0461h-1.1112v-5.1435h2.5365c0.6844 ,0 ,1.203 0.1587 ,1.5452 ,0.4692 0.3492 0.314 ,0.5256 ,0.6738 ,0.5256 ,1.0583 ,0 ,0.2963 -0.0988 ,0.5821 -0.2963 ,0.8467 -0.1587 0.2152 -0.3951 ,0.381 -0.7091 ,0.4974l1.203 ,2.2719h-1.2488ZM107.1699 ,32.8258c0.3528 ,0 ,0.6138 -0.0706 ,0.7761 -0.2081 0.1517 -0.1305 0.2293 -0.2857 0.2293 -0.4727s-0.0706 -0.3069 -0.2222 -0.4057c-0.1764 -0.1164 -0.4092 -0.1729 -0.6879 -0.1729h-1.4287v1.2629h1.337Z" fill="#bbbbbb"/>
+		<SVGPath content="M111.9254 ,35.7715v-5.1435h2.1907c0.8855 ,0 ,1.591 0.2505 ,2.092 ,0.7408 ,0.5045 ,0.4939 ,0.7585 ,1.1042 ,0.7585 ,1.8168s-0.2505 ,1.337 -0.7408 ,1.8344c-0.4904 ,0.4974 -1.1218 ,0.7479 -1.8697 ,0.7479h-2.4342ZM114.0738 ,34.8543c0.5715 ,0 ,1.0054 -0.1552 ,1.2947 -0.4586 0.2928 -0.314 ,0.4374 -0.7232 ,0.4374 -1.2453 ,0 -0.4198 -0.1376 -0.7867 -0.4198 -1.1218 -0.2752 -0.3246 -0.702 -0.4833 -1.3088 -0.4833h-0.9913v3.3126h0.9913Z" fill="#bbbbbb"/>
+		<SVGPath content="M125.6554 ,35.8703c-0.8079 ,0 -1.4499 -0.2681 -1.9156 -0.7937 -0.4586 -0.5186 -0.6914 -1.1642 -0.6914 -1.9191s0.2434 -1.4217 ,0.7267 -1.9015c0.4833 -0.4798 ,1.1324 -0.7232 ,1.9332 -0.7232 ,1.203 ,0 ,1.9897 ,0.5609 ,2.3319 ,1.6651l0.0706 0.2293 -1.1077 0.1764 -0.0564 -0.1658c-0.2258 -0.6632 -0.6315 -0.9878 -1.2418 -0.9878 -0.4621 ,0 -0.8043 0.1482 -1.0513 ,0.448 -0.254 0.3104 -0.3845 ,0.762 -0.3845 ,1.3406 ,0 ,0.5256 0.1305 ,0.949 ,0.3916 ,1.2594 0.254 0.3034 ,0.5856 ,0.4516 ,1.0089 ,0.4516 ,0.6562 ,0 ,1.0795 -0.3387 ,1.2982 -1.0372l0.0529 -0.1764 ,1.0901 0.1976 -0.0706 0.2258c-0.3528 ,1.1359 -1.1571 ,1.711 -2.3883 ,1.711Z" fill="#bbbbbb"/>
+		<SVGPath content="M132.5734 ,35.8703c-0.8184 ,0 -1.4675 -0.2611 -1.9297 -0.7761 -0.4586 -0.5115 -0.6879 -1.143 -0.6879 -1.8768s0.2434 -1.4146 ,0.7232 -1.9191c0.4833 -0.508 ,1.1289 -0.7655 ,1.9156 -0.7655s1.4287 0.254 ,1.9085 ,0.7514c0.4798 ,0.4974 ,0.7197 ,1.1289 ,0.7197 ,1.8803s-0.2328 ,1.3547 -0.695 ,1.8874c-0.4692 ,0.5433 -1.1254 ,0.8184 -1.9579 ,0.8184ZM132.5875 ,31.4324c-0.4445 ,0 -0.7832 0.1552 -1.0407 ,0.4727 -0.2646 0.3281 -0.3986 ,0.7691 -0.3986 ,1.3088s0.1341 ,0.9596 ,0.4022 ,1.2841c0.2611 0.3175 ,0.6032 ,0.4692 ,1.0407 ,0.4692s0.7937 -0.1587 ,1.0477 -0.4833c0.2611 -0.3387 ,0.3951 -0.7832 ,0.3951 -1.3264s-0.1341 -0.9878 -0.3986 -1.2876c-0.2611 -0.2963 -0.6032 -0.4374 -1.0442 -0.4374Z" fill="#bbbbbb"/>
+		<Polygon points="142.6769,35.7715,142.6769,32.3813,141.1,35.7715,140.3344,35.7715,138.7364,32.3708,138.7364,35.7715,137.6922,35.7715,137.6922,30.628,139.128,30.628,140.7754,34.1241,142.3876,30.628,143.8128,30.628,143.8128,35.7715,142.6769,35.7715" fill="#bbbbbb"/>
+		<SVGPath content="M146.6421 ,35.7715v-5.1435h2.3036c0.7056 ,0 ,1.2418 0.1623 ,1.591 ,0.4833 ,0.3563 0.3246 ,0.5362 ,0.7056 ,0.5362 ,1.1289 ,0 ,0.4727 -0.1976 ,0.8643 -0.5891 ,1.1712 -0.3739 0.2928 -0.8678 ,0.441 -1.4605 ,0.441h-1.2241v1.9191h-1.1571ZM148.9492 ,32.9458c0.2999 ,0 ,0.5397 -0.0706 ,0.7161 -0.2081 0.1658 -0.127 0.2399 -0.2857 0.2399 -0.4974 ,0 -0.1799 -0.0741 -0.3351 -0.2222 -0.4798s-0.3775 -0.2187 -0.6809 -0.2187h-1.203v1.4041h1.1501Z" fill="#bbbbbb"/>
+		<SVGPath content="M156.3082 ,35.7715l-0.5927 -1.3829h-1.912l-0.5292 ,1.3829h-1.0724l2.0884 -5.1435h1.1183l2.1025 ,5.1435h-1.203ZM155.3874 ,33.5314l-0.6068 -1.5028 -0.6068 ,1.5028h1.21Z" fill="#bbbbbb"/>
+		<SVGPath content="M163.2684 ,35.7715l-2.7199 -3.6689v3.6689h-1.0125v-5.1435h1.2382l2.5259 ,3.4043v-3.4043h1.0019v5.1435h-1.0336Z" fill="#bbbbbb"/>
+		<Polygon points="168.2849,35.7715,168.2849,33.6443,166.1083,30.628,167.4982,30.628,168.9587,32.653,170.4298,30.628,171.6187,30.628,169.442,33.6443,169.442,35.7715,168.2849,35.7715" fill="#bbbbbb"/>
+
+		<!-- Text Badge -->
+		<Rectangle width="138.0" height="54.0" arcHeight="15.0" arcWidth="15.0" layoutX="249.0" layoutY="15.0" fill="#222222" />
+		<Rectangle width="135.0" height="51.0" arcHeight="12.0" arcWidth="12.0" layoutX="250.5" layoutY="16.5" fill="#898a8d" />
+		<Label prefWidth="132.0" prefHeight="40.0" alignment="CENTER" wrapText="true" mouseTransparent="true" lineSpacing="-2.0"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 16px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="252.0" layoutY="16.0" text="BASEBALL&#10;SOFTBALL" />
+		<Label prefWidth="132.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Book'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="252.0" layoutY="53.5" text="Scoreboard Control Console" />
+		<Label prefWidth="132.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Book'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #222222;"
+			layoutX="252.0" layoutY="73.0" text="800-445-7846" />
+		<!-- Bottom Text -->
+		<Label prefWidth="120.0" prefHeight="8.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Book'; -fx-font-size: 9px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #222222;"
+			layoutX="144.0" layoutY="308.0" text="www.electro-mech.com" />
+	
+		<!-- LED Indicators and Labels -->
+		<Label prefWidth="90.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="51.0" layoutY="44.5" text="Console Power" />
+		<Rectangle width="11.0" height="1.5" arcHeight="1.5" arcWidth="1.5" layoutX="138.25" layoutY="51.75" fill="#011e41" />
+		<Circle layoutX="156.0" layoutY="52.5" radius="7.5" fill="011e41" mouseTransparent="true" />
+		<Circle id="red-led-on" fx:id="powerLight" layoutX="156.0" layoutY="52.5" radius="6.0" mouseTransparent="true" />
+		<Label prefWidth="90.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #a32035;"
+			layoutX="51.0" layoutY="58.0" text="Clock Running" />
+		<Rectangle width="11.0" height="1.5" layoutX="42.75" arcHeight="1.5" arcWidth="1.5" layoutY="65.25" fill="#a32035" />
+		<Circle layoutX="36.0" layoutY="66.0" radius="7.5" fill="a32035" mouseTransparent="true" />
+		<Circle id="red-led-off" fx:id="mainTimerRunning" layoutX="36.0" layoutY="66.0" radius="6.0" mouseTransparent="true" />
+			
+			
+		<!-- 0,0 through 4,0 [GUEST SCORE +10], [GUEST SCORE +1], [NEW GAME], [HOME SCORE +10], [HOME SCORE +1] -->
+		
+		<!-- GUEST SCORE +10 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="21.75" layoutY="93.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="23.25" layoutY="95.25" fill="#ffffff" />
+		<Button userData="0,0" id="button-white" layoutX="24.0" layoutY="96.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="24.0" layoutY="96.0" text="GUEST&#10;SCORE&#10;+10" />
+			
+		<!-- GUEST SCORE +1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="83.25" layoutY="93.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="84.75" layoutY="95.25" fill="#ffffff" />
+		<Button userData="1,0" id="button-white" layoutX="85.5" layoutY="96.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="85.5" layoutY="96.0" text="GUEST&#10;SCORE&#10;+1" />
+			
+		<!-- NEW GAME / OPTIONS -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="174.75" layoutY="41.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="176.25" layoutY="42.75" fill="#ffffff" />
+		<Button userData="2,0" id="button-white" layoutX="177.0" layoutY="43.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="177.0" layoutY="43.5" text="NEW&#10;GAME" />
+		<Rectangle width="46.1" height="15.24" arcHeight="6.0" arcWidth="6.0" layoutX="180.95" layoutY="76.38" fill="#011e41" mouseTransparent="true" />
+		<Label prefWidth="54.0" prefHeight="36.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 10px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #ffffff;"
+			layoutX="177.0" layoutY="66.5" text="OPTIONS" />
+			
+		<!-- HOME SCORE +10 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="266.25" layoutY="93.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="267.75" layoutY="95.25" fill="#ffffff" />
+		<Button userData="3,0" id="button-white" layoutX="268.5" layoutY="96.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="268.5" layoutY="96.0" text="HOME&#10;SCORE&#10;+10" />
+			
+		<!-- HOME SCORE +1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="327.75" layoutY="93.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="329.25" layoutY="95.25" fill="#ffffff" />
+		<Button userData="4,0" id="button-white" layoutX="330.0" layoutY="96.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="330.0" layoutY="96.0" text="HOME&#10;SCORE&#10;+1" />
+				
+		<!-- 0,1 through 5,1 [HIT], [MIN -1], [CLOCK RESET], [CLOCK ON / OFF], [SEC -1], [ERROR] -->
+		
+		<!-- HIT -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="21.75" layoutY="168.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="23.25" layoutY="170.25" fill="#ffffff" />
+		<Button userData="0,1" id="button-white" layoutX="24.0" layoutY="171.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="24.0" layoutY="171.0" text="HIT" />
+			
+		<!-- MIN -1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="113.25" layoutY="173.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="114.75" layoutY="174.75" fill="#ffffff" />
+		<Button userData="1,1" id="button-white" layoutX="115.5" layoutY="175.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="115.5" layoutY="175.5" text="MIN&#10;-1" />
+			
+		<!-- CLOCK RESET -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="174.75" layoutY="111.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="176.25" layoutY="113.25" fill="#ffffff" />
+		<Button userData="2,1" id="button-white" layoutX="177.0" layoutY="114.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="177.0" layoutY="114.0" text="CLOCK&#10;RESET" />
+			
+		<!-- CLOCK ON / OFF -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="174.75" layoutY="173.25" fill="#a32035" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="176.25" layoutY="174.75" fill="#ffffff" />
+		<Button userData="3,1" id="button-white" layoutX="177.0" layoutY="175.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #a32035;"
+			layoutX="177.0" layoutY="175.5" text="CLOCK&#10;ON /&#10;OFF" />
+			
+		<!-- SEC -1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="236.25" layoutY="173.25" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="237.75" layoutY="174.75" fill="#ffffff" />
+		<Button userData="4,1" id="button-white" layoutX="238.5" layoutY="175.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="238.5" layoutY="175.5" text="SEC&#10;-1" />
+			
+		<!-- HIT -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="327.75" layoutY="168.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="329.25" layoutY="170.25" fill="#ffffff" />
+		<Button userData="5,1" id="button-white" layoutX="330.0" layoutY="171.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="330.0" layoutY="171.0" text="HIT" />
+		
+		
+		<!-- 0,2 through 3,2 [BALL +1], [STRIKE +1], [OUT +1], [INNING +1] -->
+		
+		<!-- BALL +1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="21.75" layoutY="243.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="23.25" layoutY="245.25" fill="#ffffff" />
+		<Button userData="0,2" id="button-white" layoutX="24.0" layoutY="246.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="24.0" layoutY="246.0" text="BALL&#10;+1" />
+			
+		<!-- STRIKE +1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="123.75" layoutY="243.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="125.25" layoutY="245.25" fill="#ffffff" />
+		<Button userData="1,2" id="button-white" layoutX="126.0" layoutY="246.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="126.0" layoutY="246.0" text="STRIKE&#10;+1" />
+			
+		<!-- OUT +1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="225.75" layoutY="243.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="227.25" layoutY="245.25" fill="#ffffff" />
+		<Button userData="0,2" id="button-white" layoutX="228.0" layoutY="246.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="228.0" layoutY="246.0" text="OUT&#10;+1" />
+			
+		<!-- INNING +1 -->
+		<Rectangle width="58.5" height="58.5" arcHeight="15.0" arcWidth="15.0" layoutX="327.75" layoutY="243.75" fill="#011e41" />
+		<Rectangle width="55.5" height="55.5" arcHeight="12.0" arcWidth="12.0" layoutX="329.25" layoutY="245.25" fill="#ffffff" />
+		<Button userData="1,2" id="button-white" layoutX="330.0" layoutY="246.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #011e41;"
+			layoutX="330.0" layoutY="246.0" text="INNING&#10;+1" />
+		
+	</children>
+</Pane>

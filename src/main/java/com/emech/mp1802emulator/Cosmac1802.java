@@ -230,7 +230,7 @@ public class Cosmac1802 {
             
             case 0x0:
                 if (N == 0) {
-                    // IDL (Idle): The B23 OS never sleeps. 
+                    // IDL (Idle): The MP/Freymuth OS never sleeps. 
                     // If it hits this, it crashed into a data table. Park the PC.
                     R[P] = (R[P] - 1) & 0xFFFF;
                 } else {

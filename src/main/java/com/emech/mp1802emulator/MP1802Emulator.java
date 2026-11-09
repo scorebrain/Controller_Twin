@@ -14,9 +14,9 @@ public class MP1802Emulator {
         Cosmac1802 cpu = new Cosmac1802();
         cpu.reset();
 
-        System.out.println("Loading B23.HEX...");
+        System.out.println("Loading RCA 1802 hex code file...");
         try {
-            IntelHexLoader.load("B23.HEX", cpu.memory);
+            IntelHexLoader.load("F16.HEX", cpu.memory);
             System.out.println("Load complete.");
         } catch (Exception e) {
             System.err.println("Failed to load ROM: " + e.getMessage());

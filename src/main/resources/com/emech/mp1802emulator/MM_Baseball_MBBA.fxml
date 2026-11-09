@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane style="-fx-background-color: #d2d9d9;" 
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.emech.mp1802emulator.ConsoleController"
+	  stylesheets="@Nineties.css"
+      prefWidth="408"
+      prefHeight="324"	  >
+    <children>
+	
+		<!-- Background Graphics & Text -->
+		<Rectangle width="392.0" height="308.0" layoutX="8.0" layoutY="8.0" fill="#023f88" />
+		<Rectangle width="388.0" height="304.0" layoutX="10.0" layoutY="10.0" fill="#d2d9d9" />
+		<Label prefWidth="120.0" prefHeight="14.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-font-weight: bold; -fx-font-style: italic; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="28.0" layoutY="18.0" text="Electro-Mech" />
+		<Label prefWidth="120.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-style: italic; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="29.0" layoutY="34.0" text="Scoreboard Co." />
+		<Label prefWidth="120.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="29.0" layoutY="47.0" text="800-445-7846" />
+		<Label prefWidth="120.0" prefHeight="10.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 9px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="29.0" layoutY="58.0" text="www.electro-mech.com" />
+		<Label prefWidth="120.0" prefHeight="18.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-font-weight: bold; -fx-font-style: italic; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="254.0" layoutY="18.0" text="BASEBALL" />
+		<Rectangle width="120.0" height="2.0" layoutX="254.0" layoutY="46.0" fill="#023f88" />
+		<Label prefWidth="120.0" prefHeight="18.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-font-weight: bold; -fx-font-style: italic; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="254.0" layoutY="44.0" text="SOFTBALL" />
+		
+		<!-- LED Power Indicator -->
+		<Circle layoutX="204.0" layoutY="25.0" radius="7.0" fill="#023f88" mouseTransparent="true" />
+		<Circle id="red-led-on" fx:id="powerLight" layoutX="204.0" layoutY="25.0" radius="5.0" mouseTransparent="true" />
+		
+		<!-- NEW GAME -->	
+		<Rectangle width="60.0" height="60.0" layoutX="174.0" layoutY="33.5" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="176.0" layoutY="35.5" fill="#d2d9d9" />
+		<Button userData="2,0" id="button-gray" layoutX="177.0" layoutY="36.5" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="177.0" layoutY="36.5" text="NEW&#10;GAME" />
+		
+		<!-- Guest Buttons -->
+		<Rectangle width="118.0" height="60.0" layoutX="22.5" layoutY="80.0" fill="#023f88" />
+		
+		<!-- GUEST +10 -->
+		<Rectangle width="56.0" height="56.0" layoutX="24.5" layoutY="82.0" fill="#d2d9d9" />
+		<Button userData="0,0" id="button-gray" layoutX="25.5" layoutY="83.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="25.5" layoutY="83.0" text="GUEST&#10;+10" />
+		
+		<!-- GUEST +1 -->
+		<Rectangle width="56.0" height="56.0" layoutX="82.5" layoutY="82.0" fill="#d2d9d9" />
+		<Button userData="1,0" id="button-gray" layoutX="83.5" layoutY="83.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="83.5" layoutY="83.0" text="GUEST&#10;+1" />
+		
+		<!-- Home Buttons -->
+		<Rectangle width="118.0" height="60.0" layoutX="267.5" layoutY="80.0" fill="#023f88" />
+		
+		<!-- HOME +10 -->
+		<Rectangle width="56.0" height="56.0" layoutX="269.5" layoutY="82.0" fill="#d2d9d9" />
+		<Button userData="3,0" id="button-gray" layoutX="270.5" layoutY="83.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="270.5" layoutY="83.0" text="HOME&#10;+10" />
+		
+		<!-- HOME +1 -->
+		<Rectangle width="56.0" height="56.0" layoutX="327.5" layoutY="82.0" fill="#d2d9d9" />
+		<Button userData="4,0" id="button-gray" layoutX="328.5" layoutY="83.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="328.5" layoutY="83.0" text="HOME&#10;+1" />
+		
+		<!-- CLOCK RESET -->
+		<Rectangle width="60.0" height="60.0" layoutX="174.0" layoutY="103.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="176.0" layoutY="105.0" fill="#d2d9d9" />
+		<Button userData="2,1" id="button-gray" layoutX="177.0" layoutY="106.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="177.0" layoutY="106.0" text="CLOCK&#10;RESET" />
+		
+		<!-- HIT -->
+		<Rectangle width="60.0" height="60.0" layoutX="22.5" layoutY="161.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="24.5" layoutY="163.0" fill="#d2d9d9" />
+		<Button userData="0,1" id="button-gray" layoutX="25.5" layoutY="164.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="25.5" layoutY="164.0" text="HIT" />
+		
+		<!-- Clock Buttons -->
+		<Rectangle width="176.0" height="60.0" layoutX="116.0" layoutY="161.0" fill="#023f88" />
+		
+		<!-- MIN -1 -->
+		<Rectangle width="56.0" height="56.0" layoutX="118.0" layoutY="163.0" fill="#d2d9d9" />
+		<Button userData="1,1" id="button-gray" layoutX="119.0" layoutY="164.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="119.0" layoutY="164.0" text="MIN&#10;-1" />
+		
+		<!-- CLOCK ON / OFF -->
+		<Rectangle width="56.0" height="56.0" layoutX="176.0" layoutY="163.0" fill="#d2d9d9" />
+		<Button userData="3,1" id="button-gray" layoutX="177.0" layoutY="164.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="177.0" layoutY="164.0" text="CLOCK&#10;ON /&#10;OFF" />
+		
+		<!-- SEC -1 -->
+		<Rectangle width="56.0" height="56.0" layoutX="234.0" layoutY="163.0" fill="#d2d9d9" />
+		<Button userData="4,1" id="button-gray" layoutX="235.0" layoutY="164.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="235.0" layoutY="164.0" text="SEC&#10;-1" />
+		
+		<!-- ERROR -->
+		<Rectangle width="60.0" height="60.0" layoutX="325.5" layoutY="161.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="327.5" layoutY="163.0" fill="#d2d9d9" />
+		<Button userData="5,1" id="button-gray" layoutX="328.5" layoutY="164.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="328.5" layoutY="164.0" text="ERROR" />
+		
+		<!-- BALL +1 -->
+		<Rectangle width="60.0" height="60.0" layoutX="22.5" layoutY="246.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="24.5" layoutY="248.0" fill="#d2d9d9" />
+		<Button userData="0,2" id="button-gray" layoutX="25.5" layoutY="249.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="25.5" layoutY="249.0" text="BALL" />
+		
+		<!-- STRIKE +1 -->
+		<Rectangle width="60.0" height="60.0" layoutX="123.5" layoutY="246.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="125.5" layoutY="248.0" fill="#d2d9d9" />
+		<Button userData="1,2" id="button-gray" layoutX="126.5" layoutY="249.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="126.5" layoutY="249.0" text="STRIKE" />
+		
+		<!-- OUT +1 -->
+		<Rectangle width="60.0" height="60.0" layoutX="224.5" layoutY="246.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="226.5" layoutY="248.0" fill="#d2d9d9" />
+		<Button userData="2,2" id="button-gray" layoutX="227.5" layoutY="249.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="227.5" layoutY="249.0" text="OUT" />
+		
+		<!-- INNING +1 -->
+		<Rectangle width="60.0" height="60.0" layoutX="325.5" layoutY="246.0" fill="#023f88" />
+		<Rectangle width="56.0" height="56.0" layoutX="327.5" layoutY="248.0" fill="#d2d9d9" />
+		<Button userData="3,2" id="button-gray" layoutX="328.5" layoutY="249.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
+			layoutX="328.5" layoutY="249.0" text="INNING" />
+		
+	</children>
+</Pane>

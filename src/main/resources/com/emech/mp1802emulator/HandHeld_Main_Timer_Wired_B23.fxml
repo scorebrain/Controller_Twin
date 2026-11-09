@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.SVGPath?>
+
+<Pane style="-fx-background-color: #dcddde;" 
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.emech.mp1802emulator.ConsoleController"
+	  stylesheets="@Nineties.css"
+      prefWidth="170"
+      prefHeight="270"	  >
+    <children>
+	
+		<!-- Background Graphics -->
+		<Rectangle width="152.0" height="254.0" arcHeight="7.0" arcWidth="6.0" layoutX="9.0" layoutY="7.0" fill="#e6e7e8" />
+		<Label prefWidth="150.0" prefHeight="10.0" alignment="CENTER" wrapText="true"
+			style="--fx-font-family: 'Arial'; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #2e3192;"
+			layoutX="10.0" layoutY="186.0" text="GAME CLOCK" />
+		<Label prefWidth="150.0" prefHeight="10.0" alignment="CENTER" wrapText="true"
+			style="--fx-font-family: 'Arial'; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #2e3192;"
+			layoutX="10.0" layoutY="198.0" text="WIRED CONTROLLER" />
+		<Label prefWidth="150.0" prefHeight="9.0" alignment="CENTER" wrapText="true"
+			style="--fx-font-family: 'Arial'; -fx-font-size: 8.75px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #2e3192;"
+			layoutX="10.0" layoutY="250.0" text="ELECTRO-MECH SCOREBOARD CO." />
+		
+		<!-- RUNNING LED -->
+		<Circle layoutX="85.0" layoutY="26.0" radius="9.5" fill="bcbec0" />
+		<Circle id="red-led-on" fx:id="runningLight" layoutX="85.0" layoutY="26.0" radius="7.55" />
+		
+		<!-- Middle Button = START / STOP -->
+		<Circle layoutX="85.0" layoutY="142.0" radius="15.5" fill="54565a" />
+		<Circle layoutX="85.0" layoutY="142.0" radius="13.5" fill="414042" />
+		<Button userData="7,4" id="button-handheld-round-black" layoutX="72.0" layoutY="129.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		
+	</children>
+</Pane>

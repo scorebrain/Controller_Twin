@@ -28,7 +28,6 @@ import javafx.scene.layout.Priority;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 import javafx.scene.control.ListView;
@@ -90,22 +89,22 @@ public class ConsoleController {
         
         // --- RESTORE HARDWARE STATE ---
         // Load the battery-backed RAM first
-        cpu.loadNVRAM("B23.nvram");
+        cpu.loadNVRAM("F16.nvram");
 
         try {
-            IntelHexLoader.load("B23.HEX", cpu.memory);
+            IntelHexLoader.load("F16.HEX", cpu.memory);
         } catch (Exception e) {
             System.err.println("Failed to load ROM: " + e.getMessage());
             return;
         }
         
         // Load the external address descriptions
-        loadProtocolDictionary("Protocol.ini", "B23_DEFAULT");
+        loadProtocolDictionary("Protocol.ini", "F16_DEFAULT");
        
         // --- INITIALIZE PHYSICAL RS-232 HARDWARE ---
         if (enableHardwareCom) {
             comPort = SerialPort.getCommPort("COM3");
-            // B23 Spec: 2400 baud, 8 data bits, 1 stop bit, no parity
+            // MP/Freymuth Spec: 2400 baud, 8 data bits, 1 stop bit, no parity
             comPort.setComPortParameters(2400, 8, SerialPort.ONE_STOP_BIT, SerialPort.NO_PARITY);
             
             if (comPort.openPort()) {
@@ -122,7 +121,7 @@ public class ConsoleController {
                 }
                 // --- SIMULATE POWER LOSS (SAVE RAM) ---
                 if (cpu != null) {
-                    cpu.saveNVRAM("B23.nvram");
+                    cpu.saveNVRAM("F16.nvram");
                     System.out.println("Hardware NVRAM state preserved.");
                 }
             }));

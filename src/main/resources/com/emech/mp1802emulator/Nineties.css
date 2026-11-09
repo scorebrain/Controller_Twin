@@ -18,20 +18,37 @@ and open the template in the editor.
         #d2d9d9;
 }
 
-#button-white {
+#button-gray {
 	-fx-pref-width: 54;
 	-fx-pref-height: 54;
 	-fx-background-color: #d2d9d9;
 }
 
-#button-white:hover {
+#button-gray:hover {
     -fx-background-color: 
         #c9ccde;
 }
 
-#button-white:pressed {
+#button-gray:pressed {
 -fx-background-color: 
         #c0aeca;
+}
+
+#button-handheld-round-black {
+	-fx-background-color: #414042;
+	-fx-background-radius: 26px;
+    -fx-min-width: 26px;
+    -fx-min-height: 26px;
+    -fx-max-width: 26px;
+    -fx-max-height: 26px;
+}
+
+#button-handheld-round-black:hover {
+	-fx-background-color: #005243;
+}
+
+#button-handheld-round-black:pressed {
+	-fx-background-color: #4aa500;
 }
 
 #lcd-rectangle {
@@ -53,4 +70,28 @@ and open the template in the editor.
 	-fx-text-alignment: center;
 }
 
+#red-led-off {
+    -fx-fill: 
+        radial-gradient(center 50% 50%, radius 50%, darkred, black);
+}
 
+#red-led-on {
+    -fx-fill: 
+        radial-gradient(center 50% 50%, radius 50%, salmon, firebrick);
+}
+
+#green-power-light-off {
+    -fx-fill: 
+        radial-gradient(center 50% 50%, radius 50%, darkgreen, black);
+    -fx-stroke-width: 3;
+    -fx-stroke-type: centered;
+    -fx-stroke: linear-gradient(#999999, #666666);
+}
+
+#green-power-light-on {
+    -fx-fill: 
+        radial-gradient(center 50% 50%, radius 50%, greenyellow, forestgreen);
+    -fx-stroke-width: 3;
+    -fx-stroke-type: centered;
+    -fx-stroke: linear-gradient(#999999, #666666);
+}

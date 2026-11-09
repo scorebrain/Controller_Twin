@@ -19,9 +19,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("MP_Basketball_CX5.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("MP_Football_F16.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 696, 510);
-        stage.setTitle("Electro-Mech MP Controller Emulator");
+        stage.setTitle("Electro-Mech MP/MM Controller Emulator");
         stage.setScene(scene);
         // Force the entire JVM and all child windows to exit when the main window closes
         stage.setOnCloseRequest(event -> {
