@@ -17,7 +17,6 @@
 
 <Pane style="-fx-background-color: #414042;" 
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.emech.mp1802emulator.ConsoleController"
 	  stylesheets="@TwoThousands.css"
       prefWidth="170"
       prefHeight="270"	  >
@@ -94,7 +93,7 @@
 		<Label prefWidth="40.0" prefHeight="24.0" alignment="CENTER" wrapText="true" lineSpacing="-2.0"
 			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #222222;"
 			layoutX="52.0" layoutY="76.0" text="RUN" />
-		<Button userData="7,4" id="button-handheld-round-white" layoutX="95.0" layoutY="75.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Button fx:id="btnRun" userData="7,4" id="button-handheld-round-white" layoutX="95.0" layoutY="75.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
 				
 		<!-- Middle Button = STOP -->
 		<Rectangle width="68.5" height="23.0" arcHeight="5.5" arcWidth="5.5" layoutX="46.75" layoutY="110.5" fill="#54565a" />
@@ -104,7 +103,7 @@
 		<Label prefWidth="40.0" prefHeight="24.0" alignment="CENTER" wrapText="true" lineSpacing="-2.0"
 			style="-fx-font-family: 'Franklin Gothic Demi'; -fx-font-size: 12px; -fx-text-alignment: center; -fx-padding: 1; -fx-text-fill: #222222;"
 			layoutX="52.0" layoutY="110.0" text="STOP" />
-		<Button userData="7,4" id="button-handheld-round-white" layoutX="95.0" layoutY="109.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
+		<Button fx:id="btnStop" userData="7,4" id="button-handheld-round-white" layoutX="95.0" layoutY="109.0" onMousePressed="#handleMatrixPress" onMouseReleased="#handleMatrixRelease" />
 		
 		<!-- Bottom Button (not implemented) -->
 		

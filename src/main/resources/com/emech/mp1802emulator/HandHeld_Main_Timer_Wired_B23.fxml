@@ -17,7 +17,6 @@
 
 <Pane style="-fx-background-color: #dcddde;" 
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.emech.mp1802emulator.ConsoleController"
 	  stylesheets="@Nineties.css"
       prefWidth="170"
       prefHeight="270"	  >

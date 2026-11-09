@@ -35,6 +35,8 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.CheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.Pane;
 
 public class ConsoleController {
     
@@ -44,6 +46,7 @@ public class ConsoleController {
     private boolean enableHardwareCom = true; // Set to true when USB adapter is attached
     private DateTimeFormatter timeFmt = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
     private StringBuilder logBuffer = new StringBuilder();
+    private boolean isInitialized = false;
     
     // --- SERIAL LOGGER & FILTER TRACKING ---
     public boolean showChangesOnly = true; // Configurable default state
@@ -71,6 +74,11 @@ public class ConsoleController {
     // Handheld LED References
     public Circle gameClockLed;
     public Circle shotClockLed;
+    
+    // Handheld FXML Injections
+    @FXML public Circle runningLight; // For both F16 and B23
+    @FXML private Button btnRun;      // For 2000s Game Clock
+    @FXML private Button btnStop;     // For 2000s Game Clock
 
     @FXML
     private Label line1LCD;
@@ -83,6 +91,10 @@ public class ConsoleController {
 */
     @FXML
     public void initialize() {
+        // Prevent JavaFX from recursively triggering this when loading child windows
+        if (isInitialized) return;
+        isInitialized = true;
+        
         cpu = new Cosmac1802();
         cpu.controller = this; // Link CPU to this controller
         cpu.reset();
@@ -423,89 +435,53 @@ public class ConsoleController {
             if (shotClockLed != null) {
                 shotClockLed.setFill(scOn ? Color.RED : Color.DARKRED);
             }
+            
+            // Mimic hardware circuit restriction: Disable the invalid button state
+            if (btnRun != null) btnRun.setDisable(gcOn);
+            if (btnStop != null) btnStop.setDisable(!gcOn);
         });
     }
     
     private void spawnHandheldWindows() {
-        // --- GAME CLOCK HANDHELD ---
-        VBox gcLayout = new VBox(20);
-        gcLayout.setAlignment(Pos.CENTER);
-        gcLayout.setStyle("-fx-background-color: #e6e6e6; -fx-border-color: #d1b2b2; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;");
-        gcLayout.setPadding(new Insets(20));
+        try {
+            // --- MAIN TIMER (GAME CLOCK) HANDHELD ---
+            FXMLLoader gcLoader = new FXMLLoader(getClass().getResource("HandHeld_Main_Timer_Wired_B23.fxml"));
+            // Manually bind the FXML to THIS active controller instance
+            gcLoader.setController(this); 
+            Pane gcRoot = gcLoader.load();
+            
+            // If the FXML contained our running light, map it to the legacy variable 
+            // so your existing CPU logic doesn't break.
+            if (runningLight != null) {
+                gameClockLed = runningLight; 
+                runningLight = null; // Clear it so the next loader can use it
+            }
 
-        gameClockLed = new Circle(8, Color.DARKRED);
-        gameClockLed.setStroke(Color.GRAY);
+            Stage gcStage = new Stage();
+            gcStage.setTitle("Game Clock");
+            gcStage.setScene(new Scene(gcRoot));
+            gcStage.setX(100); gcStage.setY(450);
+            gcStage.show();
 
-        // ... (Game Clock LED definition)
-        Button gcBtn = new Button();
-        gcBtn.setPrefSize(40, 40);
-        gcBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
-        // Switch #1 -> Row 4, Col 7
-        gcBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 7; cpu.targetRow = 4; } });
-        gcBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
+            // --- PLAY CLOCK (DELAY OF GAME) HANDHELD ---
+            FXMLLoader pcLoader = new FXMLLoader(getClass().getResource("HandHeld_Play_Clock_Wired_F16.fxml"));
+            pcLoader.setController(this);
+            Pane pcRoot = pcLoader.load();
+            
+            if (runningLight != null) {
+                shotClockLed = runningLight;
+                runningLight = null;
+            }
 
-        Label gcLabel = new Label("GAME CLOCK\nWIRED CONTROLLER");
-        gcLabel.setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold; -fx-text-alignment: center;");
-        
-        gcLayout.getChildren().addAll(gameClockLed, gcBtn, gcLabel);
+            Stage pcStage = new Stage();
+            pcStage.setTitle("Play Clock");
+            pcStage.setScene(new Scene(pcRoot));
+            pcStage.setX(320); pcStage.setY(450);
+            pcStage.show();
 
-        Stage gcStage = new Stage();
-        gcStage.setTitle("Game Clock");
-        gcStage.setScene(new Scene(gcLayout, 200, 300));
-        gcStage.setX(100); gcStage.setY(450);
-        gcStage.show();
-
-        // --- SHOT CLOCK HANDHELD ---
-        VBox scLayout = new VBox(15);
-        scLayout.setAlignment(Pos.CENTER);
-        scLayout.setStyle("-fx-background-color: #e6e6e6; -fx-border-color: #d1b2b2; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;");
-        scLayout.setPadding(new Insets(20));
-
-        shotClockLed = new Circle(8, Color.DARKRED);
-        shotClockLed.setStroke(Color.GRAY);
-
-        Button resetBtn = new Button();
-        resetBtn.setPrefSize(40, 40);
-        resetBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
-        // Switch #3 (RESET) -> Row 4, Col 1
-        resetBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 1; cpu.targetRow = 4; } });
-        resetBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
-        VBox resetBox = new VBox(2, new Label("RESET"), resetBtn);
-        resetBox.setAlignment(Pos.CENTER);
-        resetBox.setStyle("-fx-border-color: #0000aa; -fx-border-width: 2; -fx-padding: 5;");
-        ((Label)resetBox.getChildren().get(0)).setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold;");
-
-        Button resetObBtn = new Button();
-        resetObBtn.setPrefSize(40, 40);
-        resetObBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
-        // Switch #4 (RESET-OB) -> Row 4, Col 3
-        resetObBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 3; cpu.targetRow = 4; } });
-        resetObBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
-        VBox resetObBox = new VBox(2, new Label("RESET - OB / BLANK"), resetObBtn);
-        resetObBox.setAlignment(Pos.CENTER);
-        resetObBox.setStyle("-fx-border-color: #0000aa; -fx-border-width: 2; -fx-padding: 5;");
-        ((Label)resetObBox.getChildren().get(0)).setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold;");
-
-        Button blankBtn = new Button();
-        blankBtn.setPrefSize(40, 40);
-        blankBtn.setStyle("-fx-background-color: #333333; -fx-background-radius: 20;");
-        // Switch #2 (BLANK) -> Row 4, Col 5
-        blankBtn.setOnMousePressed(e -> { if (cpu != null) { cpu.targetColumn = 5; cpu.targetRow = 4; } });
-        blankBtn.setOnMouseReleased(e -> { if (cpu != null) { cpu.targetColumn = 0xFF; cpu.targetRow = 0xFF; } });
-        VBox blankBox = new VBox(2, new Label("PAUSE"), blankBtn);
-        blankBox.setAlignment(Pos.CENTER);
-        blankBox.setStyle("-fx-border-color: red; -fx-border-width: 2; -fx-padding: 5;");
-        ((Label)blankBox.getChildren().get(0)).setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
-
-        Label scLabel = new Label("SHOT TIMER\nWIRED CONTROLLER");
-        scLabel.setStyle("-fx-text-fill: #0000aa; -fx-font-weight: bold; -fx-text-alignment: center;");
-
-        scLayout.getChildren().addAll(shotClockLed, resetBox, resetObBox, blankBox, scLabel);
-
-        Stage scStage = new Stage();
-        scStage.setTitle("Shot Clock");
-        scStage.setScene(new Scene(scLayout, 220, 450));
-        scStage.setX(320); scStage.setY(450);
-        scStage.show();
+        } catch (Exception e) {
+            System.err.println("Failed to spawn handhelds: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
