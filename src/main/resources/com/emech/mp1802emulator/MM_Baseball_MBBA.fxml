@@ -15,10 +15,9 @@
 
 <Pane style="-fx-background-color: #d2d9d9;" 
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.emech.mp1802emulator.ConsoleController"
 	  stylesheets="@Nineties.css"
       prefWidth="408"
-      prefHeight="324"	  >
+      prefHeight="360"	  >
     <children>
 	
 		<!-- Background Graphics & Text -->
@@ -169,6 +168,17 @@
 		<Label prefWidth="54.0" prefHeight="54.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
 			style="-fx-font-family: 'Arial'; -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #023f88;"
 			layoutX="328.5" layoutY="249.0" text="INNING" />
+		
+		<!-- Configuration Drawer Button -->
+		<Rectangle width="40.0" height="2.0" arcHeight="1.0" arcWidth="1.0" layoutX="12.0" layoutY="335.0" fill="#023f88" />
+		<Rectangle width="24.0" height="2.0" arcHeight="1.0" arcWidth="1.0" layoutX="28.0" layoutY="342.0" fill="#023f88" />
+		<Rectangle width="290.0" height="24.0" arcHeight="8.0" arcWidth="8.0" layoutX="59.0" layoutY="327.0" fill="#636466" />
+		<Rectangle width="40.0" height="2.0" arcHeight="1.0" arcWidth="1.0" layoutX="356.0" layoutY="335.0" fill="#023f88" />
+		<Rectangle width="24.0" height="2.0" arcHeight="1.0" arcWidth="1.0" layoutX="356.0" layoutY="342.0" fill="#023f88" />
+		<Button fx:id="btnConfig" id="button-config" layoutX="61.0" layoutY="329.0" />
+		<Label fx:id="lblConfig" prefWidth="280.0" prefHeight="22.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #ffffff;"
+			layoutX="64.0" layoutY="328.0" text="▶   {Name} from the manifest.ini file" />
 		
 	</children>
 </Pane>

@@ -167,8 +167,25 @@ public class Cosmac1802 {
     
     public void reset() {
         P = 0;
+        X = 0;
         R[0] = 0;
         D = 0;
+        IE = 1;
+        Q = 0;
+        DF = 0;
+        interruptPending = false;
+        totalCycles = 0;
+        
+        // Clear hardware latches
+        lastOut3 = 0;
+        lastOut6 = 0;
+        targetColumn = 0xFF;
+        targetRow = 0xFF;
+        
+        // Clear internal LCD memory to force UI repaint on boot
+        java.util.Arrays.fill(lcdLine1, ' ');
+        java.util.Arrays.fill(lcdLine2, ' ');
+        lcdCursor = 0;
     }
 
     /**

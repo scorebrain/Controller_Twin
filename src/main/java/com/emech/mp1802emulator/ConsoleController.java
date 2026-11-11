@@ -11,6 +11,8 @@ package com.emech.mp1802emulator;
 
 import java.util.HashMap;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalTime;
@@ -37,16 +39,32 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 
 public class ConsoleController {
+    
+    // --- THREAD SYNCHRONIZATION ---
+    private volatile boolean isCpuPaused = true;
     
     private Cosmac1802 cpu;
     private HashMap<String, String> gbwDictionary = new HashMap<>();
     private SerialPort comPort; // Add the hardware port variable
-    private boolean enableHardwareCom = true; // Set to true when USB adapter is attached
+    private boolean enableHardwareCom = false; // Set to true when USB adapter is attached
     private DateTimeFormatter timeFmt = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
     private StringBuilder logBuffer = new StringBuilder();
-    private boolean isInitialized = false;
+    
+    // --- PROFILE & WINDOW MANAGEMENT ---
+    private List<EmulatorProfile> availableProfiles = new ArrayList<>();
+    private EmulatorProfile activeProfile;
+    
+    private HBox masterLayout;
+    private VBox configDrawer;
+    private javafx.scene.control.ComboBox<EmulatorProfile> profileCombo;
+    private javafx.scene.control.CheckBox coldBootCheck;
+    private javafx.scene.control.CheckBox[] jumperChecks = new javafx.scene.control.CheckBox[8];
+    
+    private Stage gcStage;
+    private Stage pcStage;
     
     // --- SERIAL LOGGER & FILTER TRACKING ---
     public boolean showChangesOnly = true; // Configurable default state
@@ -89,30 +107,11 @@ public class ConsoleController {
     @FXML
     private javafx.scene.control.CheckBox jumperCheckBox;
 */
-    @FXML
-    public void initialize() {
-        // Prevent JavaFX from recursively triggering this when loading child windows
-        if (isInitialized) return;
-        isInitialized = true;
-        
+    public javafx.scene.layout.Pane buildMasterShell() {
         cpu = new Cosmac1802();
-        cpu.controller = this; // Link CPU to this controller
+        cpu.controller = this;
         cpu.reset();
         
-        // --- RESTORE HARDWARE STATE ---
-        // Load the battery-backed RAM first
-        cpu.loadNVRAM("F16.nvram");
-
-        try {
-            IntelHexLoader.load("F16.HEX", cpu.memory);
-        } catch (Exception e) {
-            System.err.println("Failed to load ROM: " + e.getMessage());
-            return;
-        }
-        
-        // Load the external address descriptions
-        loadProtocolDictionary("Protocol.ini", "F16_DEFAULT");
-       
         // --- INITIALIZE PHYSICAL RS-232 HARDWARE ---
         if (enableHardwareCom) {
             comPort = SerialPort.getCommPort("COM3");
@@ -131,9 +130,9 @@ public class ConsoleController {
                     comPort.closePort();
                     System.out.println("COM3 port released.");
                 }
-                // --- SIMULATE POWER LOSS (SAVE RAM) ---
-                if (cpu != null) {
-                    cpu.saveNVRAM("F16.nvram");
+                if (cpu != null && activeProfile != null) {
+                    ensureNvramDir();
+                    cpu.saveNVRAM("nvram/" + activeProfile.protocolProfile + ".nvram");
                     System.out.println("Hardware NVRAM state preserved.");
                 }
             }));
@@ -206,17 +205,36 @@ public class ConsoleController {
         logStage.show();
         // ----------------------------------------------
         spawnHandheldWindows();
+        
+        loadManifest("Manifest.ini");
+        buildConfigDrawer();
+
+        masterLayout = new HBox();
+        masterLayout.setStyle("-fx-background-color: #2b2b2b;");
+
+        // Boot the first profile found in the manifest
+        if (!availableProfiles.isEmpty()) {
+            activeProfile = availableProfiles.get(0);
+            profileCombo.getSelectionModel().select(activeProfile);
+            applyProfile(activeProfile);
+        }
 
         // Start the CPU in a background daemon thread
         Thread cpuThread = new Thread(() -> {
             long startTime = System.nanoTime();
-            // 1.79 MHz clock / 8 ticks per machine cycle = 223,721.5 Hz
-            // 1,000,000,000 ns / 223,721.5 = 4469.84 ns per cycle
             final double NS_PER_CYCLE = 4469.84;
             long lastThrottleCheck = 0;
             
             try {
                 while (true) {
+                    if (isCpuPaused) {
+                        Thread.sleep(10); // Hold CPU in RESET state
+                        // Reset the throttle clock so we don't hyper-speed when unpaused
+                        startTime = System.nanoTime(); 
+                        lastThrottleCheck = cpu.totalCycles;
+                        continue;
+                    }
+                    
                     cpu.step();
                     
                     // EF2 Hardware Oscillator: Toggle state every 2048 machine cycles
@@ -229,7 +247,6 @@ public class ConsoleController {
                         long actualElapsedNs = System.nanoTime() - startTime;
                         long differenceNs = expectedElapsedNs - actualElapsedNs;
                         
-                        // If the emulator is ahead of real time by > 2ms, sleep
                         if (differenceNs > 2000000) {
                             Thread.sleep(differenceNs / 1000000);
                         }
@@ -241,6 +258,221 @@ public class ConsoleController {
         });
         cpuThread.setDaemon(true); 
         cpuThread.start();
+        
+        return masterLayout;
+    }
+    
+    // --- MANIFEST PARSER ---
+    private void loadManifest(String filename) {
+        availableProfiles.clear();
+        EmulatorProfile currentProfile = null;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty() || line.startsWith("#")) continue;
+
+                // New Section [PROFILE_ID]
+                if (line.startsWith("[") && line.endsWith("]")) {
+                    if (currentProfile != null) availableProfiles.add(currentProfile);
+                    currentProfile = new EmulatorProfile();
+                    currentProfile.sectionId = line.substring(1, line.length() - 1);
+                    continue;
+                }
+
+                // Key=Value parsing
+                if (currentProfile != null && line.contains("=")) {
+                    String[] parts = line.split("=", 2);
+                    String key = parts[0].trim();
+                    String val = parts[1].trim();
+
+                    // Strip leading and trailing quotes if present
+                    if (val.startsWith("\"") && val.endsWith("\"")) {
+                        val = val.substring(1, val.length() - 1);
+                    }
+
+                    switch (key) {
+                        case "Name": currentProfile.name = val; break;
+                        case "HardwarePlatform": currentProfile.hardwarePlatform = val; break;
+                        case "HexFile": currentProfile.hexFile = val; break;
+                        case "ReleaseDate": currentProfile.releaseDate = val; break;
+                        case "RetireData": currentProfile.retireDate = val; break;
+                        case "SportType": currentProfile.sportType = val; break;
+                        case "KeypadLayout": currentProfile.keypadLayout = val; break;
+                        case "HandheldMainTimer": currentProfile.handheldMainTimer = val; break;
+                        case "HandheldAux": currentProfile.handheldAux = val; break;
+                        case "ProtocolProfile": currentProfile.protocolProfile = val; break;
+                        case "OptionJumpers":
+                            if (val.startsWith("0b")) {
+                                currentProfile.optionJumpers = Integer.parseInt(val.substring(2), 2);
+                            } else {
+                                currentProfile.optionJumpers = Integer.decode(val);
+                            }
+                            break;
+                        case "ScoreboardModels":
+                            // Parse arrays like ["MP-259", "MP-269"]
+                            val = val.replace("[", "").replace("]", "");
+                            String[] models = val.split(",");
+                            for (String m : models) {
+                                currentProfile.scoreboardModels.add(m.trim().replace("\"", ""));
+                            }
+                            break;
+                    }
+                }
+            }
+            // Add the final profile after the loop finishes
+            if (currentProfile != null) availableProfiles.add(currentProfile);
+            
+            System.out.println("Manifest Loaded: Found " + availableProfiles.size() + " profiles.");
+            for (EmulatorProfile p : availableProfiles) {
+                System.out.println(" - " + p.sectionId + ": " + p.name + " (Jumpers: " + p.optionJumpers + ")");
+            }
+
+        } catch (Exception e) {
+            System.err.println("Failed to load Manifest.ini: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    private void buildConfigDrawer() {
+        configDrawer = new VBox(15);
+        configDrawer.setPadding(new Insets(20));
+        configDrawer.setStyle("-fx-background-color: #2b2b2b; -fx-font-family: 'Arial';");
+        configDrawer.setPrefWidth(260);
+
+        Label title = new Label("EMULATOR CONFIG");
+        title.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+        profileCombo = new javafx.scene.control.ComboBox<>();
+        profileCombo.getItems().addAll(availableProfiles);
+        profileCombo.setMaxWidth(Double.MAX_VALUE);
+        
+        // Auto-update checkboxes when a new profile is selected in the dropdown
+        profileCombo.setOnAction(e -> {
+            EmulatorProfile p = profileCombo.getValue();
+            if (p != null) {
+                for (int i = 0; i < 8; i++) {
+                    // Check if the specific bit is a 1 in the TOML binary literal
+                    jumperChecks[i].setSelected((p.optionJumpers & (1 << i)) != 0);
+                }
+            }
+        });
+
+        VBox jumperBox = new VBox(8);
+        Label jumperLabel = new Label("J6 Option Jumpers (Pins 1-8):");
+        jumperLabel.setStyle("-fx-text-fill: #aaaaaa; -fx-font-size: 11px;");
+        jumperBox.getChildren().add(jumperLabel);
+        
+        for (int i = 0; i < 8; i++) {
+            jumperChecks[i] = new javafx.scene.control.CheckBox("Jumper Pin " + (i + 1));
+            jumperChecks[i].setStyle("-fx-text-fill: white;");
+            jumperBox.getChildren().add(jumperChecks[i]);
+        }
+        
+        coldBootCheck = new javafx.scene.control.CheckBox("Force Cold Boot (Wipe RAM)");
+        coldBootCheck.setStyle("-fx-text-fill: #ffaa00; -fx-padding: 10 0 0 0;");
+
+        Button btnApply = new Button("REBOOT HARDWARE");
+        btnApply.setMaxWidth(Double.MAX_VALUE);
+        btnApply.setStyle("-fx-background-color: #a32035; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnApply.setOnAction(e -> applyProfile(profileCombo.getValue()));
+
+        configDrawer.getChildren().addAll(title, profileCombo, jumperBox, coldBootCheck, new Region(), btnApply);
+        VBox.setVgrow(configDrawer.getChildren().get(4), Priority.ALWAYS); // Push button to bottom
+    }
+    
+    private void applyProfile(EmulatorProfile p) {
+        if (p == null) return;
+
+        // 1. Halt the CPU thread immediately
+        isCpuPaused = true; 
+
+        // 2. Save NVRAM to the subfolder using the ProtocolProfile name
+        if (activeProfile != null && cpu != null && activeProfile != p) {
+            ensureNvramDir();
+            cpu.saveNVRAM("nvram/" + activeProfile.protocolProfile + ".nvram");
+        }
+        activeProfile = p;
+
+        // 3. Parse manual jumper overrides
+        int customJumpers = 0;
+        for (int i = 0; i < 8; i++) {
+            if (jumperChecks[i].isSelected()) customJumpers |= (1 << i);
+        }
+        if (cpu != null) cpu.jumperState = ~customJumpers & 0xFF; 
+
+        // --- GHOST UI FIX ---
+        // Explicitly clear FXML bindings so detached UI elements don't survive the swap
+        line1LCD = null;
+        line2LCD = null;
+        if (gameClockLed != null) gameClockLed = null;
+        if (shotClockLed != null) shotClockLed = null;
+        // --------------------
+
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource(p.keypadLayout));
+            loader.setController(this); // Safely injects the FXML elements into THIS active controller
+            Pane newKeypad = loader.load();
+            
+            // Inject the invisible gear trigger button
+            Button gearBtn = new Button("⚙");
+            gearBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: #555555; -fx-font-size: 20px; -fx-cursor: hand;");
+            gearBtn.setLayoutX(5); gearBtn.setLayoutY(5);
+            gearBtn.setOnAction(e -> toggleDrawer());
+            newKeypad.getChildren().add(gearBtn);
+
+            // Replace the old keypad with the new one
+            masterLayout.getChildren().clear();
+            masterLayout.getChildren().add(newKeypad);
+
+            if (masterLayout.getScene() != null) {
+                masterLayout.getScene().getWindow().sizeToScene(); // Snap OS window to new dimensions
+            }
+
+        } catch (Exception e) {
+            System.err.println("Failed to load keypad layout: " + p.keypadLayout);
+            e.printStackTrace();
+        }
+
+        loadProtocolDictionary("Protocol.ini", p.protocolProfile);
+        
+        if (cpu != null) {
+            cpu.reset();
+            java.util.Arrays.fill(cpu.memory, 0); 
+            
+            // Check if the user requested a destructive cold boot
+            if (coldBootCheck != null && coldBootCheck.isSelected()) {
+                System.out.println("Forcing Cold Boot (Bypassing NVRAM).");
+                coldBootCheck.setSelected(false); // Reset the toggle for next time
+            } else {
+                cpu.loadNVRAM("nvram/" + p.protocolProfile + ".nvram");
+            }
+            
+            try {
+                IntelHexLoader.load(p.hexFile, cpu.memory);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+        spawnHandheldWindows();
+        
+        // 4. Release the RESET line and let the OS boot!
+        isCpuPaused = false;
+    }
+    
+    private void toggleDrawer() {
+        if (masterLayout.getChildren().contains(configDrawer)) {
+            masterLayout.getChildren().remove(configDrawer);
+        } else {
+            masterLayout.getChildren().add(0, configDrawer); 
+        }
+        
+        // Use masterLayout to resize, avoiding the NPE on MM boards
+        if (masterLayout.getScene() != null) {
+            masterLayout.getScene().getWindow().sizeToScene();
+        }
     }
  
     // --- PROTOCOL DICTIONARY LOADER ---
@@ -273,8 +505,8 @@ public class ConsoleController {
     // Called by Cosmac1802.java to push text to the UI
     public void updateLCD(String line1, String line2) {
         Platform.runLater(() -> {
-            line1LCD.setText(line1);
-            line2LCD.setText(line2);
+            if (line1LCD != null) line1LCD.setText(line1);
+            if (line2LCD != null) line2LCD.setText(line2);
         });
     }
    
@@ -444,44 +676,56 @@ public class ConsoleController {
     
     private void spawnHandheldWindows() {
         try {
+            // Close existing handhelds
+            if (gcStage != null && gcStage.isShowing()) gcStage.close();
+            if (pcStage != null && pcStage.isShowing()) pcStage.close();
+
             // --- MAIN TIMER (GAME CLOCK) HANDHELD ---
-            FXMLLoader gcLoader = new FXMLLoader(getClass().getResource("HandHeld_Main_Timer_Wired_B23.fxml"));
-            // Manually bind the FXML to THIS active controller instance
-            gcLoader.setController(this); 
-            Pane gcRoot = gcLoader.load();
-            
-            // If the FXML contained our running light, map it to the legacy variable 
-            // so your existing CPU logic doesn't break.
-            if (runningLight != null) {
-                gameClockLed = runningLight; 
-                runningLight = null; // Clear it so the next loader can use it
+            if (activeProfile != null && !activeProfile.handheldMainTimer.equalsIgnoreCase("None")) {
+                javafx.fxml.FXMLLoader gcLoader = new javafx.fxml.FXMLLoader(getClass().getResource(activeProfile.handheldMainTimer));
+                gcLoader.setController(this); 
+                Pane gcRoot = gcLoader.load();
+                
+                if (runningLight != null) {
+                    gameClockLed = runningLight; 
+                    runningLight = null; 
+                }
+
+                gcStage = new Stage();
+                gcStage.setTitle("Game Clock");
+                gcStage.setScene(new Scene(gcRoot));
+                gcStage.setX(100); gcStage.setY(450);
+                gcStage.show();
             }
 
-            Stage gcStage = new Stage();
-            gcStage.setTitle("Game Clock");
-            gcStage.setScene(new Scene(gcRoot));
-            gcStage.setX(100); gcStage.setY(450);
-            gcStage.show();
+            // --- SECONDARY (SHOT / PLAY CLOCK) HANDHELD ---
+            if (activeProfile != null && !activeProfile.handheldAux.equalsIgnoreCase("None")) {
+                javafx.fxml.FXMLLoader pcLoader = new javafx.fxml.FXMLLoader(getClass().getResource(activeProfile.handheldAux));
+                pcLoader.setController(this);
+                Pane pcRoot = pcLoader.load();
+                
+                if (runningLight != null) {
+                    shotClockLed = runningLight;
+                    runningLight = null;
+                }
 
-            // --- PLAY CLOCK (DELAY OF GAME) HANDHELD ---
-            FXMLLoader pcLoader = new FXMLLoader(getClass().getResource("HandHeld_Play_Clock_Wired_F16.fxml"));
-            pcLoader.setController(this);
-            Pane pcRoot = pcLoader.load();
-            
-            if (runningLight != null) {
-                shotClockLed = runningLight;
-                runningLight = null;
+                pcStage = new Stage();
+                pcStage.setTitle("Aux Clock");
+                pcStage.setScene(new Scene(pcRoot));
+                pcStage.setX(320); pcStage.setY(450);
+                pcStage.show();
             }
-
-            Stage pcStage = new Stage();
-            pcStage.setTitle("Play Clock");
-            pcStage.setScene(new Scene(pcRoot));
-            pcStage.setX(320); pcStage.setY(450);
-            pcStage.show();
 
         } catch (Exception e) {
-            System.err.println("Failed to spawn handhelds: " + e.getMessage());
+            System.err.println("Failed to spawn handhelds.");
             e.printStackTrace();
+        }
+    }
+    
+    private void ensureNvramDir() {
+        java.io.File dir = new java.io.File("nvram");
+        if (!dir.exists()) {
+            dir.mkdir();
         }
     }
 }

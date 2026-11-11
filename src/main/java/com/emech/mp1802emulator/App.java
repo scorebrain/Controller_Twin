@@ -4,31 +4,26 @@
  */
 package com.emech.mp1802emulator;
 
-/**
- *
- * @author CMcMichael
- */
-
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.IOException;
 
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("MP_Football_F16.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 696, 510);
-        stage.setTitle("Electro-Mech MP/MM Controller Emulator");
+    public void start(Stage stage) throws Exception {
+        // Instantiate the master controller manually
+        ConsoleController controller = new ConsoleController();
+        
+        // Let the controller build the UI based on the Manifest.ini
+        Scene scene = new Scene(controller.buildMasterShell());
+        
+        stage.setTitle("Electro-Mech MP/MM Scoreboard Control Console Emulator");
         stage.setScene(scene);
-        // Force the entire JVM and all child windows to exit when the main window closes
         stage.setOnCloseRequest(event -> {
             javafx.application.Platform.exit();
             System.exit(0);
         });
-        // ---------------------
         stage.show();
     }
 

@@ -17,10 +17,9 @@
 
 <Pane style="-fx-background-color: #bbbbbb;" 
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.emech.mp1802emulator.ConsoleController"
 	  stylesheets="@TwoThousands.css"
       prefWidth="696"
-      prefHeight="510"	  >
+      prefHeight="526"	  >
     <children>
 	
 		<!-- Emech Logo -->
@@ -442,6 +441,17 @@
 		<Label prefWidth="296.0" prefHeight="12.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
 			style="-fx-font-family: 'Franklin Gothic Book'; -fx-font-size: 11px; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #222222;"
 			layoutX="200.0" layoutY="470.0" text="www.electro-mech.com  •  800-445-7846" />
+			
+		<!-- Configuration Drawer Button -->
+		<Rectangle width="60.0" height="1.5" layoutX="136.0" layoutY="507.0" fill="#222222" />
+		<Rectangle width="40.0" height="1.5" layoutX="156.0" layoutY="512.0" fill="#222222" />
+		<Rectangle width="290.0" height="24.0" arcHeight="8.0" arcWidth="8.0" layoutX="203.0" layoutY="498.0" fill="#636466" />
+		<Rectangle width="60.0" height="1.5" layoutX="500.0" layoutY="507.0" fill="#222222" />
+		<Rectangle width="40.0" height="1.5" layoutX="500.0" layoutY="512.0" fill="#222222" />
+		<Button fx:id="btnConfig" id="button-config" layoutX="205.0" layoutY="500.0" />
+		<Label fx:id="lblConfig" prefWidth="280.0" prefHeight="22.0" alignment="CENTER" wrapText="true" mouseTransparent="true"
+			style="-fx-font-family: 'Arial'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-alignment: center; -fx-padding: 3; -fx-text-fill: #ffffff;"
+			layoutX="208.0" layoutY="499.0" text="▶   {Name} from the manifest.ini file" />
 		
 	</children>
 </Pane>

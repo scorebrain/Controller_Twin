@@ -34,6 +34,23 @@ and open the template in the editor.
         #c0aeca;
 }
 
+#button-config {
+	-fx-pref-width: 286;
+	-fx-pref-height: 20;
+	-fx-font-size: 4px;
+	-fx-background-color: #636466;
+}
+
+#button-config:hover {
+    -fx-background-color: 
+        #808285;
+}
+
+#button-config:pressed {
+-fx-background-color: 
+        #333333;
+}
+
 #button-handheld-round-black {
 	-fx-background-color: #414042;
 	-fx-background-radius: 26px;
